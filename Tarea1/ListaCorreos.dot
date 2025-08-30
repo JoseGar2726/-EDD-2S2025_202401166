@@ -1,0 +1,49 @@
+digraph G {
+  rankdir=LR;
+  node [shape=record];
+  subgraph cluster_10 {
+    label="Correos de Ian Murdock";
+  }
+  subgraph cluster_9 {
+    label="Correos de Mitchell Baker";
+  }
+  subgraph cluster_8 {
+    label="Correos de Karen Sandler";
+  }
+  subgraph cluster_7 {
+    label="Correos de Jon Corbet";
+  }
+  subgraph cluster_6 {
+    label="Correos de Brian Fox";
+  }
+  subgraph cluster_5 {
+    label="Correos de Steven Mejia";
+  }
+  subgraph cluster_4 {
+    label="Correos de Mark Shuttleworth";
+  }
+  subgraph cluster_3 {
+    label="Correos de Greg Kroah-Hartman";
+    "U3_C301" [label="Asunto: Revisión de Kernel\nFecha: 2025-08-17"];
+    "U3_C302" [label="Asunto: Verificación de cuenta\nFecha: 2025-08-18"];
+    "U3_C301" -> "U3_C302";
+    "U3_C302" -> "U3_C301";
+  }
+  subgraph cluster_2 {
+    label="Correos de Marcos Itzep";
+    "U2_C201" [label="Asunto: Resumen semanal\nFecha: 2025-08-21"];
+    "U2_C202" [label="Asunto: Actualización de seguridad\nFecha: 2025-08-19"];
+    "U2_C201" -> "U2_C202";
+    "U2_C202" -> "U2_C201";
+    "U2_C203" [label="Asunto: Invitación a webinar\nFecha: 2025-08-20"];
+    "U2_C202" -> "U2_C203";
+    "U2_C203" -> "U2_C202";
+  }
+  subgraph cluster_1 {
+    label="Correos de Luis Garcia";
+    "U1_C101" [label="Asunto: Bienvenido Luis\nFecha: 2025-08-20"];
+    "U1_C102" [label="Asunto: Promociones del mes\nFecha: 2025-08-18"];
+    "U1_C101" -> "U1_C102";
+    "U1_C102" -> "U1_C101";
+  }
+}

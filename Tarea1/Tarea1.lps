@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="Tarea1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="43" Y="17"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="menu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <TopLine Value="93"/>
+        <CursorPos X="54" Y="117"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="usuarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="2" Y="2"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="listausuarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="listaUsuarios"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="74"/>
+        <CursorPos X="28" Y="96"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="correos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="11"/>
+        <CursorPos X="19" Y="15"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="listacorreos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="listaCorreos"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="98"/>
+        <CursorPos X="5" Y="130"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="28">
+      <Position>
+        <Filename Value="correos.pas"/>
+        <Caret Line="37" Column="52" TopLine="12"/>
+      </Position>
+      <Position>
+        <Filename Value="correos.pas"/>
+        <Caret Line="41" Column="21" TopLine="12"/>
+      </Position>
+      <Position>
+        <Filename Value="correos.pas"/>
+        <Caret Line="42" Column="10" TopLine="12"/>
+      </Position>
+      <Position>
+        <Filename Value="listacorreos.pas"/>
+        <Caret Line="60" Column="43" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="Tarea1.lpr"/>
+        <Caret Line="17" Column="43"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="142" Column="38" TopLine="111"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="67" Column="45" TopLine="43"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="89" Column="70" TopLine="62"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="114" Column="64" TopLine="90"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="77" Column="20" TopLine="51"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="93" Column="100" TopLine="68"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="141" Column="38" TopLine="117"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="127" Column="50" TopLine="108"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="140" Column="42" TopLine="120"/>
+      </Position>
+      <Position>
+        <Filename Value="listacorreos.pas"/>
+        <Caret Line="26" Column="28" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="listacorreos.pas"/>
+        <Caret Line="22" Column="37"/>
+      </Position>
+      <Position>
+        <Filename Value="listacorreos.pas"/>
+        <Caret Line="11" Column="41"/>
+      </Position>
+      <Position>
+        <Filename Value="listacorreos.pas"/>
+        <Caret Line="12" Column="37"/>
+      </Position>
+      <Position>
+        <Filename Value="listacorreos.pas"/>
+        <Caret Line="98" Column="11" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="listacorreos.pas"/>
+        <Caret Line="76" Column="27" TopLine="53"/>
+      </Position>
+      <Position>
+        <Filename Value="listacorreos.pas"/>
+        <Caret Line="73" Column="40" TopLine="53"/>
+      </Position>
+      <Position>
+        <Filename Value="listacorreos.pas"/>
+        <Caret Line="79" Column="51" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="19" Column="26"/>
+      </Position>
+      <Position>
+        <Filename Value="listacorreos.pas"/>
+        <Caret Line="98" Column="41" TopLine="75"/>
+      </Position>
+      <Position>
+        <Filename Value="listacorreos.pas"/>
+        <Caret Line="105" Column="24" TopLine="86"/>
+      </Position>
+      <Position>
+        <Filename Value="listacorreos.pas"/>
+        <Caret Line="103" Column="94" TopLine="86"/>
+      </Position>
+      <Position>
+        <Filename Value="listacorreos.pas"/>
+        <Caret Line="113" Column="42" TopLine="92"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="139" Column="88" TopLine="120"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="137" Column="21" TopLine="120"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

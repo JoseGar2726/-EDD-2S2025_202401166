@@ -1,0 +1,22 @@
+digraph G {
+  node [shape=record];
+  "Nodo0" [label="10\nIan Murdock\nimurdock\nimurdock123\nimurdock@edd.com\n41235678"];
+  "Nodo0" -> "Nodo1";
+  "Nodo1" [label="9\nMitchell Baker\nmbaker\nmbaker123\nmbaker@edd.com\n19384756"];
+  "Nodo1" -> "Nodo2";
+  "Nodo2" [label="8\nKaren Sandler\nksandler\nksandler123\nksandler@edd.com\n89514362"];
+  "Nodo2" -> "Nodo3";
+  "Nodo3" [label="7\nJon Corbet\njcorbet\njcorbet123\njcorbet@edd.com\n75849231"];
+  "Nodo3" -> "Nodo4";
+  "Nodo4" [label="6\nBrian Fox\nbfox\nbfox123\nbfox@edd.com\n64578231"];
+  "Nodo4" -> "Nodo5";
+  "Nodo5" [label="5\nSteven Mejia\nsmejia\nsmejia123\nsmejia@edd.com\n23419875"];
+  "Nodo5" -> "Nodo6";
+  "Nodo6" [label="4\nMark Shuttleworth\nmshuttleworth\nmshuttleworth123\nmshuttleworth@edd.com\n76018423"];
+  "Nodo6" -> "Nodo7";
+  "Nodo7" [label="3\nGreg Kroah-Hartman\ngkroah-hartman\ngkroah-hartman123\ngkroah-hartman@edd.com\n31628954"];
+  "Nodo7" -> "Nodo8";
+  "Nodo8" [label="2\nMarcos Itzep\nmitzep\nmitzep123\nmitzep@edd.com\n87654321"];
+  "Nodo8" -> "Nodo9";
+  "Nodo9" [label="1\nLuis Garcia\nlgarcia\nlgarcia123\nlgarcia@edd.com\n12345678"];
+}
