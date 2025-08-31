@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="Fase1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="26"/>
+      </Unit>
+      <Unit>
+        <Filename Value="menuinicio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="menuInicio"/>
+        <TopLine Value="36"/>
+        <CursorPos X="22" Y="67"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="menuadmin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form2"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="menuAdmin"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="7"/>
+        <CursorPos X="89" Y="5"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="menuadmin.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="24"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="menucrearcuenta.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form3"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="menuCrearCuenta"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="69"/>
+        <CursorPos X="22" Y="76"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="usuario.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="45" Y="88"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="listausuarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="listaUsuarios"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="90"/>
+        <CursorPos X="31" Y="100"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="globals.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="10" Y="6"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="menuadmin.pas"/>
+        <Caret Line="38" Column="26" TopLine="32"/>
+      </Position>
+      <Position>
+        <Filename Value="menuadmin.pas"/>
+        <Caret Line="9" Column="67"/>
+      </Position>
+      <Position>
+        <Filename Value="menuadmin.pas"/>
+        <Caret Line="41" Column="20" TopLine="30"/>
+      </Position>
+      <Position>
+        <Filename Value="menuadmin.pas"/>
+        <Caret Line="3" Column="26"/>
+      </Position>
+      <Position>
+        <Filename Value="menuadmin.pas"/>
+        <Caret Line="35" Column="21" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="11" Column="31" TopLine="3"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="45" Column="35" TopLine="38"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="46" Column="26" TopLine="41"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="61" Column="20" TopLine="53"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="58" Column="22" TopLine="51"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="66" Column="50" TopLine="53"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="58" Column="42" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="menuinicio.pas"/>
+        <Caret Line="49" Column="36" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="menuinicio.pas"/>
+        <Caret Line="46" Column="58" TopLine="42"/>
+      </Position>
+      <Position>
+        <Filename Value="menucrearcuenta.pas"/>
+        <Caret Line="47" Column="4" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="menucrearcuenta.pas"/>
+        <Caret Line="52" Column="22" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="menucrearcuenta.pas"/>
+        <Caret Line="8" Column="90" TopLine="40"/>
+      </Position>
+      <Position>
+        <Filename Value="menucrearcuenta.pas"/>
+        <Caret Line="59" Column="27" TopLine="51"/>
+      </Position>
+      <Position>
+        <Filename Value="menucrearcuenta.pas"/>
+        <Caret Line="57" Column="33" TopLine="51"/>
+      </Position>
+      <Position>
+        <Filename Value="menucrearcuenta.pas"/>
+        <Caret Line="55" Column="52" TopLine="49"/>
+      </Position>
+      <Position>
+        <Filename Value="menuinicio.pas"/>
+        <Caret Line="51" Column="16" TopLine="48"/>
+      </Position>
+      <Position>
+        <Filename Value="menuinicio.pas"/>
+        <Caret Line="55" Column="66" TopLine="49"/>
+      </Position>
+      <Position>
+        <Filename Value="menuinicio.pas"/>
+        <Caret Line="62" Column="61" TopLine="53"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="72" Column="38" TopLine="64"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="25" Column="29" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="70" Column="92" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="22" Column="45" TopLine="11"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="80" Column="27" TopLine="69"/>
+      </Position>
+      <Position>
+        <Filename Value="listausuarios.pas"/>
+        <Caret Line="100" Column="31" TopLine="90"/>
+      </Position>
+      <Position>
+        <Filename Value="menucrearcuenta.pas"/>
+        <Caret Line="66" Column="25" TopLine="58"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
