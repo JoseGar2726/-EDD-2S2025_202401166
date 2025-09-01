@@ -1,7 +1,7 @@
 object Form3: TForm3
-  Left = 620
+  Left = 430
   Height = 556
-  Top = 100
+  Top = 279
   Width = 419
   Caption = 'Crear Cuenta'
   ClientHeight = 556

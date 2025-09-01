@@ -4,10 +4,8 @@ unit globals;
 
 interface
 
-uses listaUsuarios;
-
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, listaUsuarios;
 
 var
   ListaUsuariosGlobal: TListaUsuarios;

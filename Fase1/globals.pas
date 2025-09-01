@@ -5,10 +5,11 @@ unit globals;
 interface
 
 uses
-  Classes, SysUtils, listaUsuarios;
+  Classes, SysUtils, listaUsuarios, usuario;
 
 var
   ListaUsuariosGlobal: TListaUsuarios;
+  UsuarioLogeado: TUsuario;
 
 implementation
 

@@ -21,7 +21,11 @@ type
     constructor Create;
     destructor Destroy; override;
     procedure Agregar(Usuario: TUsuario);
+    procedure GenerarDOT(const RutaArchivo: string);
+    procedure EditarUsuario(email: string; nuevoUser: string; nuevoTelefono: string);
     function ExisteId(id: Integer): Boolean;
+    function ExisteEmail(email: string): Boolean;
+    function Logearse(email: string): TUsuario;
   end;
 
 implementation
@@ -83,6 +87,107 @@ begin
        Temp := Temp^.Siguiente;
   end;
 end;
+
+function TListaUsuarios.ExisteEmail(email: string): Boolean;
+var
+   Temp: PNodo;
+begin
+  Result := False;
+  Temp := Cabeza;
+
+  while Temp <> nil do
+  begin
+       if Temp^.Datos.GetEmail = email then
+       begin
+         Result := True;
+         Exit;
+       end;
+       Temp := Temp^.Siguiente;
+  end;
+end;
+
+function TListaUsuarios.Logearse(email: string): TUsuario;
+var
+   Temp: PNodo;
+begin
+  Result := nil;
+  Temp := Cabeza;
+
+  while Temp <> nil do
+  begin
+       if Temp^.Datos.GetEmail = email then
+       begin
+         Result := Temp^.Datos;
+         Exit;
+       end;
+       Temp := Temp^.Siguiente;
+  end;
+end;
+
+procedure TListaUsuarios.EditarUsuario(email, nuevoUser, nuevoTelefono: string);
+var
+  Temp: PNodo;
+begin
+  Temp := Cabeza;
+
+  while Temp <> nil do
+  begin
+    if Temp^.Datos.GetEmail = email then
+    begin
+      Temp^.Datos.SetUser(nuevoUser);
+      Temp^.Datos.SetTelefono(nuevoTelefono);
+      Exit;
+    end;
+    Temp := Temp^.Siguiente;
+  end;
+end;
+
+procedure TListaUsuarios.GenerarDOT(const RutaArchivo: string);
+var
+  Archivo: TextFile;
+  Temp: PNodo;
+  NodoNombre: string;
+  Contador: Integer;
+begin
+  AssignFile(Archivo, RutaArchivo);
+  Rewrite(Archivo);
+
+  Writeln(Archivo, 'digraph G {');
+  Writeln(Archivo, '  rankdir=LR;');
+  Writeln(Archivo, '  node [shape=record, style=filled, fillcolor=lightblue];');
+  Writeln(Archivo, '  label="Lista Simplemente Enlazada: Usuarios";');
+  Writeln(Archivo, '  labelloc=top; fontsize=20;');
+
+  Temp := Cabeza;
+  Contador := 0;
+
+  while Temp <> nil do
+  begin
+    NodoNombre := 'Nodo' + IntToStr(Contador);
+    Writeln(Archivo, '  ', NodoNombre, ' [label="Id: ', Temp^.Datos.GetId,
+            '\nNombre: ', Temp^.Datos.GetNombre,
+            '\nUsuario: ', Temp^.Datos.GetUser,
+            '\nEmail: ', Temp^.Datos.GetEmail,
+            '\nTelefono: ', Temp^.Datos.GetTelefono, '"];');
+
+    Temp := Temp^.Siguiente;
+    Inc(Contador);
+  end;
+
+  Temp := Cabeza;
+  Contador := 0;
+  while (Temp <> nil) and (Temp^.Siguiente <> nil) do
+  begin
+    Writeln(Archivo, '  Nodo', Contador, ' -> Nodo', Contador + 1, ';');
+    Temp := Temp^.Siguiente;
+    Inc(Contador);
+  end;
+
+  Writeln(Archivo, '}');
+  CloseFile(Archivo);
+end;
+
+
 
 end.
 

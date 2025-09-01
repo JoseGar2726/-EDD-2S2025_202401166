@@ -67,14 +67,19 @@ begin
      showMessage('Id Existente')
   else
   begin
-    Usuario := TUsuario.Create(id,nombre,user,password,email,telefono);
-    ListaUsuariosGlobal.Agregar(Usuario);
-    Edit1.Text := '';
-    Edit2.Text := '';
-    Edit3.Text := '';
-    Edit4.Text := '';
-    Edit5.Text := '';
-    showMessage('Usuario Creado Correctamente');
+    if ListaUsuariosGlobal.ExisteEmail(email) then
+       showMessage('El Correo Ya Se Encuentra Registrado')
+    else
+    begin
+      Usuario := TUsuario.Create(id,nombre,user,password,email,telefono);
+      ListaUsuariosGlobal.Agregar(Usuario);
+      Edit1.Text := '';
+      Edit2.Text := '';
+      Edit3.Text := '';
+      Edit4.Text := '';
+      Edit5.Text := '';
+      showMessage('Usuario Creado Correctamente');
+    end;
   end;
 end;
 

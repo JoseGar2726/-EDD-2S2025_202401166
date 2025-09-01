@@ -53,6 +53,7 @@
         <Filename Value="menucrearcuenta.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form3"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="menuCrearCuenta"/>
       </Unit>
@@ -68,6 +69,49 @@
       <Unit>
         <Filename Value="globals.pas"/>
         <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="menuusuario.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form4"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="menuUsuario"/>
+      </Unit>
+      <Unit>
+        <Filename Value="actualizarperfil.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form5"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="actualizarPerfil"/>
+      </Unit>
+      <Unit>
+        <Filename Value="listausuarioscircular.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="listaUsuariosCircular"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tiposusuarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="tiposUsuarios"/>
+      </Unit>
+      <Unit>
+        <Filename Value="contactos.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="agregarcontacto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form6"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="agregarContacto"/>
+      </Unit>
+      <Unit>
+        <Filename Value="vercontactos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form7"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verContactos"/>
       </Unit>
     </Units>
   </ProjectOptions>

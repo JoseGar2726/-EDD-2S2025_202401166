@@ -5,9 +5,10 @@ unit usuario;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, listaUsuariosCircular;
 
 type
+
   TUsuario = class
   private
     FID: Integer;
@@ -16,8 +17,9 @@ type
     FPassword: string;
     FEmail: string;
     FTelefono: string;
+    FContactos: TListaUsuariosCircular;
   public
-    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string);
+    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular);
     procedure SetId(id: Integer);
     function GetId: Integer;
     procedure SetNombre(nombre: string);
@@ -30,12 +32,15 @@ type
     function GetEmail: string;
     procedure SetTelefono(telefono: string);
     function GetTelefono: string;
+    procedure SetContactos(contactos: TListaUsuariosCircular);
+    function GetContactos: TListaUsuariosCircular;
   end;
 
 implementation
+
 { TUsuario }
 
-constructor TUsuario.Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string);
+constructor TUsuario.Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular);
 begin
   FId := id;
   FNombre := nombre;
@@ -43,6 +48,7 @@ begin
   FPassword := password;
   FEmail := email;
   FTelefono := telefono;
+  FContactos := contactos
 end;
 
 procedure TUsuario.SetId(id: Integer);
@@ -57,7 +63,7 @@ procedure TUsuario.SetUser(user: string);
 begin
   FUser := user;
 end;
-procedure TUsuario.SetPAssword(password: string);
+procedure TUsuario.SetPassword(password: string);
 begin
   FPassword := password;
 end;
@@ -69,6 +75,10 @@ procedure TUsuario.SetTelefono(telefono: string);
 begin
   FTelefono := telefono;
 end;
+procedure TUsuario.SetContactos(contactos: TListaUsuariosCircular);
+begin
+  FContactos := contactos;
+end;
 
 function TUsuario.GetId: Integer;
 begin
@@ -76,7 +86,7 @@ begin
 end;
 function TUsuario.GetNombre: string;
 begin
-  Result := FNOmbre;
+  Result := FNombre;
 end;
 function TUsuario.GetUser: string;
 begin
@@ -93,6 +103,10 @@ end;
 function TUsuario.GetTelefono: string;
 begin
   Result := FTelefono;
+end;
+function TUsuario.GetContactos: TListaUsuariosCircular;
+begin
+  Result := FContactos;
 end;
 
 end.

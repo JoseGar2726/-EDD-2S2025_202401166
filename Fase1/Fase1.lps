@@ -8,10 +8,9 @@
         <Filename Value="Fase1.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="26"/>
+        <TopLine Value="5"/>
+        <CursorPos X="43" Y="15"/>
+        <UsageCount Value="40"/>
       </Unit>
       <Unit>
         <Filename Value="menuinicio.pas"/>
@@ -20,11 +19,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="menuInicio"/>
-        <TopLine Value="36"/>
-        <CursorPos X="22" Y="67"/>
-        <UsageCount Value="26"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="47"/>
+        <CursorPos X="80" Y="60"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="menuadmin.pas"/>
@@ -33,181 +32,258 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="menuAdmin"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="7"/>
-        <CursorPos X="89" Y="5"/>
-        <UsageCount Value="26"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="menuadmin.lfm"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="24"/>
-        <UsageCount Value="10"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
+        <CursorPos X="90" Y="13"/>
+        <UsageCount Value="40"/>
       </Unit>
       <Unit>
         <Filename Value="menucrearcuenta.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form3"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="menuCrearCuenta"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="69"/>
-        <CursorPos X="22" Y="76"/>
-        <UsageCount Value="24"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="71"/>
+        <CursorPos X="84" Y="76"/>
+        <UsageCount Value="38"/>
       </Unit>
       <Unit>
         <Filename Value="usuario.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
-        <CursorPos X="45" Y="88"/>
-        <UsageCount Value="24"/>
+        <EditorIndex Value="9"/>
+        <CursorPos X="62" Y="10"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="listausuarios.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="listaUsuarios"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="90"/>
-        <CursorPos X="31" Y="100"/>
-        <UsageCount Value="24"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="109"/>
+        <CursorPos X="50" Y="27"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="globals.pas"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="22" Y="11"/>
+        <UsageCount Value="36"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="menuadmin.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="24"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="menuusuario.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form4"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="menuUsuario"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="70"/>
+        <CursorPos X="15" Y="81"/>
+        <UsageCount Value="31"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="actualizarperfil.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form5"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="actualizarPerfil"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="20"/>
+        <CursorPos X="46" Y="28"/>
+        <UsageCount Value="30"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="menuusuario.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="listausuarioscircular.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="listaUsuariosCircular"/>
         <EditorIndex Value="4"/>
-        <CursorPos X="10" Y="6"/>
+        <TopLine Value="92"/>
+        <CursorPos X="39" Y="103"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tiposusuarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="tiposUsuarios"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="2"/>
+        <UsageCount Value="25"/>
+      </Unit>
+      <Unit>
+        <Filename Value="contactos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="32"/>
+        <CursorPos X="49" Y="7"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="agregarcontacto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form6"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="agregarContacto"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="53"/>
+        <CursorPos X="46" Y="61"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="vercontactos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form7"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verContactos"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="72" Y="11"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="menuadmin.pas"/>
-        <Caret Line="38" Column="26" TopLine="32"/>
+        <Filename Value="agregarcontacto.pas"/>
+        <Caret Line="39" Column="8" TopLine="26"/>
       </Position>
       <Position>
-        <Filename Value="menuadmin.pas"/>
-        <Caret Line="9" Column="67"/>
+        <Filename Value="agregarcontacto.pas"/>
+        <Caret Line="44" Column="27" TopLine="31"/>
       </Position>
       <Position>
-        <Filename Value="menuadmin.pas"/>
-        <Caret Line="41" Column="20" TopLine="30"/>
+        <Filename Value="agregarcontacto.pas"/>
+        <Caret Line="8" Column="82"/>
       </Position>
       <Position>
-        <Filename Value="menuadmin.pas"/>
-        <Caret Line="3" Column="26"/>
+        <Filename Value="agregarcontacto.pas"/>
+        <Caret Line="60" Column="21" TopLine="49"/>
       </Position>
       <Position>
-        <Filename Value="menuadmin.pas"/>
-        <Caret Line="35" Column="21" TopLine="23"/>
+        <Filename Value="agregarcontacto.pas"/>
+        <Caret Line="50" Column="23" TopLine="39"/>
       </Position>
       <Position>
-        <Filename Value="listausuarios.pas"/>
-        <Caret Line="11" Column="31" TopLine="3"/>
+        <Filename Value="agregarcontacto.pas"/>
+        <Caret Line="49" Column="48" TopLine="40"/>
       </Position>
       <Position>
-        <Filename Value="listausuarios.pas"/>
-        <Caret Line="45" Column="35" TopLine="38"/>
+        <Filename Value="agregarcontacto.pas"/>
+        <Caret Line="51" Column="30" TopLine="42"/>
       </Position>
       <Position>
-        <Filename Value="listausuarios.pas"/>
-        <Caret Line="46" Column="26" TopLine="41"/>
+        <Filename Value="agregarcontacto.pas"/>
+        <Caret Line="55" Column="36" TopLine="50"/>
       </Position>
       <Position>
-        <Filename Value="listausuarios.pas"/>
-        <Caret Line="61" Column="20" TopLine="53"/>
+        <Filename Value="listausuarioscircular.pas"/>
+        <Caret Line="91" Column="56" TopLine="80"/>
       </Position>
       <Position>
-        <Filename Value="listausuarios.pas"/>
-        <Caret Line="58" Column="22" TopLine="51"/>
+        <Filename Value="listausuarioscircular.pas"/>
+        <Caret Line="76" Column="37" TopLine="68"/>
       </Position>
       <Position>
-        <Filename Value="listausuarios.pas"/>
-        <Caret Line="66" Column="50" TopLine="53"/>
+        <Filename Value="listausuarioscircular.pas"/>
+        <Caret Line="80" Column="19" TopLine="73"/>
       </Position>
       <Position>
-        <Filename Value="listausuarios.pas"/>
-        <Caret Line="58" Column="42" TopLine="52"/>
+        <Filename Value="actualizarperfil.pas"/>
+        <Caret Line="28" Column="46" TopLine="20"/>
       </Position>
       <Position>
-        <Filename Value="menuinicio.pas"/>
-        <Caret Line="49" Column="36" TopLine="37"/>
+        <Filename Value="vercontactos.pas"/>
       </Position>
       <Position>
-        <Filename Value="menuinicio.pas"/>
-        <Caret Line="46" Column="58" TopLine="42"/>
+        <Filename Value="listausuarioscircular.pas"/>
+        <Caret Line="76" Column="30" TopLine="70"/>
       </Position>
       <Position>
-        <Filename Value="menucrearcuenta.pas"/>
-        <Caret Line="47" Column="4" TopLine="34"/>
+        <Filename Value="vercontactos.pas"/>
+        <Caret Line="2" Column="63"/>
       </Position>
       <Position>
-        <Filename Value="menucrearcuenta.pas"/>
-        <Caret Line="52" Column="22" TopLine="39"/>
+        <Filename Value="vercontactos.pas"/>
+        <Caret Line="46" Column="8" TopLine="33"/>
       </Position>
       <Position>
-        <Filename Value="menucrearcuenta.pas"/>
-        <Caret Line="8" Column="90" TopLine="40"/>
+        <Filename Value="menuusuario.pas"/>
+        <Caret Line="74" Column="28" TopLine="57"/>
       </Position>
       <Position>
-        <Filename Value="menucrearcuenta.pas"/>
-        <Caret Line="59" Column="27" TopLine="51"/>
+        <Filename Value="menuusuario.pas"/>
+        <Caret Line="80" Column="60" TopLine="67"/>
       </Position>
       <Position>
-        <Filename Value="menucrearcuenta.pas"/>
-        <Caret Line="57" Column="33" TopLine="51"/>
+        <Filename Value="vercontactos.pas"/>
+        <Caret Line="52" Column="37" TopLine="39"/>
       </Position>
       <Position>
-        <Filename Value="menucrearcuenta.pas"/>
-        <Caret Line="55" Column="52" TopLine="49"/>
+        <Filename Value="vercontactos.pas"/>
+        <Caret Line="58" Column="3" TopLine="45"/>
       </Position>
       <Position>
-        <Filename Value="menuinicio.pas"/>
-        <Caret Line="51" Column="16" TopLine="48"/>
+        <Filename Value="menuusuario.pas"/>
+        <Caret Line="9" Column="95"/>
       </Position>
       <Position>
-        <Filename Value="menuinicio.pas"/>
-        <Caret Line="55" Column="66" TopLine="49"/>
+        <Filename Value="menuusuario.pas"/>
+        <Caret Line="81" Column="15" TopLine="70"/>
       </Position>
       <Position>
-        <Filename Value="menuinicio.pas"/>
-        <Caret Line="62" Column="61" TopLine="53"/>
+        <Filename Value="vercontactos.pas"/>
+        <Caret Line="74" Column="46" TopLine="57"/>
       </Position>
       <Position>
-        <Filename Value="listausuarios.pas"/>
-        <Caret Line="72" Column="38" TopLine="64"/>
+        <Filename Value="vercontactos.pas"/>
+        <Caret Line="59" Column="40" TopLine="52"/>
       </Position>
       <Position>
-        <Filename Value="listausuarios.pas"/>
-        <Caret Line="25" Column="29" TopLine="16"/>
+        <Filename Value="vercontactos.pas"/>
+        <Caret Line="72" Column="44" TopLine="82"/>
       </Position>
       <Position>
-        <Filename Value="listausuarios.pas"/>
-        <Caret Line="70" Column="92" TopLine="58"/>
+        <Filename Value="listausuarioscircular.pas"/>
+        <Caret Line="103" Column="39" TopLine="92"/>
       </Position>
       <Position>
-        <Filename Value="listausuarios.pas"/>
-        <Caret Line="22" Column="45" TopLine="11"/>
+        <Filename Value="vercontactos.pas"/>
+        <Caret Line="33" Column="12" TopLine="24"/>
       </Position>
       <Position>
-        <Filename Value="listausuarios.pas"/>
-        <Caret Line="80" Column="27" TopLine="69"/>
+        <Filename Value="vercontactos.pas"/>
+        <Caret Line="9" Column="77"/>
       </Position>
       <Position>
-        <Filename Value="listausuarios.pas"/>
-        <Caret Line="100" Column="31" TopLine="90"/>
+        <Filename Value="vercontactos.pas"/>
+        <Caret Line="4" Column="6"/>
       </Position>
       <Position>
-        <Filename Value="menucrearcuenta.pas"/>
-        <Caret Line="66" Column="25" TopLine="58"/>
+        <Filename Value="vercontactos.pas"/>
+        <Caret Line="11" Column="72"/>
       </Position>
     </JumpHistory>
     <RunParams>
