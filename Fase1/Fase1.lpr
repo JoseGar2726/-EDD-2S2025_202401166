@@ -12,8 +12,8 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, menuInicio, menuAdmin, menuCrearCuenta, usuario, listaUsuarios,
   globals, menuUsuario, actualizarPerfil, listaUsuariosCircular, contactos,
-  agregarContacto, verContactos
-  { you can add units after this };
+  agregarContacto, verContactos, enviarCorreo, listaCorreos, bandejaEntrada,
+  verCorreo, papelera, pilaPapelera;
 
 {$R *.res}
 
@@ -31,6 +31,10 @@ begin
   Application.CreateForm(TForm5, Form5);
   Application.CreateForm(TForm6, Form6);
   Application.CreateForm(TForm7, Form7);
+  Application.CreateForm(TForm8, Form8);
+  Application.CreateForm(TForm9, Form9);
+  Application.CreateForm(TForm10, Form10);
+  Application.CreateForm(TForm11, Form11);
   Application.Run;
 end.
 

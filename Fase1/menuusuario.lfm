@@ -1,7 +1,7 @@
 object Form4: TForm4
-  Left = 562
+  Left = 1023
   Height = 554
-  Top = 229
+  Top = 235
   Width = 320
   Caption = 'Menu Usuario'
   ClientHeight = 554
@@ -26,6 +26,7 @@ object Form4: TForm4
     Width = 160
     Caption = 'Bandeja de Entrada'
     TabOrder = 0
+    OnClick = Button1Click
   end
   object Button2: TButton
     Left = 80
@@ -34,6 +35,7 @@ object Form4: TForm4
     Width = 160
     Caption = 'Enviar Correo'
     TabOrder = 1
+    OnClick = Button2Click
   end
   object Button3: TButton
     Left = 80
@@ -42,6 +44,7 @@ object Form4: TForm4
     Width = 160
     Caption = 'Papelera'
     TabOrder = 2
+    OnClick = Button3Click
   end
   object Button4: TButton
     Left = 80

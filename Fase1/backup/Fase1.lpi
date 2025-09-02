@@ -103,8 +103,56 @@
         <Filename Value="agregarcontacto.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form6"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="agregarContacto"/>
+      </Unit>
+      <Unit>
+        <Filename Value="vercontactos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form7"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verContactos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="enviarcorreo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form8"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="enviarCorreo"/>
+      </Unit>
+      <Unit>
+        <Filename Value="listacorreos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="listaCorreos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="bandejaentrada.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form9"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="bandejaEntrada"/>
+      </Unit>
+      <Unit>
+        <Filename Value="vercorreo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form10"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verCorreo"/>
+      </Unit>
+      <Unit>
+        <Filename Value="papelera.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form11"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="pilapapelera.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pilaPapelera"/>
       </Unit>
     </Units>
   </ProjectOptions>

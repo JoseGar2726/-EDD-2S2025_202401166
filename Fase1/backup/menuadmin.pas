@@ -5,7 +5,7 @@ unit menuAdmin;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, listaUsuarios, usuario, fpjson, jsonparser, Process;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, listaUsuarios, usuario, contactos, listaUsuariosCircular, listaCorreos, pilaPapelera, fpjson, jsonparser, Process;
 
 type
 
@@ -55,6 +55,8 @@ var
   nombre, user, password, email, telefono: string;
   Usuario: TUsuario;
   contactos: TListaUsuariosCircular;
+  correosRecibidos: TListaCorreos;
+  pilaPapelera: TPilaPapelera;
 
 begin
   //CARGA MASIVA
@@ -77,10 +79,12 @@ begin
         email := JSONObject.Get('email', '');
         telefono := JSONObject.Get('telefono', '');
         contactos := TListaUsuariosCircular.Create;
+        correosRecibidos := TListaCorreos.Create;
+        pilaPapelera := TListaPilaPapelera.Create;
 
         if (not ListaUsuariosGlobal.ExisteId(id)) and (not ListaUsuariosGlobal.ExisteEmail(email)) then
         begin
-           Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos);
+           Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos,correosRecibidos, pilaPapelera);
 
            ListaUsuariosGlobal.Agregar(Usuario);
         end;

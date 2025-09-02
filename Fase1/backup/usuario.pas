@@ -5,7 +5,7 @@ unit usuario;
 interface
 
 uses
-  Classes, SysUtils, listaUsuariosCircular;
+  Classes, SysUtils, listaUsuariosCircular, listaCorreos, pilaPapelera;
 
 type
 
@@ -18,8 +18,10 @@ type
     FEmail: string;
     FTelefono: string;
     FContactos: TListaUsuariosCircular;
+    FCorreosRecibidos: TListaCorreos;
+    FPilaPapelera: TPilaPapelera;
   public
-    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular);
+    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos, pilaPapelera: TPilaPapelera);
     procedure SetId(id: Integer);
     function GetId: Integer;
     procedure SetNombre(nombre: string);
@@ -34,13 +36,17 @@ type
     function GetTelefono: string;
     procedure SetContactos(contactos: TListaUsuariosCircular);
     function GetContactos: TListaUsuariosCircular;
+    procedure SetCorreosRecibidos(correosRecibidos: TListaCorreos);
+    function GetCorreosRecibidos: TListaCorreos;
+    procedure SetPilaPapelera(pilaPapelera: TPilaPapelera);
+    function GetPilaPapelera: TPilaPapelera;
   end;
 
 implementation
 
 { TUsuario }
 
-constructor TUsuario.Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular);
+constructor TUsuario.Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera);
 begin
   FId := id;
   FNombre := nombre;
@@ -48,7 +54,9 @@ begin
   FPassword := password;
   FEmail := email;
   FTelefono := telefono;
-  FContactos := contactos
+  FContactos := contactos;
+  FCorreosRecibidos := correosRecibidos;
+  FPilaPapelera := pilaPapelera;
 end;
 
 procedure TUsuario.SetId(id: Integer);
@@ -63,7 +71,7 @@ procedure TUsuario.SetUser(user: string);
 begin
   FUser := user;
 end;
-procedure TUsuario.SetPAssword(password: string);
+procedure TUsuario.SetPassword(password: string);
 begin
   FPassword := password;
 end;
@@ -78,6 +86,14 @@ end;
 procedure TUsuario.SetContactos(contactos: TListaUsuariosCircular);
 begin
   FContactos := contactos;
+end;
+procedure TUsuario.SetCorreosRecibidos(correosRecibidos: TListaCorreos);
+begin
+  FCorreosRecibidos := correosRecibidos;
+end;
+procedure TUsuario.SetPilaPapelera(pilaPapelera: TPilaPapelera);
+begin
+  FPilaPapelera := pilaPapelera;
 end;
 
 function TUsuario.GetId: Integer;
@@ -107,6 +123,14 @@ end;
 function TUsuario.GetContactos: TListaUsuariosCircular;
 begin
   Result := FContactos;
+end;
+function TUsuario.GetCorreosRecibidos: TListaCorreos;
+begin
+  Result := FCorreosRecibidos;
+end;
+function TUsuario.GetPilaPapelera: TPilaPapelera;
+begin
+  Result := FPilaPapelera;
 end;
 
 end.

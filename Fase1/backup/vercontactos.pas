@@ -5,7 +5,7 @@ unit verContactos;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, listaUsuariosCircular, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, listaUsuariosCircular, globals, StdCtrls;
 
 type
 
