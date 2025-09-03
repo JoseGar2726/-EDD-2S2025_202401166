@@ -14,7 +14,7 @@ uses
   globals, menuUsuario, actualizarPerfil, listaUsuariosCircular, contactos,
   agregarContacto, verContactos, enviarCorreo, listaCorreos, bandejaEntrada,
   verCorreo, papelera, pilaPapelera, programarCorreo, colaCorreos, 
-enviarCorreoP;
+enviarCorreoP, relaciones;
 
 {$R *.res}
 

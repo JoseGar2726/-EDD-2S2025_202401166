@@ -52,11 +52,13 @@ begin
   if (correoEnviado <> nil) then
   begin
    usuarioEnviar := ListaUsuariosGlobal.Logearse(correoEnviado.GetDestinatario);
+   correoEnviado.SetEstado('NL');
    usuarioEnviar.GetCorreosRecibidos.AgregarCorreo(correoEnviado);
+   //SUMAR CORREOS AL CONTACTO
    ShowMessage('Mensaje Enviado Correctamente')
   end
   else
-   ShowMessage('No Quedan Mensajes Por Enviar')
+   ShowMessage('No Quedan Mensajes Por Enviar');
 
   //Actualizar Tabla
   StringGrid1.ColCount:=3;

@@ -1,0 +1,13 @@
+digraph G {
+  rankdir=LR;
+  node [shape=record, style=filled, fillcolor=lightblue];
+  label="Lista Simplemente Enlazada: Usuarios";
+  labelloc=top; fontsize=20;
+  Nodo0 [label="Id: 670\nNombre: ema\nUsuario: ema\nEmail: ema\nTelefono: ema"];
+  Nodo1 [label="Id: 328\nNombre: pablo\nUsuario: pablo\nEmail: pablo\nTelefono: pablo"];
+  Nodo2 [label="Id: 766\nNombre: chepe\nUsuario: chepe\nEmail: chepe\nTelefono: chepe"];
+  Nodo3 [label="Id: 153\nNombre: santi\nUsuario: santi\nEmail: santi\nTelefono: santi"];
+  Nodo0 -> Nodo1;
+  Nodo1 -> Nodo2;
+  Nodo2 -> Nodo3;
+}

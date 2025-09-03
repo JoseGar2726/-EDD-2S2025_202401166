@@ -98,6 +98,7 @@ object Form4: TForm4
     Width = 160
     Caption = 'Generar Reportes'
     TabOrder = 8
+    OnClick = Button9Click
   end
   object Button10: TButton
     Left = 80

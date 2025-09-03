@@ -5,7 +5,7 @@ unit enviarCorreo;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, usuario, correo, listaUsuariosCircular, globals, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, usuario, contactos, correo, listaUsuariosCircular, globals, StdCtrls;
 
 type
 
@@ -47,11 +47,12 @@ end;
 
 procedure TForm8.Button1Click(Sender: TObject);
 var
-  destinatario,remitente,asunto,mensaje, estado, fecha: string;
+  destinatario,remitente,asunto,mensaje, estado, fecha, programado: string;
   destinatarioU: TUsuario;
   id: Integer;
   fechaActual: TDateTime;
   correoEnviar: TCorreo;
+  contactoE: TContacto;
 begin
   destinatario := Edit1.Text;
   if usuarioLogeado.GetContactos.ExisteContacto(destinatario) then
@@ -63,12 +64,15 @@ begin
         remitente := usuarioLogeado.GetEmail;
         destinatario := Edit1.Text;
         estado := 'NL';
+        programado := 'No';
         fechaActual := Now;
         fecha := FormatDateTime('dd/mm/yyyy hh:nn:ss', fechaActual);
         asunto := Edit2.Text;
         mensaje := Memo1.Text;
-        correoEnviar := TCorreo.Create(id,remitente,destinatario,estado,fecha,asunto,mensaje);
+        contactoE := usuarioLogeado.GetContactos.BuscarPorEmail(destinatario);
+        correoEnviar := TCorreo.Create(id,remitente,destinatario,estado,fecha,asunto,mensaje,programado);
         destinatarioU.GetCorreosRecibidos.AgregarCorreo(correoEnviar);
+        contactoE.SetCorreosEnviados(contactoE.GetCorreosEnviados + 1);
         ShowMessage('Correo Enviado');
         Edit1.Text:= '';
         Edit2.Text:= '';

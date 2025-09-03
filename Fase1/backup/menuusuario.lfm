@@ -62,6 +62,7 @@ object Form4: TForm4
     Width = 160
     Caption = 'Correos Programados'
     TabOrder = 4
+    OnClick = Button5Click
   end
   object Button6: TButton
     Left = 80
@@ -97,6 +98,7 @@ object Form4: TForm4
     Width = 160
     Caption = 'Generar Reportes'
     TabOrder = 8
+    OnClick = Button9Click
   end
   object Button10: TButton
     Left = 80

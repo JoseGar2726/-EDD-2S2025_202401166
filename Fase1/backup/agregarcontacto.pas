@@ -56,6 +56,7 @@ begin
     begin
          id := contactoNuevo.GetId;
          nombre := contactoNuevo.GetNombre;
+         user := contactoNuevo.GetUser;
          password := contactoNuevo.GetPassword;
          email := contactoNuevo.GetEmail;
          telefono := contactoNuevo.GetTelefono;

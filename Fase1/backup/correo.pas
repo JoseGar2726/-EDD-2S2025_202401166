@@ -18,8 +18,9 @@ type
     FFecha: string;
     FAsunto: string;
     FMensaje: string;
+    FProgramado: string;
   public
-    constructor Create(id: Integer; remitente: string; destinatario: string; estado: string; fecha: string; asunto: string; mensaje: string);
+    constructor Create(id: Integer; remitente: string; destinatario: string; estado: string; fecha: string; asunto: string; mensaje: string; programado: string);
     procedure SetId(id: Integer);
     function GetId: Integer;
     procedure SetRemitente(remitente: string);
@@ -34,13 +35,15 @@ type
     function GetAsunto: string;
     procedure SetMensaje(mensaje: string);
     function GetMensaje: string;
+    procedure SetProgramado(mensaje: string);
+    function GetProgramado: string;
   end;
 
 implementation
 
 { TCorreo }
 
-constructor TCorreo.Create(id: Integer; remitente: string; destinatario: string; estado: string; fecha: string; asunto: string; mensaje: string);
+constructor TCorreo.Create(id: Integer; remitente: string; destinatario: string; estado: string; fecha: string; asunto: string; mensaje: string; programado: string);
 begin
   FId := id;
   FRemitente := remitente;
@@ -48,7 +51,8 @@ begin
   FEstado := estado;
   FFecha := fecha;
   FAsunto := asunto;
-  FMensaje := mensaje
+  FMensaje := mensaje;
+  FProgramado := programado;
 end;
 
 procedure TCorreo.SetId(id: Integer);
@@ -67,6 +71,10 @@ procedure TCorreo.SetEstado(estado: string);
 begin
   FEstado := estado;
 end;
+procedure TCorreo.SetFecha(fecha: string);
+begin
+  FFecha := fecha;
+end;
 procedure TCorreo.SetAsunto(asunto: string);
 begin
   FAsunto := asunto;
@@ -74,6 +82,10 @@ end;
 procedure TCorreo.SetMensaje(mensaje: string);
 begin
   FMensaje := mensaje;
+end;
+procedure TCorreo.SetProgramado(programado: string);
+begin
+  FProgramado := programado;
 end;
 
 function TCorreo.GetId: Integer;
@@ -103,6 +115,10 @@ end;
 function TCorreo.GetMensaje: string;
 begin
   Result := FMensaje;
+end;
+function TCorreo.GetProgramado: string;
+begin
+  Result := FProgramado;
 end;
 
 end.

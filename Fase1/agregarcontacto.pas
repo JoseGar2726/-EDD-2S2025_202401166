@@ -45,7 +45,7 @@ procedure TForm6.Button1Click(Sender: TObject);
 var
   contactoNuevo: TUsuario;
   contactoN: TContacto;
-  id: Integer;
+  id, correosEnviados: Integer;
   nombre, password, email, telefono: string;
   user: string;
 begin
@@ -60,7 +60,8 @@ begin
          password := contactoNuevo.GetPassword;
          email := contactoNuevo.GetEmail;
          telefono := contactoNuevo.GetTelefono;
-         contactoN := TContacto.Create(id,nombre,user,password,email,telefono);
+         correosEnviados := 0;
+         contactoN := TContacto.Create(id,nombre,user,password,email,telefono,correosEnviados);
          usuarioLogeado.GetContactos.Agregar(contactoN);
          ShowMessage('Contacto Registrado Correctamente');
          Edit1.text := '';

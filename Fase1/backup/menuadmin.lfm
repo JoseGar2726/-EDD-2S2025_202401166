@@ -31,6 +31,7 @@ object Form2: TForm2
     Width = 174
     Caption = 'Reporte de Relaciones'
     TabOrder = 1
+    OnClick = Button2Click
   end
   object Button3: TButton
     Left = 80

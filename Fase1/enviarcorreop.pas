@@ -5,7 +5,7 @@ unit enviarCorreoP;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, globals, colaCorreos, correo, usuario, Dialogs, StdCtrls, Grids;
+  Classes, SysUtils, Forms, Controls, Graphics, globals, colaCorreos, correo, contactos, usuario, Dialogs, StdCtrls, Grids;
 
 type
 
@@ -45,6 +45,7 @@ procedure TForm13.Button1Click(Sender: TObject);
 var
   correoEnviado: TCorreo;
   usuarioEnviar: TUsuario;
+  contactoE: TContacto;
   i: Integer;
   Nodo: PNodo;
 begin
@@ -52,7 +53,10 @@ begin
   if (correoEnviado <> nil) then
   begin
    usuarioEnviar := ListaUsuariosGlobal.Logearse(correoEnviado.GetDestinatario);
+   contactoE := usuarioLogeado.GetContactos.BuscarPorEmail(correoEnviado.GetDestinatario);
+   correoEnviado.SetEstado('NL');
    usuarioEnviar.GetCorreosRecibidos.AgregarCorreo(correoEnviado);
+   contactoE.SetCorreosEnviados(contactoE.GetCorreosEnviados + 1);
    ShowMessage('Mensaje Enviado Correctamente')
   end
   else

@@ -5,7 +5,7 @@ unit menuAdmin;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, listaUsuarios, usuario, contactos, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, fpjson, jsonparser, Process;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, relaciones, listaUsuarios, usuario, contactos, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, fpjson, jsonparser, Process;
 
 type
 
@@ -19,6 +19,7 @@ type
     Label1: TLabel;
     OpenDialog1: TOpenDialog;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -100,25 +101,77 @@ begin
   end;
 end;
 
-procedure TForm2.Button3Click(Sender: TObject);
+procedure TForm2.Button2Click(Sender: TObject);
 var
   AProcess: TProcess;
+  usuarioActual: PnodoUsuario;
+  contactoActual: PNodoContacto;
+  matriz: TRelaciones;
 begin
-  //Graficar - Generar DOT
-  ListaUsuariosGlobal.GenerarDOT('graficas/ListaSimpleUsuarios.dot');
-  //Graficar - Generar PNG
-  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166/Fase1/graficas/ListaSimpleUsuarios.dot') then
+  //MatrizDispersa
+  matriz := TRelaciones.Create;
+  usuarioActual := ListaUsuariosGlobal.GetCabeza;
+  while usuarioActual <> nil do
+  begin
+    contactoActual := usuarioActual^.Datos.GetContactos.Primero;
+    if contactoActual <> nil then
+    begin
+      repeat
+        matriz.Insertar(usuarioActual^.Datos.GetNombre, contactoActual^.Datos.GetNombre, contactoActual^.Datos.GetCorreosEnviados);
+        contactoActual := contactoActual^.Siguiente;
+      until contactoActual = usuarioActual^.Datos.GetContactos.Primero;
+    end;
+
+    usuarioActual := usuarioActual^.Siguiente;
+  end;
+  matriz.GenerarDOT('Reporte/Relaciones.dot');
+
+  //GENERAR PNG
+  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/Relaciones.dot') then
   begin
     AProcess := TProcess.Create(nil);
     try
       AProcess.Executable := 'dot';
       AProcess.Parameters.Add('-Tpng');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166/Fase1/graficas/ListaSimpleUsuarios.dot');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/Relaciones.dot');
       AProcess.Parameters.Add('-o');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166/Fase1/graficas/ListaSimpleUsuarios.png');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/Relaciones.png');
       AProcess.Options := [poWaitOnExit];
       AProcess.Execute;
-      ShowMessage('Lista de Usuarios Graficada, Imagen Generada en la Carpeta Graficas');
+      ShowMessage('Imagen Generada en la Carpeta Reporte');
+    finally
+      AProcess.Free;
+    end;
+  end
+  else
+    ShowMessage('Error: el archivo DOT no existe');
+
+
+end;
+
+procedure TForm2.Button3Click(Sender: TObject);
+var
+  AProcess: TProcess;
+  usuarioActual: PnodoUsuario;
+  contactoActual: PNodoContacto;
+  matriz: TRelaciones;
+begin
+  ForceDirectories('Reporte');
+  //Graficar - Generar DOT
+  ListaUsuariosGlobal.GenerarDOT('Reporte/ListaSimpleUsuarios.dot');
+  //Graficar - Generar PNG
+  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/ListaSimpleUsuarios.dot') then
+  begin
+    AProcess := TProcess.Create(nil);
+    try
+      AProcess.Executable := 'dot';
+      AProcess.Parameters.Add('-Tpng');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/ListaSimpleUsuarios.dot');
+      AProcess.Parameters.Add('-o');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/ListaSimpleUsuarios.png');
+      AProcess.Options := [poWaitOnExit];
+      AProcess.Execute;
+      ShowMessage('Lista de Usuarios Graficada, Imagen Generada en la Carpeta Reporte');
     finally
       AProcess.Free;
     end;

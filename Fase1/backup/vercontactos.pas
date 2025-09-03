@@ -65,7 +65,7 @@ end;
 
 procedure TForm7.Button1Click(Sender: TObject);
 begin
-  //SIGUIENTE
+  //Anterior
   if nodoActual <> nil then
   begin
        nodoActual := nodoActual^.Anterior;

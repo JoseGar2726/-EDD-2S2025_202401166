@@ -8,15 +8,15 @@ uses
   Classes, SysUtils, usuario;
 
 type
-  PNodo = ^TNodo;
-  TNodo = record
+  PNodoUsuario = ^TNodoUsuario;
+  TNodoUsuario = record
         Datos: TUsuario;
-        Siguiente: PNodo;
+        Siguiente: PNodoUsuario;
   end;
 
   TListaUsuarios = class
   private
-    Cabeza: PNodo;
+    Cabeza: PNodoUsuario;
   public
     constructor Create;
     destructor Destroy; override;
@@ -26,6 +26,7 @@ type
     function ExisteId(id: Integer): Boolean;
     function ExisteEmail(email: string): Boolean;
     function Logearse(email: string): TUsuario;
+    function GetCabeza: PNodoUsuario;
   end;
 
 implementation
@@ -39,7 +40,7 @@ end;
 
 destructor TListaUsuarios.Destroy;
 var
-   Aux: PNodo;
+   Aux: PNodoUsuario;
 begin
   while Cabeza <> nil do
   begin
@@ -53,7 +54,7 @@ end;
 
 procedure TListaUsuarios.Agregar(Usuario: TUsuario);
 var
-   Nuevo, Temp: PNodo;
+   Nuevo, Temp: PNodoUsuario;
 begin
   New(Nuevo);
   Nuevo^.Datos := Usuario;
@@ -72,7 +73,7 @@ end;
 
 function TListaUsuarios.ExisteId(id: Integer): Boolean;
 var
-   Temp: PNodo;
+   Temp: PNodoUsuario;
 begin
   Result := False;
   Temp := Cabeza;
@@ -90,7 +91,7 @@ end;
 
 function TListaUsuarios.ExisteEmail(email: string): Boolean;
 var
-   Temp: PNodo;
+   Temp: PNodoUsuario;
 begin
   Result := False;
   Temp := Cabeza;
@@ -108,7 +109,7 @@ end;
 
 function TListaUsuarios.Logearse(email: string): TUsuario;
 var
-   Temp: PNodo;
+   Temp: PNodoUsuario;
 begin
   Result := nil;
   Temp := Cabeza;
@@ -126,7 +127,7 @@ end;
 
 procedure TListaUsuarios.EditarUsuario(email, nuevoUser, nuevoTelefono: string);
 var
-  Temp: PNodo;
+  Temp: PNodoUsuario;
 begin
   Temp := Cabeza;
 
@@ -142,10 +143,15 @@ begin
   end;
 end;
 
+function TListaUsuarios.GetCabeza: PNodoUsuario;
+begin
+  Result := Cabeza;
+end;
+
 procedure TListaUsuarios.GenerarDOT(const RutaArchivo: string);
 var
   Archivo: TextFile;
-  Temp: PNodo;
+  Temp: PNodoUsuario;
   NodoNombre: string;
   Contador: Integer;
 begin

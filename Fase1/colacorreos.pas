@@ -24,6 +24,7 @@ type
       destructor Destroy; override;
 
       procedure Encolar(NuevoCorreo: TCorreo);
+      procedure GenerarDOT(const RutaArchivo: string);
       function Desencolar: TCorreo;
       property Count: Integer read FCantidad;
       function GetFrente: PNodo;
@@ -90,6 +91,53 @@ end;
 function TColaCorreos.GetFrente: PNodo;
 begin
  Result := Frente;
+end;
+
+procedure TColaCorreos.GenerarDOT(const RutaArchivo: string);
+var
+  Archivo: TextFile;
+  Temp: PNodo;
+  NodoNombre: string;
+  Contador: Integer;
+begin
+  AssignFile(Archivo, RutaArchivo);
+  Rewrite(Archivo);
+
+  Writeln(Archivo, 'digraph G {');
+  Writeln(Archivo, '  rankdir=TB;');
+  Writeln(Archivo, '  node [shape=record, style=filled, fillcolor=lightblue];');
+  Writeln(Archivo, '  label="Cola de Correos (Programados)";');
+  Writeln(Archivo, '  labelloc=top; fontsize=20;');
+
+  Temp := Frente;
+  Contador := 0;
+
+  while Temp <> nil do
+  begin
+    NodoNombre := 'Nodo' + IntToStr(Contador);
+    Writeln(Archivo, '  ', NodoNombre, ' [label="{Id: ', IntToStr(Temp^.Correo.GetId),
+            '\nDestinatario: ', Temp^.Correo.GetDestinatario,
+            '\nEstado: ', Temp^.Correo.GetEstado,
+            '\nProgramado: ', Temp^.Correo.GetProgramado,
+            '\nAsunto: ', Temp^.Correo.GetAsunto,
+            '\nFecha: ', Temp^.Correo.GetFecha,
+            '\nMensaje: ', Temp^.Correo.GetMensaje, '}"];');
+
+    Temp := Temp^.Siguiente;
+    Inc(Contador);
+  end;
+
+  Temp := Frente;
+  Contador := 0;
+  while (Temp <> nil) and (Temp^.Siguiente <> nil) do
+  begin
+    Writeln(Archivo, '  Nodo', Contador, ' -> Nodo', Contador + 1, ';');
+    Temp := Temp^.Siguiente;
+    Inc(Contador);
+  end;
+
+  Writeln(Archivo, '}');
+  CloseFile(Archivo);
 end;
 
 end.

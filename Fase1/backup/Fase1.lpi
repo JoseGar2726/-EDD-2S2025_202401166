@@ -173,8 +173,13 @@
         <Filename Value="enviarcorreop.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form13"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="enviarCorreoP"/>
+      </Unit>
+      <Unit>
+        <Filename Value="relaciones.pas"/>
+        <IsPartOfProject Value="True"/>
       </Unit>
     </Units>
   </ProjectOptions>

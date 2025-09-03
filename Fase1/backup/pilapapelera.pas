@@ -23,6 +23,7 @@ type
        destructor Destroy; override;
 
        procedure Push(NuevoCorreo: TCorreo);
+       procedure GenerarDOT(const RutaArchivo: string);
        function Pop: TCorreo;
        function Count: Integer;
        function GetTope: PNodo;
@@ -78,9 +79,60 @@ begin
   Dec(FCantidad);
 end;
 
+function TPilaPapelera.Count: Integer;
+begin
+  Result := FCantidad;
+end;
+
 function TPilaPapelera.GetTope: PNodo;
 begin
   Result := Tope;
+end;
+
+procedure TPilaPapelera.GenerarDOT(const RutaArchivo: string);
+var
+  Archivo: TextFile;
+  Temp: PNodo;
+  NodoNombre: string;
+  Contador: Integer;
+begin
+  AssignFile(Archivo, RutaArchivo);
+  Rewrite(Archivo);
+
+  Writeln(Archivo, 'digraph G {');
+  Writeln(Archivo, '  rankdir=TB;');
+  Writeln(Archivo, '  node [shape=record, style=filled, fillcolor=lightcoral];');
+  Writeln(Archivo, '  label="Pila de Correos (Papelera)";');
+  Writeln(Archivo, '  labelloc=top; fontsize=20;');
+
+  Temp := Tope;
+  Contador := 0;
+
+  while Temp <> nil do
+  begin
+    NodoNombre := 'Nodo' + IntToStr(Contador);
+    Writeln(Archivo, '  ', NodoNombre, ' [label="{Id: ', (IntToStr(Temp^.Correo.GetId)),
+            '\nRemitente: ', (Temp^.Correo.GetRemitente),
+            '\nEstado: ', (Temp^.Correo.GetEstado),
+            '\nAsunto: ', (Temp^.Correo.GetAsunto),
+            '\nFecha: ', (Temp^.Correo.GetFecha),
+            '\nMensaje: ', (Temp^.Correo.GetMensaje), '}"];');
+
+    Temp := Temp^.Siguiente;
+    Inc(Contador);
+  end;
+
+  Temp := Tope;
+  Contador := 0;
+  while (Temp <> nil) and (Temp^.Siguiente <> nil) do
+  begin
+    Writeln(Archivo, '  Nodo', Contador, ' -> Nodo', Contador + 1, ';');
+    Temp := Temp^.Siguiente;
+    Inc(Contador);
+  end;
+
+  Writeln(Archivo, '}');
+  CloseFile(Archivo);
 end;
 
 

@@ -46,7 +46,7 @@ uses menuUsuario;
 procedure TForm12.Button2Click(Sender: TObject);
 var
   id: Integer;
-  remitente, destinatario, asunto, fecha, mensaje, estado: string;
+  remitente, destinatario, asunto, fecha, mensaje, estado, programado: string;
   correoEnviar: TCorreo;
 begin
   destinatario := Edit1.Text;
@@ -60,9 +60,14 @@ begin
           id := Random(10000) + 1;
           remitente := usuarioLogeado.GetEmail;
           estado := 'NL';
-          correoEnviar := TCorreo.Create(id,remitente,destinatario,estado,fecha,asunto,mensaje);
+          programado := 'Si';
+          correoEnviar := TCorreo.Create(id,remitente,destinatario,estado,fecha,asunto,mensaje,programado);
           usuarioLogeado.GetColaCorreo.Encolar(correoEnviar);
-          ShowMessage('Mensaje Programado Correctamente')
+          ShowMessage('Mensaje Programado Correctamente');
+          Edit1.Text := '';
+          Edit2.Text := '';
+          Edit3.Text := '';
+          Memo1.Lines.Text := '';
      end
   else
      ShowMessage('Error Al Programar El Mensaje');

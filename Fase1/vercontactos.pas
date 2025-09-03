@@ -30,7 +30,7 @@ type
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormShow(Sender: TObject);
   private
-    nodoActual: PNodo;
+    nodoActual: PNodoContacto;
   public
 
   end;

@@ -17,8 +17,9 @@ type
     FPassword: string;
     FEmail: string;
     FTelefono: string;
+    FCorreosEnviados: Integer;
   public
-    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string);
+    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; correosEnviados: Integer);
     procedure SetId(id: Integer);
     function GetId: Integer;
     procedure SetNombre(nombre: string);
@@ -31,13 +32,15 @@ type
     function GetEmail: string;
     procedure SetTelefono(telefono: string);
     function GetTelefono: string;
+    procedure SetCorreosEnviados(correosEnviados: Integer);
+    function GetCorreosEnviados: Integer;
   end;
 
 implementation
 
 { TContacto }
 
-constructor TContacto.Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string);
+constructor TContacto.Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; correosEnviados: Integer);
 begin
   FId := id;
   FNombre := nombre;
@@ -45,6 +48,7 @@ begin
   FPassword := password;
   FEmail := email;
   FTelefono := telefono;
+  FCorreosEnviados := correosEnviados;
 end;
 
 procedure TContacto.SetId(id: Integer);
@@ -71,6 +75,10 @@ procedure TContacto.SetTelefono(telefono: string);
 begin
   FTelefono := telefono;
 end;
+procedure TContacto.SetCorreosEnviados(correosEnviados: Integer);
+begin
+  FCorreosEnviados := correosEnviados;
+end;
 
 function TContacto.GetId: Integer;
 begin
@@ -95,6 +103,10 @@ end;
 function TContacto.GetTelefono: string;
 begin
   Result := FTelefono;
+end;
+function TContacto.GetCorreosEnviados: Integer;
+begin
+  Result := FCorreosEnviados;
 end;
 
 end.

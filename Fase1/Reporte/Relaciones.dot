@@ -1,0 +1,66 @@
+digraph Matriz {
+  graph [splines=ortho];
+  rankdir=TB;
+  node [shape=record, style=filled, fillcolor=white];
+  label = "Matriz Dispersa de Relaciones";
+  { rank=same; "ROOT"; "col_pablo";  "col_pablo" [label="pablo", shape=plaintext, fillcolor=lightblue];
+ "col_chepe";  "col_chepe" [label="chepe", shape=plaintext, fillcolor=lightblue];
+ "col_santi";  "col_santi" [label="santi", shape=plaintext, fillcolor=lightblue];
+ "col_ema";  "col_ema" [label="ema", shape=plaintext, fillcolor=lightblue];
+ }
+  "row_ema" [label="ema", shape=plaintext, fillcolor=lightgreen];
+  "row_pablo" [label="pablo", shape=plaintext, fillcolor=lightgreen];
+  "row_chepe" [label="chepe", shape=plaintext, fillcolor=lightgreen];
+  "ROOT" -> "col_pablo";
+  "col_pablo" -> "ROOT";
+  "ROOT" -> "row_ema";
+  "row_ema" -> "ROOT";
+  "col_pablo" -> "col_chepe";
+  "col_chepe" -> "col_pablo";
+  "col_chepe" -> "col_santi";
+  "col_santi" -> "col_chepe";
+  "col_santi" -> "col_ema";
+  "col_ema" -> "col_santi";
+  "row_ema" -> "row_pablo";
+  "row_pablo" -> "row_ema";
+  "row_pablo" -> "row_chepe";
+  "row_chepe" -> "row_pablo";
+  { rank=same; "row_ema"; "f_ema_c_pablo"; "f_ema_c_chepe"; "f_ema_c_santi"; }
+  "f_ema_c_pablo" [label="3"];
+  "row_ema" -> "f_ema_c_pablo";
+  "f_ema_c_pablo" -> "row_ema";
+  "col_pablo" -> "f_ema_c_pablo";
+  "f_ema_c_pablo" -> "col_pablo";
+  "f_ema_c_chepe" [label="2"];
+  "f_ema_c_pablo" -> "f_ema_c_chepe";
+  "f_ema_c_chepe" -> "f_ema_c_pablo";
+  "col_chepe" -> "f_ema_c_chepe";
+  "f_ema_c_chepe" -> "col_chepe";
+  "f_ema_c_santi" [label="1"];
+  "f_ema_c_chepe" -> "f_ema_c_santi";
+  "f_ema_c_santi" -> "f_ema_c_chepe";
+  "col_santi" -> "f_ema_c_santi";
+  "f_ema_c_santi" -> "col_santi";
+  { rank=same; "row_pablo"; "f_pablo_c_santi"; }
+  "f_pablo_c_santi" [label="2"];
+  "row_pablo" -> "f_pablo_c_santi";
+  "f_pablo_c_santi" -> "row_pablo";
+  "col_santi" -> "f_pablo_c_santi";
+  "f_pablo_c_santi" -> "col_santi";
+  { rank=same; "row_chepe"; "f_chepe_c_ema"; "f_chepe_c_pablo"; "f_chepe_c_santi"; }
+  "f_chepe_c_ema" [label="1"];
+  "row_chepe" -> "f_chepe_c_ema";
+  "f_chepe_c_ema" -> "row_chepe";
+  "col_ema" -> "f_chepe_c_ema";
+  "f_chepe_c_ema" -> "col_ema";
+  "f_chepe_c_pablo" [label="1"];
+  "f_chepe_c_ema" -> "f_chepe_c_pablo";
+  "f_chepe_c_pablo" -> "f_chepe_c_ema";
+  "col_pablo" -> "f_chepe_c_pablo";
+  "f_chepe_c_pablo" -> "col_pablo";
+  "f_chepe_c_santi" [label="1"];
+  "f_chepe_c_pablo" -> "f_chepe_c_santi";
+  "f_chepe_c_santi" -> "f_chepe_c_pablo";
+  "col_santi" -> "f_chepe_c_santi";
+  "f_chepe_c_santi" -> "col_santi";
+}
