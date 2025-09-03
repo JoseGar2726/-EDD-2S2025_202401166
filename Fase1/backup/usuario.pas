@@ -5,7 +5,7 @@ unit usuario;
 interface
 
 uses
-  Classes, SysUtils, listaUsuariosCircular, listaCorreos, pilaPapelera;
+  Classes, SysUtils, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos;
 
 type
 
@@ -20,8 +20,9 @@ type
     FContactos: TListaUsuariosCircular;
     FCorreosRecibidos: TListaCorreos;
     FPilaPapelera: TPilaPapelera;
+    FColaCorreo: TColaCorreos;
   public
-    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos, pilaPapelera: TPilaPapelera);
+    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera; colaCorreo: TColaCorreos);
     procedure SetId(id: Integer);
     function GetId: Integer;
     procedure SetNombre(nombre: string);
@@ -40,13 +41,15 @@ type
     function GetCorreosRecibidos: TListaCorreos;
     procedure SetPilaPapelera(pilaPapelera: TPilaPapelera);
     function GetPilaPapelera: TPilaPapelera;
+    procedure SetColaCorreo(colaCorreo: TColaCorreos);
+    function GetColaCorreo: TColaCorreos;
   end;
 
 implementation
 
 { TUsuario }
 
-constructor TUsuario.Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera);
+constructor TUsuario.Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera; colaCorreo: TColaCorreo);
 begin
   FId := id;
   FNombre := nombre;
@@ -57,6 +60,7 @@ begin
   FContactos := contactos;
   FCorreosRecibidos := correosRecibidos;
   FPilaPapelera := pilaPapelera;
+  FColaCorreo := colaCorreo;
 end;
 
 procedure TUsuario.SetId(id: Integer);
@@ -95,6 +99,10 @@ procedure TUsuario.SetPilaPapelera(pilaPapelera: TPilaPapelera);
 begin
   FPilaPapelera := pilaPapelera;
 end;
+procedure TUsuario.SetColaCorreo(colaCorreo: TColaCorreos);
+begin
+  FColaCorreo := colaCorreo;
+end;
 
 function TUsuario.GetId: Integer;
 begin
@@ -131,6 +139,10 @@ end;
 function TUsuario.GetPilaPapelera: TPilaPapelera;
 begin
   Result := FPilaPapelera;
+end;
+function TUsuario.GetColaCorreo: TColaCorreos;
+begin
+  Result := FColaCorreo;
 end;
 
 end.

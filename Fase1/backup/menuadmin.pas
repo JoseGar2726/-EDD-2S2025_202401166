@@ -80,7 +80,7 @@ begin
         telefono := JSONObject.Get('telefono', '');
         contactos := TListaUsuariosCircular.Create;
         correosRecibidos := TListaCorreos.Create;
-        pilaPapelera := TListaPilaPapelera.Create;
+        pilaPapelera := TPilaPapelera.Create;
 
         if (not ListaUsuariosGlobal.ExisteId(id)) and (not ListaUsuariosGlobal.ExisteEmail(email)) then
         begin

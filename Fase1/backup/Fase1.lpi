@@ -140,6 +140,7 @@
         <Filename Value="vercorreo.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form10"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="verCorreo"/>
       </Unit>
@@ -147,12 +148,33 @@
         <Filename Value="papelera.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form11"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
       <Unit>
         <Filename Value="pilapapelera.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="pilaPapelera"/>
+      </Unit>
+      <Unit>
+        <Filename Value="programarcorreo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form12"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="programarCorreo"/>
+      </Unit>
+      <Unit>
+        <Filename Value="colacorreos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="colaCorreos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="enviarcorreop.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form13"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="enviarCorreoP"/>
       </Unit>
     </Units>
   </ProjectOptions>

@@ -1,13 +1,14 @@
 object Form11: TForm11
-  Left = 340
+  Left = 425
   Height = 373
-  Top = 225
+  Top = 420
   Width = 449
   Caption = 'Papelera'
   ClientHeight = 373
   ClientWidth = 449
   LCLVersion = '4.2.0.0'
   OnClose = FormClose
+  OnShow = FormShow
   object Label1: TLabel
     Left = 192
     Height = 18
@@ -30,6 +31,7 @@ object Form11: TForm11
     Width = 75
     Caption = 'Eliminar'
     TabOrder = 1
+    OnClick = Button2Click
   end
   object StringGrid1: TStringGrid
     Left = 40

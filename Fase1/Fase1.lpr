@@ -13,7 +13,8 @@ uses
   Forms, menuInicio, menuAdmin, menuCrearCuenta, usuario, listaUsuarios,
   globals, menuUsuario, actualizarPerfil, listaUsuariosCircular, contactos,
   agregarContacto, verContactos, enviarCorreo, listaCorreos, bandejaEntrada,
-  verCorreo, papelera, pilaPapelera;
+  verCorreo, papelera, pilaPapelera, programarCorreo, colaCorreos, 
+enviarCorreoP;
 
 {$R *.res}
 
@@ -35,6 +36,8 @@ begin
   Application.CreateForm(TForm9, Form9);
   Application.CreateForm(TForm10, Form10);
   Application.CreateForm(TForm11, Form11);
+  Application.CreateForm(TForm12, Form12);
+  Application.CreateForm(TForm13, Form13);
   Application.Run;
 end.
 

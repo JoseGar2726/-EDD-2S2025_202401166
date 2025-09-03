@@ -17,12 +17,15 @@ type
    TPilaPapelera = class
      private
        Tope: PNodo;
+       FCantidad: Integer;
      public
        constructor Create;
        destructor Destroy; override;
 
        procedure Push(NuevoCorreo: TCorreo);
        function Pop: TCorreo;
+       function Count: Integer;
+       function GetTope: PNodo;
    end;
 
 implementation
@@ -30,6 +33,7 @@ implementation
 constructor TPilaPapelera.Create;
 begin
   Tope := nil;
+  FCantidad := 0;
 end;
 
 destructor TPilaPapelera.Destroy;
@@ -54,6 +58,7 @@ begin
   NuevoNodo^.Correo := NuevoCorreo;
   NuevoNodo^.Siguiente := Tope;
   Tope := nuevoNodo;
+  Inc(FCantidad);
 end;
 
 function TPilaPapelera.Pop: TCorreo;
@@ -70,6 +75,17 @@ begin
   Aux := Tope;
   Tope := Tope^.Siguiente;
   Dispose(Aux);
+  Dec(FCantidad);
+end;
+
+function TPilaPapelera.Count: Integer;
+begin
+  Result := FCantidad;
+end;
+
+function TPilaPapelera.GetTope: PNodo;
+begin
+  Result := Tope;
 end;
 
 

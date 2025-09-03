@@ -1,7 +1,7 @@
 object Form11: TForm11
-  Left = 340
+  Left = 425
   Height = 373
-  Top = 225
+  Top = 420
   Width = 449
   Caption = 'Papelera'
   ClientHeight = 373
@@ -31,6 +31,7 @@ object Form11: TForm11
     Width = 75
     Caption = 'Eliminar'
     TabOrder = 1
+    OnClick = Button2Click
   end
   object StringGrid1: TStringGrid
     Left = 40

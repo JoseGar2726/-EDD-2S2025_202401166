@@ -5,7 +5,7 @@ unit menuUsuario;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, actualizarPerfil, agregarContacto, verContactos, enviarCorreo, bandejaEntrada, papelera, globals;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, actualizarPerfil, agregarContacto, verContactos, enviarCorreo, bandejaEntrada, papelera, programarCorreo, enviarCorreoP, globals;
 
 type
 
@@ -27,6 +27,8 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
@@ -89,6 +91,22 @@ procedure TForm4.Button3Click(Sender: TObject);
 begin
   Form11 := TForm11.Create(nil);
   Form11.Show;
+
+  Self.Hide;
+end;
+
+procedure TForm4.Button4Click(Sender: TObject);
+begin
+  Form12 := TForm12.Create(nil);
+  Form12.Show;
+
+  Self.Hide;
+end;
+
+procedure TForm4.Button5Click(Sender: TObject);
+begin
+  Form13 := TForm13.Create(nil);
+  Form13.Show;
 
   Self.Hide;
 end;
