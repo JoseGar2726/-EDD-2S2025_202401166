@@ -10,11 +10,11 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, menuInicio, menuAdmin, menuCrearCuenta, usuario, listaUsuarios,
-  globals, menuUsuario, actualizarPerfil, listaUsuariosCircular, contactos,
-  agregarContacto, verContactos, enviarCorreo, listaCorreos, bandejaEntrada,
-  verCorreo, papelera, pilaPapelera, programarCorreo, colaCorreos, 
-enviarCorreoP, relaciones, crearComunidadad, Comunidades;
+  Forms, actualizarPerfil, agregarContacto, bandejaEntrada, crearComunidadad,
+  enviarCorreo, enviarCorreoP, menuAdmin, menuCrearCuenta, menuInicio,
+  menuUsuario, papelera, programarCorreo, verContactos, verCorreo, contactos,
+  correo, usuario, globals, listaCorreos, pilaPapelera, colaCorreos,
+  listaUsuarios, listaUsuariosCircular, relaciones, Comunidades;
 
 {$R *.res}
 
@@ -26,19 +26,6 @@ begin
   {$POP}
   Application.Initialize;
   Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TForm2, Form2);
-  Application.CreateForm(TForm3, Form3);
-  Application.CreateForm(TForm4, Form4);
-  Application.CreateForm(TForm5, Form5);
-  Application.CreateForm(TForm6, Form6);
-  Application.CreateForm(TForm7, Form7);
-  Application.CreateForm(TForm8, Form8);
-  Application.CreateForm(TForm9, Form9);
-  Application.CreateForm(TForm10, Form10);
-  Application.CreateForm(TForm11, Form11);
-  Application.CreateForm(TForm12, Form12);
-  Application.CreateForm(TForm13, Form13);
-  Application.CreateForm(TForm14, Form14);
   Application.Run;
 end.
 

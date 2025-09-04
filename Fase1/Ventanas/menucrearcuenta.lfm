@@ -1,0 +1,108 @@
+object Form3: TForm3
+  Left = 430
+  Height = 556
+  Top = 279
+  Width = 419
+  Caption = 'Crear Cuenta'
+  ClientHeight = 556
+  ClientWidth = 419
+  LCLVersion = '4.2.0.0'
+  OnClose = FormClose
+  object Label1: TLabel
+    Left = 48
+    Height = 18
+    Top = 120
+    Width = 62
+    Caption = 'Nombre :'
+  end
+  object Label2: TLabel
+    Left = 168
+    Height = 18
+    Top = 16
+    Width = 87
+    Caption = 'Crear Cuenta'
+  end
+  object Label3: TLabel
+    Left = 48
+    Height = 18
+    Top = 167
+    Width = 55
+    Caption = 'Usuario:'
+  end
+  object Label4: TLabel
+    Left = 48
+    Height = 18
+    Top = 215
+    Width = 80
+    Caption = 'Contraseña:'
+  end
+  object Label5: TLabel
+    Left = 48
+    Height = 18
+    Top = 263
+    Width = 41
+    Caption = 'Email:'
+  end
+  object Label6: TLabel
+    Left = 48
+    Height = 18
+    Top = 311
+    Width = 63
+    Caption = 'Telefono:'
+  end
+  object Edit1: TEdit
+    Left = 160
+    Height = 35
+    Top = 104
+    Width = 208
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 160
+    Height = 35
+    Top = 150
+    Width = 208
+    TabOrder = 1
+  end
+  object Edit3: TEdit
+    Left = 160
+    Height = 35
+    Top = 198
+    Width = 208
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 2
+  end
+  object Edit4: TEdit
+    Left = 160
+    Height = 35
+    Top = 246
+    Width = 208
+    TabOrder = 3
+  end
+  object Edit5: TEdit
+    Left = 160
+    Height = 35
+    Top = 294
+    Width = 208
+    TabOrder = 4
+  end
+  object Button1: TButton
+    Left = 144
+    Height = 48
+    Top = 400
+    Width = 144
+    Caption = 'Crear Cuenta'
+    TabOrder = 5
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 144
+    Height = 48
+    Top = 472
+    Width = 144
+    Caption = 'Salir'
+    TabOrder = 6
+    OnClick = Button2Click
+  end
+end
