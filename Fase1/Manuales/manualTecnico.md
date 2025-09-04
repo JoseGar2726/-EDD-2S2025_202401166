@@ -58,3 +58,51 @@ Lista de lista la cual almacena las comunidades creadas y los usuarios que se en
 <img width="1010" height="938" alt="image" src="https://github.com/user-attachments/assets/849e4e81-0621-441a-b279-98352d5af450" />
 
 Almacena informacion globalmente, el usuario que se encuentra logeado y la lista de usuarios registrados en el sistema.
+
+
+# Arbol del directorio
+── Fase1
+├── Fase1.ico
+├── Fase1.lpi
+├── Fase1.lpr
+├── Fase1.lps
+├── Fase1.res
+├── lib
+│   └── x86_64-linux
+├── Objetos
+│   ├── contactos.pas
+│   ├── correo.pas
+│   └── usuario.pas
+├── usuarios.json
+├── Utilidades
+│   └── globals.pas
+└── Ventanas
+    ├── actualizarperfil.lfm
+    ├── actualizarperfil.pas
+    ├── agregarcontacto.lfm
+    ├── agregarcontacto.pas
+    ├── backup
+    ├── bandejaentrada.lfm
+    ├── bandejaentrada.pas
+    ├── crearcomunidadad.lfm
+    ├── crearcomunidadad.pas
+    ├── enviarcorreo.lfm
+    ├── enviarcorreo.pas
+    ├── enviarcorreop.lfm
+    ├── enviarcorreop.pas
+    ├── menuadmin.lfm
+    ├── menuadmin.pas
+    ├── menucrearcuenta.lfm
+    ├── menucrearcuenta.pas
+    ├── menuinicio.lfm
+    ├── menuinicio.pas
+    ├── menuusuario.lfm
+    ├── menuusuario.pas
+    ├── papelera.lfm
+    ├── papelera.pas
+    ├── programarcorreo.lfm
+    ├── programarcorreo.pas
+    ├── vercontactos.lfm
+    ├── vercontactos.pas
+    ├── vercorreo.lfm
+    └── vercorreo.pas
