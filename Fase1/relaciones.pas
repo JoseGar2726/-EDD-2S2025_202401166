@@ -144,7 +144,6 @@ begin
   Writeln(Dot, '  node [shape=record, style=filled, fillcolor=white];');
   Writeln(Dot, '  label = "Matriz Dispersa de Relaciones";');
 
-  { Cabeceras de columnas }
   colCab := columnas;
   Write(Dot, '  { rank=same; "ROOT";');
   while colCab <> nil do
@@ -156,7 +155,6 @@ begin
   end;
   Writeln(Dot, ' }');
 
-  { Cabeceras de filas }
   filaCab := filas;
   while filaCab <> nil do
   begin
@@ -165,7 +163,6 @@ begin
     filaCab := filaCab^.siguiente;
   end;
 
-  { Conectar ROOT }
   if columnas <> nil then
   begin
     Writeln(Dot, Format('  "ROOT" -> "col_%s";', [columnas^.nombre]));
@@ -177,7 +174,6 @@ begin
     Writeln(Dot, Format('  "row_%s" -> "ROOT";', [filas^.nombre]));
   end;
 
-  { Conectar cabeceras en cadena (doble enlace) }
   colCab := columnas;
   while (colCab <> nil) and (colCab^.siguiente <> nil) do
   begin
@@ -194,14 +190,12 @@ begin
     filaCab := filaCab^.siguiente;
   end;
 
-  { Nodos internos }
   filaCab := filas;
   while filaCab <> nil do
   begin
     nodo := filaCab^.acceso;
     prevNodo := nil;
 
-    { Alinear por fila }
     Write(Dot, '  { rank=same;');
     Write(Dot, Format(' "row_%s";', [filaCab^.nombre]));
     while nodo <> nil do
@@ -212,7 +206,6 @@ begin
     end;
     Writeln(Dot, ' }');
 
-    { Conexiones de la fila }
     nodo := filaCab^.acceso;
     prevNodo := nil;
     while nodo <> nil do

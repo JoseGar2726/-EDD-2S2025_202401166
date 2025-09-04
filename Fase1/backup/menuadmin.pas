@@ -5,7 +5,7 @@ unit menuAdmin;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, relaciones, listaUsuarios, usuario, contactos, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, fpjson, jsonparser, Process;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, crearComunidad, relaciones, listaUsuarios, usuario, contactos, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, fpjson, jsonparser, Process;
 
 type
 
@@ -16,12 +16,14 @@ type
     Button2: TButton;
     Button3: TButton;
     Button4: TButton;
+    Button5: TButton;
     Label1: TLabel;
     OpenDialog1: TOpenDialog;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
   private
 
@@ -43,6 +45,14 @@ uses menuInicio;
 procedure TForm2.Button4Click(Sender: TObject);
 begin
   Close
+end;
+
+procedure TForm2.Button5Click(Sender: TObject);
+begin
+  Form14 := TForm14.Create(nil);
+  Form14.Show;
+
+  Self.Hide;
 end;
 
 procedure TForm2.Button1Click(Sender: TObject);
@@ -102,6 +112,11 @@ begin
 end;
 
 procedure TForm2.Button2Click(Sender: TObject);
+var
+  AProcess: TProcess;
+  usuarioActual: PnodoUsuario;
+  contactoActual: PNodoContacto;
+  matriz: TRelaciones;
 begin
   //MatrizDispersa
   matriz := TRelaciones.Create;

@@ -1,10 +1,10 @@
 object Form2: TForm2
-  Left = 1094
-  Height = 328
-  Top = 378
+  Left = 1081
+  Height = 404
+  Top = 315
   Width = 320
   Caption = 'Menu Administrador'
-  ClientHeight = 328
+  ClientHeight = 404
   ClientWidth = 320
   LCLVersion = '4.2.0.0'
   OnClose = FormClose
@@ -43,13 +43,22 @@ object Form2: TForm2
     OnClick = Button3Click
   end
   object Button4: TButton
-    Left = 80
+    Left = 79
     Height = 49
-    Top = 264
+    Top = 336
     Width = 175
     Caption = 'Salir'
     TabOrder = 3
     OnClick = Button4Click
+  end
+  object Button5: TButton
+    Left = 80
+    Height = 49
+    Top = 272
+    Width = 174
+    Caption = 'Comunidades'
+    TabOrder = 4
+    OnClick = Button5Click
   end
   object OpenDialog1: TOpenDialog
     Filter = 'JSON files|*.json|All files|*.*'

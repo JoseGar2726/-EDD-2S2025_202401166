@@ -82,6 +82,7 @@
         <Filename Value="actualizarperfil.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form5"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="actualizarPerfil"/>
       </Unit>
@@ -180,6 +181,18 @@
       <Unit>
         <Filename Value="relaciones.pas"/>
         <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="crearcomunidadad.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form14"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="crearComunidadad"/>
+      </Unit>
+      <Unit>
+        <Filename Value="comunidades.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Comunidades"/>
       </Unit>
     </Units>
   </ProjectOptions>

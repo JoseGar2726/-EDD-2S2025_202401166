@@ -1,0 +1,26 @@
+digraph Comunidades {
+  rankdir=LR;
+  nodesep=0.5;
+  edge[arrowhead=normal];
+  node [shape=box, style=filled, fillcolor=lightblue];
+
+ comunidad0 [label="GAYS", fillcolor=lightgreen];
+ comunidad0 -> comunidad1;
+   comunidad0 -> usuario0_0;
+    usuario0_0 [label="ema"];
+    usuario0_0 -> usuario0_1; 
+    usuario0_1 [label="pablo"];
+    usuario0_1 -> usuario0_2; 
+    usuario0_2 [label="chepe"];
+{rank=same; comunidad0
+ usuario0_0
+ usuario0_1
+ usuario0_2
+ }
+ comunidad1 [label="ULTRAGAYS", fillcolor=lightgreen];
+   comunidad1 -> usuario1_0;
+    usuario1_0 [label="santi"];
+{rank=same; comunidad1
+ usuario1_0
+ }
+}

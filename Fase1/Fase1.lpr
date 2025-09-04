@@ -14,7 +14,7 @@ uses
   globals, menuUsuario, actualizarPerfil, listaUsuariosCircular, contactos,
   agregarContacto, verContactos, enviarCorreo, listaCorreos, bandejaEntrada,
   verCorreo, papelera, pilaPapelera, programarCorreo, colaCorreos, 
-enviarCorreoP, relaciones;
+enviarCorreoP, relaciones, crearComunidadad, Comunidades;
 
 {$R *.res}
 
@@ -38,6 +38,7 @@ begin
   Application.CreateForm(TForm11, Form11);
   Application.CreateForm(TForm12, Form12);
   Application.CreateForm(TForm13, Form13);
+  Application.CreateForm(TForm14, Form14);
   Application.Run;
 end.
 

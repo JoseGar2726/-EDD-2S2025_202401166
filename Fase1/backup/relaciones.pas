@@ -128,7 +128,6 @@ begin
   end;
 end;
 
-
 procedure TRelaciones.GenerarDOT(const RutaArchivo: string);
 var
   Dot: Text;
@@ -145,6 +144,7 @@ begin
   Writeln(Dot, '  node [shape=record, style=filled, fillcolor=white];');
   Writeln(Dot, '  label = "Matriz Dispersa de Relaciones";');
 
+  { Cabeceras de columnas }
   colCab := columnas;
   Write(Dot, '  { rank=same; "ROOT";');
   while colCab <> nil do
@@ -156,6 +156,7 @@ begin
   end;
   Writeln(Dot, ' }');
 
+  { Cabeceras de filas }
   filaCab := filas;
   while filaCab <> nil do
   begin
@@ -164,15 +165,24 @@ begin
     filaCab := filaCab^.siguiente;
   end;
 
+  { Conectar ROOT }
   if columnas <> nil then
+  begin
     Writeln(Dot, Format('  "ROOT" -> "col_%s";', [columnas^.nombre]));
+    Writeln(Dot, Format('  "col_%s" -> "ROOT";', [columnas^.nombre]));
+  end;
   if filas <> nil then
+  begin
     Writeln(Dot, Format('  "ROOT" -> "row_%s";', [filas^.nombre]));
+    Writeln(Dot, Format('  "row_%s" -> "ROOT";', [filas^.nombre]));
+  end;
 
+  { Conectar cabeceras en cadena (doble enlace) }
   colCab := columnas;
   while (colCab <> nil) and (colCab^.siguiente <> nil) do
   begin
     Writeln(Dot, Format('  "col_%s" -> "col_%s";', [colCab^.nombre, colCab^.siguiente^.nombre]));
+    Writeln(Dot, Format('  "col_%s" -> "col_%s";', [colCab^.siguiente^.nombre, colCab^.nombre]));
     colCab := colCab^.siguiente;
   end;
 
@@ -180,15 +190,18 @@ begin
   while (filaCab <> nil) and (filaCab^.siguiente <> nil) do
   begin
     Writeln(Dot, Format('  "row_%s" -> "row_%s";', [filaCab^.nombre, filaCab^.siguiente^.nombre]));
+    Writeln(Dot, Format('  "row_%s" -> "row_%s";', [filaCab^.siguiente^.nombre, filaCab^.nombre]));
     filaCab := filaCab^.siguiente;
   end;
 
+  { Nodos internos }
   filaCab := filas;
   while filaCab <> nil do
   begin
     nodo := filaCab^.acceso;
     prevNodo := nil;
 
+    { Alinear por fila }
     Write(Dot, '  { rank=same;');
     Write(Dot, Format(' "row_%s";', [filaCab^.nombre]));
     while nodo <> nil do
@@ -199,6 +212,7 @@ begin
     end;
     Writeln(Dot, ' }');
 
+    { Conexiones de la fila }
     nodo := filaCab^.acceso;
     prevNodo := nil;
     while nodo <> nil do
@@ -207,15 +221,20 @@ begin
       Writeln(Dot, Format('  "%s" [label="%d"];', [NodeName, nodo^.valor]));
 
       if prevNodo = nil then
-        Writeln(Dot, Format('  "row_%s" -> "%s";', [filaCab^.nombre, NodeName]))
+      begin
+        Writeln(Dot, Format('  "row_%s" -> "%s";', [filaCab^.nombre, NodeName]));
+        Writeln(Dot, Format('  "%s" -> "row_%s";', [NodeName, filaCab^.nombre]));
+      end
       else
       begin
         PrevName := Format('f_%s_c_%s', [prevNodo^.fila, prevNodo^.columna]);
         Writeln(Dot, Format('  "%s" -> "%s";', [PrevName, NodeName]));
+        Writeln(Dot, Format('  "%s" -> "%s";', [NodeName, PrevName]));
       end;
 
-      { Enlazar con su columna }
+      { Conexiones de la columna }
       Writeln(Dot, Format('  "col_%s" -> "%s";', [nodo^.columna, NodeName]));
+      Writeln(Dot, Format('  "%s" -> "col_%s";', [NodeName, nodo^.columna]));
 
       prevNodo := nodo;
       nodo := nodo^.derecha;
