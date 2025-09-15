@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="3"/>
         <CursorPos X="43" Y="17"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -19,9 +19,10 @@
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="93"/>
-        <CursorPos X="54" Y="117"/>
-        <UsageCount Value="20"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="96"/>
+        <CursorPos X="92" Y="114"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -30,18 +31,16 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
         <CursorPos X="2" Y="2"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="listausuarios.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="listaUsuarios"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="74"/>
-        <CursorPos X="28" Y="96"/>
-        <UsageCount Value="20"/>
+        <CursorPos X="79" Y="26"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -50,7 +49,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="11"/>
         <CursorPos X="19" Y="15"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -60,15 +59,11 @@
         <EditorIndex Value="5"/>
         <TopLine Value="98"/>
         <CursorPos X="5" Y="130"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="28">
-      <Position>
-        <Filename Value="correos.pas"/>
-        <Caret Line="37" Column="52" TopLine="12"/>
-      </Position>
+    <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="correos.pas"/>
         <Caret Line="41" Column="21" TopLine="12"/>
@@ -180,6 +175,14 @@
       <Position>
         <Filename Value="menu.pas"/>
         <Caret Line="137" Column="21" TopLine="120"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="118" Column="54" TopLine="94"/>
+      </Position>
+      <Position>
+        <Filename Value="menu.pas"/>
+        <Caret Line="167" Column="3" TopLine="138"/>
       </Position>
     </JumpHistory>
     <RunParams>

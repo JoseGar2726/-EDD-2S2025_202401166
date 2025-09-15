@@ -25,6 +25,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
 
   public
@@ -158,6 +159,11 @@ begin
 
     ShowMessage('Lista de Correos Graficada, Imagen Generada en la Carpeta del Proyecto');
   end;
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
 
 end;
 

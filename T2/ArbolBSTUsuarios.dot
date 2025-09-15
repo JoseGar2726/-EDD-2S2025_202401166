@@ -1,0 +1,34 @@
+digraph Arbol {
+  node [shape=rectangle, style=filled, color=lightblue];
+  rankdir=TB
+  splines=false
+  1 [label="ID: 1\nNombre: Stanton\nApellido: Whiston\nEmail: swhistona@amazon.de"];
+  13 [label="ID: 13\nNombre: Tamas\nApellido: Hedney\nEmail: thedney5@deliciousdays.com"];
+  14 [label="ID: 14\nNombre: Elwood\nApellido: Corwood\nEmail: ecorwoode@dagondesign.com"];
+  16 [label="ID: 16\nNombre: Thomasa\nApellido: Olphert\nEmail: tolphert3@senate.gov"];
+  19 [label="ID: 19\nNombre: Saxe\nApellido: Spencelayh\nEmail: sspencelayh9@xrea.com"];
+  22 [label="ID: 22\nNombre: Elane\nApellido: Antonik\nEmail: eantonik2@army.mil"];
+  23 [label="ID: 23\nNombre: Kennedy\nApellido: Beedham\nEmail: kbeedham8@jimdo.com"];
+  28 [label="ID: 28\nNombre: Enoch\nApellido: Flanders\nEmail: eflandersc@alexa.com"];
+  30 [label="ID: 30\nNombre: Ramsay\nApellido: Dallin\nEmail: rdallind@imageshack.us"];
+  35 [label="ID: 35\nNombre: Chicky\nApellido: Egle of Germany\nEmail: cegleofgermany0@paginegialle.it"];
+  43 [label="ID: 43\nNombre: Lexine\nApellido: Dempsey\nEmail: ldempsey7@pcworld.com"];
+  49 [label="ID: 49\nNombre: Carrissa\nApellido: Elwyn\nEmail: celwyn6@uol.com.br"];
+  50 [label="ID: 50\nNombre: Linzy\nApellido: Kerne\nEmail: lkerne4@globo.com"];
+  60 [label="ID: 60\nNombre: Norine\nApellido: Sindle\nEmail: nsindle1@wp.com"];
+  82 [label="ID: 82\nNombre: Lyndell\nApellido: Jeune\nEmail: ljeuneb@meetup.com"];
+  35 -> 22
+  35 -> 60
+  22 -> 16
+  22 -> 23
+  16 -> 13
+  16 -> 19
+  13 -> 1
+  13 -> 14
+  23 -> 28
+  28 -> 30
+  60 -> 50
+  60 -> 82
+  50 -> 49
+  49 -> 43
+}

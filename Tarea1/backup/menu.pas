@@ -110,7 +110,7 @@ begin
     else
         ShowMessage('Error');
 
-    ShowMessage('Lista de Usuarios Graficada');
+    ShowMessage('Lista de Usuarios Graficada, Imagen Generada en la Carpeta del Proyecto');
 
   //LEER RUTA2
   SLCorreos := TStringList.Create;
@@ -149,6 +149,14 @@ begin
       JSONDataCorreos.Free;
     end;
     ListaCorreosS.generarDOTCorreos(Lista,'ListaCorreos.dot');
+    if FileExists('ListaCorreos.dot') then
+       begin
+            ExecuteProcess('dot', ['-Tpng', 'ListaCorreos.dot', '-o', 'ListaCorreos.png']);
+            end
+    else
+        ShowMessage('Error');
+
+    ShowMessage('Lista de Correos Graficada, Imagen Generada en la Carpeta del Proyecto');
   end;
 
 end;

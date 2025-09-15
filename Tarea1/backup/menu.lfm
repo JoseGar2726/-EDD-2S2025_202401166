@@ -67,8 +67,8 @@ object Form1: TForm1
     Left = 384
     Height = 80
     Top = 216
-    Width = 143
-    Caption = 'Para que funcione \n'#13#10'Es importante que \n'#13#10'las rutas se añadan \n'#13#10'correctamente.'
+    Width = 125
+    Caption = 'Para que funcione'#13#10'Es importante que'#13#10'las rutas se añadan'#13#10'correctamente.'
   end
   object OpenDialog1: TOpenDialog
     Filter = 'JSON files|*.json|All files|*.*'
