@@ -1,0 +1,7 @@
+digraph G {
+  rankdir=LR;
+  node [shape=record, style=filled, fillcolor=lightblue];
+  label="Lista Doblemente Enlazada: Correos";
+  labelloc=top; fontsize=20;
+  Nodo0 [label="{Id: 4909\nRemitente: 1\nEstado: NL\nProgramado: No\nAsunto: Prueba\nFecha: 5-10-25 06:18:17\nMensaje: asdasd}"];
+}

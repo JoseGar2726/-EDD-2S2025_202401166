@@ -1,0 +1,25 @@
+digraph G {
+  rankdir=LR;
+  node [shape=record, style=filled, fillcolor=lightblue];
+  label="Lista Simplemente Enlazada: Usuarios";
+  labelloc=top; fontsize=20;
+  Nodo0 [label="Id: 1\nNombre: Luis Garcia\nUsuario: auxluis\nEmail: aux-luis@edd.com\nTelefono: 12345678"];
+  Nodo1 [label="Id: 2\nNombre: Marcos Itzep\nUsuario: auxmarcos\nEmail: aux-marcosg@edd.com\nTelefono: 87654321"];
+  Nodo2 [label="Id: 3\nNombre: Steven Mejia\nUsuario: smejia\nEmail: smejia@edd.com\nTelefono: 1234123"];
+  Nodo3 [label="Id: 4\nNombre: Linus Torvalds\nUsuario: linus\nEmail: linus@edd.com\nTelefono: 30012345"];
+  Nodo4 [label="Id: 5\nNombre: Bill Gates\nUsuario: bgates\nEmail: bill@edd.com\nTelefono: 30054321"];
+  Nodo5 [label="Id: 6\nNombre: Satya Nadella\nUsuario: snadella\nEmail: satya@edd.com\nTelefono: 30111222"];
+  Nodo6 [label="Id: 7\nNombre: Grace Hopper\nUsuario: ghopper\nEmail: grace@edd.com\nTelefono: 30133445"];
+  Nodo7 [label="Id: 8\nNombre: Alan Turing\nUsuario: aturing\nEmail: alan@edd.com\nTelefono: 30255667"];
+  Nodo8 [label="Id: 9\nNombre: Ada Lovelace\nUsuario: alovelace\nEmail: ada@edd.com\nTelefono: 30277889"];
+  Nodo9 [label="Id: 10\nNombre: Richard Stallman\nUsuario: rms\nEmail: rms@edd.com\nTelefono: 30399000"];
+  Nodo0 -> Nodo1;
+  Nodo1 -> Nodo2;
+  Nodo2 -> Nodo3;
+  Nodo3 -> Nodo4;
+  Nodo4 -> Nodo5;
+  Nodo5 -> Nodo6;
+  Nodo6 -> Nodo7;
+  Nodo7 -> Nodo8;
+  Nodo8 -> Nodo9;
+}

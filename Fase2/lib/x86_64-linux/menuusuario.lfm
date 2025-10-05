@@ -1,10 +1,10 @@
 object Form4: TForm4
-  Left = 1023
-  Height = 554
-  Top = 235
+  Left = 596
+  Height = 683
+  Top = 45
   Width = 320
   Caption = 'Menu Usuario'
-  ClientHeight = 554
+  ClientHeight = 683
   ClientWidth = 320
   LCLVersion = '4.2.0.0'
   OnClose = FormClose
@@ -31,7 +31,7 @@ object Form4: TForm4
   object Button2: TButton
     Left = 80
     Height = 32
-    Top = 112
+    Top = 256
     Width = 160
     Caption = 'Enviar Correo'
     TabOrder = 1
@@ -40,7 +40,7 @@ object Form4: TForm4
   object Button3: TButton
     Left = 80
     Height = 32
-    Top = 160
+    Top = 208
     Width = 160
     Caption = 'Papelera'
     TabOrder = 2
@@ -49,7 +49,7 @@ object Form4: TForm4
   object Button4: TButton
     Left = 80
     Height = 32
-    Top = 208
+    Top = 304
     Width = 160
     Caption = 'Programar Correo'
     TabOrder = 3
@@ -58,7 +58,7 @@ object Form4: TForm4
   object Button5: TButton
     Left = 80
     Height = 32
-    Top = 256
+    Top = 352
     Width = 160
     Caption = 'Correos Programados'
     TabOrder = 4
@@ -67,7 +67,7 @@ object Form4: TForm4
   object Button6: TButton
     Left = 80
     Height = 32
-    Top = 304
+    Top = 448
     Width = 160
     Caption = 'Agregar Contacto'
     TabOrder = 5
@@ -76,7 +76,7 @@ object Form4: TForm4
   object Button7: TButton
     Left = 80
     Height = 32
-    Top = 352
+    Top = 496
     Width = 160
     Caption = 'Contactos'
     TabOrder = 6
@@ -85,7 +85,7 @@ object Form4: TForm4
   object Button8: TButton
     Left = 80
     Height = 32
-    Top = 400
+    Top = 544
     Width = 160
     Caption = 'Actualizar Perfil'
     TabOrder = 7
@@ -94,7 +94,7 @@ object Form4: TForm4
   object Button9: TButton
     Left = 80
     Height = 32
-    Top = 448
+    Top = 592
     Width = 160
     Caption = 'Generar Reportes'
     TabOrder = 8
@@ -103,10 +103,35 @@ object Form4: TForm4
   object Button10: TButton
     Left = 80
     Height = 32
-    Top = 496
+    Top = 640
     Width = 160
     Caption = 'Salir'
     TabOrder = 9
     OnClick = Button10Click
+  end
+  object Button11: TButton
+    Left = 80
+    Height = 33
+    Top = 112
+    Width = 160
+    Caption = 'Favoritos'
+    TabOrder = 10
+  end
+  object Button12: TButton
+    Left = 80
+    Height = 33
+    Top = 160
+    Width = 160
+    Caption = 'Borradores'
+    TabOrder = 11
+    OnClick = Button12Click
+  end
+  object Button13: TButton
+    Left = 80
+    Height = 33
+    Top = 400
+    Width = 160
+    Caption = 'Mensaje Comunidad'
+    TabOrder = 12
   end
 end

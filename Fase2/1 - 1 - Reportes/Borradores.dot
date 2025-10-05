@@ -1,0 +1,8 @@
+digraph AVL_Borradores {
+  rankdir=TB;
+  node [shape=box, style=filled, fillcolor=lightblue];
+  label="Arbol AVL Borradores"; labelloc=top; fontsize=20;
+  Nodo5292 [label="ID: 5292\nRemitente: 1\nDestinatario: \nEstado: NL\nFecha: 05-10-2025 06:17:56\nAsunto: \nMensaje: \nProgramado: No"];
+  Nodo5292 -> Nodo8782;
+  Nodo8782 [label="ID: 8782\nRemitente: 1\nDestinatario: \nEstado: NL\nFecha: 05-10-2025 06:17:55\nAsunto: \nMensaje: \nProgramado: No"];
+}

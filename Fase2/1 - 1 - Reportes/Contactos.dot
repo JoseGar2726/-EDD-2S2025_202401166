@@ -1,0 +1,7 @@
+digraph G {
+  rankdir=LR;
+  node [shape=record, style=filled, fillcolor=lightgreen];
+  label="Lista Circular de Contactos";
+  labelloc=top; fontsize=20;
+  Nodo0 [label="{ID: 230\nNombre: 2\nUsuario: 2\nEmail: 2\nTelefono: 2}"];
+}

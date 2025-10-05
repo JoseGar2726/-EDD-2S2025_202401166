@@ -15,6 +15,7 @@ type
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
+    Button4: TButton;
     Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
@@ -27,6 +28,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormShow(Sender: TObject);
   private
@@ -48,6 +50,34 @@ uses menuUsuario;
 procedure TForm7.Button3Click(Sender: TObject);
 begin
   Close
+end;
+
+procedure TForm7.Button4Click(Sender: TObject);
+var
+  contactoActual: string;
+begin
+   contactoActual := Edit3.Text;
+   if (UsuarioLogeado.GetContactos.EliminarContacto(contactoActual)) then
+   begin
+      ShowMessage('Contacto Eliminado Correctamente');
+      nodoActual := usuarioLogeado.GetContactos.Primero;
+   end
+   else
+      ShowMessage('Error Al Eliminar El Contacto');
+
+  Edit1.Text:= '';
+  Edit2.Text:= '';
+  Edit3.Text:= '';
+  Edit4.Text:= '';
+
+  if nodoActual <> nil then
+  begin
+       nodoActual := nodoActual^.Siguiente;
+       Edit1.Text:=nodoActual^.Datos.GetNombre;
+       Edit2.Text:=nodoActual^.Datos.GetUser;
+       Edit3.Text:=nodoActual^.Datos.GetEmail;
+       Edit4.Text:=nodoActual^.Datos.GetTelefono;
+  end;
 end;
 
 procedure TForm7.Button2Click(Sender: TObject);

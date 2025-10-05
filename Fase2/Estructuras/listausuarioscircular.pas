@@ -25,6 +25,7 @@ type
     procedure GenerarDOT(const RutaArchivo: string);
     function ExisteContacto(email: string): Boolean;
     function BuscarPorEmail(const email: string): TContacto;
+    function EliminarContacto(const email: string): Boolean;
     function Primero: PNodoContacto;
   end;
 
@@ -124,6 +125,44 @@ begin
       Temp := Temp^.Siguiente;
     until Temp = Cabeza;
   end;
+end;
+
+function TListaUsuariosCircular.eliminarContacto(const email: string): Boolean;
+var
+  Temp, Anterior, Siguiente: PNodoContacto;
+begin
+  Result := False;
+
+  if Cabeza = nil then
+   Exit;
+
+  Temp := Cabeza;
+  repeat;
+    if Temp^.Datos.GetEmail = email then
+    begin
+      if (Temp^.Siguiente = Temp) and (Temp^.Anterior = Temp) then
+      begin
+        Dispose(Temp);
+        Cabeza := nil;
+      end
+      else
+      begin
+        Anterior := Temp^.Anterior;
+        Siguiente := Temp^.Siguiente;
+
+        Anterior^.Siguiente := Siguiente;
+        Siguiente^.Anterior := Anterior;
+
+        if Temp = Cabeza then
+           Cabeza := Siguiente;
+
+        Dispose(Temp);
+      end;
+      Result := True;
+      Exit;
+    end;
+    Temp := Temp^.Siguiente;
+    until Temp =Cabeza;
 end;
 
 procedure TListaUsuariosCircular.GenerarDOT(const RutaArchivo: string);

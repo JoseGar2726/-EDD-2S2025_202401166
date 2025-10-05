@@ -1,7 +1,7 @@
 object Form10: TForm10
-  Left = 676
+  Left = 706
   Height = 407
-  Top = 267
+  Top = 227
   Width = 321
   Caption = 'Correo'
   ClientHeight = 407

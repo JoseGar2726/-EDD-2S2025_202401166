@@ -14,6 +14,7 @@ type
   TForm8 = class(TForm)
     Button1: TButton;
     Button2: TButton;
+    Button3: TButton;
     Edit1: TEdit;
     Edit2: TEdit;
     Label1: TLabel;
@@ -23,6 +24,7 @@ type
     Memo1: TMemo;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
   private
 
@@ -43,6 +45,31 @@ uses menuUsuario;
 procedure TForm8.Button2Click(Sender: TObject);
 begin
   Close
+end;
+
+procedure TForm8.Button3Click(Sender: TObject);
+var
+  destinatario,remitente,asunto,mensaje, estado, fecha, programado: string;
+  destinatarioU: TUsuario;
+  id: Integer;
+  fechaActual: TDateTime;
+  correoEnviar: TCorreo;
+  contactoE: TContacto;
+begin
+//GuardarBorrador
+Randomize;
+id := Random(10000) + 1;
+remitente := usuarioLogeado.GetEmail;
+destinatario := Edit1.Text;
+estado := 'NL';
+programado := 'No';
+fechaActual := Now;
+fecha := FormatDateTime('dd/mm/yyyy hh:nn:ss', fechaActual);
+asunto := Edit2.Text;
+mensaje := Memo1.Text;
+correoEnviar := TCorreo.Create(id,remitente,destinatario,estado,fecha,asunto,mensaje,programado);
+usuarioLogeado.GetAvlBorradores.Insertar(correoEnviar);
+ShowMessage('Mensaje Guardado Como Borrador');
 end;
 
 procedure TForm8.Button1Click(Sender: TObject);

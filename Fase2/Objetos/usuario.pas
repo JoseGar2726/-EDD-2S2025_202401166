@@ -5,7 +5,7 @@ unit usuario;
 interface
 
 uses
-  Classes, SysUtils, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos;
+  Classes, SysUtils, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, avlBorradores;
 
 type
 
@@ -21,8 +21,9 @@ type
     FCorreosRecibidos: TListaCorreos;
     FPilaPapelera: TPilaPapelera;
     FColaCorreo: TColaCorreos;
+    FAvlBorradores: TAvlBorradores;
   public
-    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera; colaCorreo: TColaCorreos);
+    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera; colaCorreo: TColaCorreos; avlBorradores: TAvlBorradores);
     procedure SetId(id: Integer);
     function GetId: Integer;
     procedure SetNombre(nombre: string);
@@ -43,13 +44,15 @@ type
     function GetPilaPapelera: TPilaPapelera;
     procedure SetColaCorreo(colaCorreo: TColaCorreos);
     function GetColaCorreo: TColaCorreos;
+    procedure SetAvlBorradores(avlBorradores: TAvlBorradores);
+    function GetAvlBorradores: TAvlBorradores;
   end;
 
 implementation
 
 { TUsuario }
 
-constructor TUsuario.Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera; colaCorreo: TColaCorreos);
+constructor TUsuario.Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera; colaCorreo: TColaCorreos; avlBorradores: TAvlBorradores);
 begin
   FId := id;
   FNombre := nombre;
@@ -61,6 +64,7 @@ begin
   FCorreosRecibidos := correosRecibidos;
   FPilaPapelera := pilaPapelera;
   FColaCorreo := colaCorreo;
+  FAvlBorradores := avlBorradores;
 end;
 
 procedure TUsuario.SetId(id: Integer);
@@ -103,6 +107,10 @@ procedure TUsuario.SetColaCorreo(colaCorreo: TColaCorreos);
 begin
   FColaCorreo := colaCorreo;
 end;
+procedure TUsuario.SetAvlBorradores(avlBorradores: TAvlBorradores);
+begin
+  FAvlBorradores := avlBorradores;
+end;
 
 function TUsuario.GetId: Integer;
 begin
@@ -143,6 +151,10 @@ end;
 function TUsuario.GetColaCorreo: TColaCorreos;
 begin
   Result := FColaCorreo;
+end;
+function TUsuario.GetAvlBorradores: TAvlBorradores;
+begin
+  Result := FAvlBorradores;
 end;
 
 end.

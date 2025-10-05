@@ -1,7 +1,7 @@
 object Form8: TForm8
-  Left = 348
+  Left = 532
   Height = 349
-  Top = 225
+  Top = 258
   Width = 320
   Caption = 'Enviar Correo'
   ClientHeight = 349
@@ -51,9 +51,9 @@ object Form8: TForm8
     TabOrder = 1
   end
   object Button1: TButton
-    Left = 20
+    Left = 24
     Height = 32
-    Top = 296
+    Top = 272
     Width = 120
     Caption = 'Enviar'
     TabOrder = 2
@@ -74,5 +74,17 @@ object Form8: TForm8
     Top = 160
     Width = 173
     TabOrder = 4
+  end
+  object Button3: TButton
+    Left = 24
+    Height = 32
+    Top = 304
+    Width = 120
+    Caption = 'Guardar como Borrador'
+    Font.Height = -8
+    Font.Name = 'Sans'
+    ParentFont = False
+    TabOrder = 5
+    OnClick = Button3Click
   end
 end

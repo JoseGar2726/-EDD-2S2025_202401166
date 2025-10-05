@@ -95,12 +95,21 @@ object Form7: TForm7
     TabOrder = 5
   end
   object Button3: TButton
-    Left = 192
+    Left = 288
     Height = 41
     Top = 328
     Width = 96
     Caption = 'Salir'
     TabOrder = 6
     OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 128
+    Height = 41
+    Top = 328
+    Width = 104
+    Caption = 'Eliminar'
+    TabOrder = 7
+    OnClick = Button4Click
   end
 end

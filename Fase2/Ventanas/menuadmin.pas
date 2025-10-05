@@ -5,7 +5,7 @@ unit menuAdmin;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, crearComunidadad, relaciones, listaUsuarios, usuario, contactos, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, fpjson, jsonparser, Process;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, crearComunidadad, relaciones, listaUsuarios, usuario, contactos, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, avlBorradores, correo, fpjson, jsonparser, Process;
 
 type
 
@@ -17,13 +17,16 @@ type
     Button3: TButton;
     Button4: TButton;
     Button5: TButton;
+    Button6: TButton;
     Label1: TLabel;
     OpenDialog1: TOpenDialog;
+    OpenDialog2: TOpenDialog;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
   private
 
@@ -55,6 +58,59 @@ begin
   Self.Hide;
 end;
 
+procedure TForm2.Button6Click(Sender: TObject);
+var
+  ruta: string;
+  SL: TStringList;
+  JSONData: TJSONData;
+  JSONArray: TJSONArray;
+  JSONObject: TJSONObject;
+  i, id: Integer;
+  remitente, destinatario, estado, asunto, mensaje, fecha, programado: string;
+  receptor: TUsuario;
+  Correo: TCorreo;
+
+begin
+  //CARGA MASIVA CORREOS
+  SL := TStringList.Create;
+  if OpenDialog1.Execute then
+  begin
+    ruta := OpenDialog1.FileName;
+    try
+      SL.LoadFromFile(ruta);
+      JSONData := GetJSON(SL.Text);
+
+      JSONArray := JSONDATA.GetPath('correos') as TJSONArray;
+      for i := 0 to JSONArray.Count -1 do
+      begin
+        JSONObject := JSONArray.Items[i] as TJSONObject;
+        id := JSONObject.Get('id', 0);
+        remitente := JSONObject.Get('remitente', '');
+        destinatario := JSONObject.Get('destinatario', '');
+        estado := JSONObject.Get('estado', '');
+        asunto := JSONObject.Get('asunto', '');
+        mensaje := JSONObject.Get('mensaje', '');
+        fecha := DateTimeToStr(Now);
+        programado := 'No';
+
+        if (ListaUsuariosGlobal.ExisteEmail(remitente)) and (ListaUsuariosGlobal.ExisteEmail(destinatario)) then
+        begin
+           Correo := TCorreo.Create(id,remitente,destinatario,estado,fecha,asunto,mensaje,programado);
+
+           receptor := ListaUsuariosGlobal.Logearse(destinatario);
+           receptor.GetCorreosRecibidos.AgregarCorreo(Correo);
+        end;
+
+      end;
+    except
+      on E: Exception do
+         ShowMessage('Error')
+    end;
+    ShowMessage('Correos Cargados Correctamente')
+  end;
+
+end;
+
 procedure TForm2.Button1Click(Sender: TObject);
 var
   ruta: string;
@@ -69,6 +125,7 @@ var
   correosRecibidos: TListaCorreos;
   pilaPapelera: TPilaPapelera;
   colaCorreo: TColaCorreos;
+  avlBorradores: TAvlBorradores;
 
 begin
   //CARGA MASIVA
@@ -94,10 +151,11 @@ begin
         correosRecibidos := TListaCorreos.Create;
         pilaPapelera := TPilaPapelera.Create;
         colaCorreo := TColaCorreos.Create;
+        avlBorradores := TAvlBorradores.Create;
 
         if (not ListaUsuariosGlobal.ExisteId(id)) and (not ListaUsuariosGlobal.ExisteEmail(email)) then
         begin
-           Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos,correosRecibidos, pilaPapelera, colaCorreo);
+           Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos,correosRecibidos, pilaPapelera, colaCorreo, avlBorradores);
 
            ListaUsuariosGlobal.Agregar(Usuario);
         end;
@@ -137,15 +195,15 @@ begin
   matriz.GenerarDOT('Reporte/Relaciones.dot');
 
   //GENERAR PNG
-  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/Relaciones.dot') then
+  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/Relaciones.dot') then
   begin
     AProcess := TProcess.Create(nil);
     try
       AProcess.Executable := 'dot';
       AProcess.Parameters.Add('-Tpng');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/Relaciones.dot');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/Relaciones.dot');
       AProcess.Parameters.Add('-o');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/Relaciones.png');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/Relaciones.png');
       AProcess.Options := [poWaitOnExit];
       AProcess.Execute;
       ShowMessage('Imagen Generada en la Carpeta Reporte');
@@ -170,15 +228,15 @@ begin
   //Graficar - Generar DOT
   ListaUsuariosGlobal.GenerarDOT('Reporte/ListaSimpleUsuarios.dot');
   //Graficar - Generar PNG
-  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/ListaSimpleUsuarios.dot') then
+  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/ListaSimpleUsuarios.dot') then
   begin
     AProcess := TProcess.Create(nil);
     try
       AProcess.Executable := 'dot';
       AProcess.Parameters.Add('-Tpng');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/ListaSimpleUsuarios.dot');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/ListaSimpleUsuarios.dot');
       AProcess.Parameters.Add('-o');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/ListaSimpleUsuarios.png');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/ListaSimpleUsuarios.png');
       AProcess.Options := [poWaitOnExit];
       AProcess.Execute;
       ShowMessage('Lista de Usuarios Graficada, Imagen Generada en la Carpeta Reporte');

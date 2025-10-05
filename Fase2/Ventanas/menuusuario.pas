@@ -5,7 +5,7 @@ unit menuUsuario;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, actualizarPerfil, agregarContacto, verContactos, enviarCorreo, bandejaEntrada, papelera, programarCorreo, enviarCorreoP, globals, Process;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, actualizarPerfil, agregarContacto, verContactos, enviarCorreo, bandejaEntrada, papelera, programarCorreo, enviarCorreoP, borradores, globals, Process;
 
 type
 
@@ -14,6 +14,9 @@ type
   TForm4 = class(TForm)
     Button1: TButton;
     Button10: TButton;
+    Button11: TButton;
+    Button12: TButton;
+    Button13: TButton;
     Button2: TButton;
     Button3: TButton;
     Button4: TButton;
@@ -24,6 +27,7 @@ type
     Button9: TButton;
     Label1: TLabel;
     procedure Button10Click(Sender: TObject);
+    procedure Button12Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -70,6 +74,14 @@ end;
 procedure TForm4.Button10Click(Sender: TObject);
 begin
   Close
+end;
+
+procedure TForm4.Button12Click(Sender: TObject);
+begin
+  Form15 := TForm15.Create(nil);
+  Form15.Show;
+
+  Self.Hide;
 end;
 
 procedure TForm4.Button1Click(Sender: TObject);
@@ -148,7 +160,7 @@ begin
   //Graficar - Generar DOT - Correos
   usuarioLogeado.GetCorreosRecibidos.GenerarDOT(direccion + '/ListaCorreos.dot');
   //Graficar - Generar PNG - Correos
-  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
   if FileExists(direccion + '/ListaCorreos.dot') then
   begin
     AProcess := TProcess.Create(nil);
@@ -175,7 +187,7 @@ begin
   //Graficar - Generar DOT - PAPELERA
   usuarioLogeado.GetPilaPapelera.GenerarDOT(direccion + '/Papelera.dot');
   //Graficar - Generar PNG - PAPELERA
-  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
   if FileExists(direccion + '/Papelera.dot') then
   begin
     AProcess := TProcess.Create(nil);
@@ -199,7 +211,7 @@ begin
   //Graficar - Generar DOT - PROGRAMADOS
   usuarioLogeado.GetColaCorreo.GenerarDOT(direccion + '/CorreosProgramados.dot');
   //Graficar - Generar PNG - PROGRAMADOS
-  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
   if FileExists(direccion + '/CorreosProgramados.dot') then
   begin
     AProcess := TProcess.Create(nil);
@@ -223,7 +235,7 @@ begin
   //Graficar - Generar DOT - CONTACTOSS
   usuarioLogeado.GetContactos.GenerarDOT(direccion + '/Contactos.dot');
   //Graficar - Generar PNG - CONTACTOS
-  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
   if FileExists(direccion + '/Contactos.dot') then
   begin
     AProcess := TProcess.Create(nil);
@@ -238,7 +250,31 @@ begin
     finally
       AProcess.Free;
     end;
-  end
+  end;
+  //--------------------------------------------------------------------------------------------------------------------------------
+  nombreReporte := usuarioLogeado.GetNombre;
+  usuarioReporte := usuarioLogeado.GetUser;
+  direccion := nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  ForceDirectories(direccion);
+  //Graficar - Generar DOT - BORRADORES
+  usuarioLogeado.GetAvlBorradores.GenerarDot(direccion + '/Borradores.dot');
+  //Graficar - Generar PNG - BORRADORES
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  if FileExists(direccion + '/Borradores.dot') then
+  begin
+    AProcess := TProcess.Create(nil);
+    try
+      AProcess.Executable := 'dot';
+      AProcess.Parameters.Add('-Tpng');
+      AProcess.Parameters.Add(direccion + '/Borradores.dot');
+      AProcess.Parameters.Add('-o');
+      AProcess.Parameters.Add(direccion + '/Borradores.png');
+      AProcess.Options := [poWaitOnExit];
+      AProcess.Execute;
+    finally
+      AProcess.Free;
+    end;
+  end;
 end;
 
 end.

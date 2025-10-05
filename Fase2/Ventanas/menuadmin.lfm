@@ -1,11 +1,11 @@
 object Form2: TForm2
-  Left = 1081
-  Height = 404
-  Top = 315
-  Width = 320
+  Left = 651
+  Height = 492
+  Top = 213
+  Width = 318
   Caption = 'Menu Administrador'
-  ClientHeight = 404
-  ClientWidth = 320
+  ClientHeight = 492
+  ClientWidth = 318
   LCLVersion = '4.2.0.0'
   OnClose = FormClose
   object Label1: TLabel
@@ -20,14 +20,14 @@ object Form2: TForm2
     Height = 48
     Top = 80
     Width = 174
-    Caption = 'Carga Masiva'
+    Caption = 'Carga Masiva Usuarios'
     TabOrder = 0
     OnClick = Button1Click
   end
   object Button2: TButton
     Left = 80
     Height = 48
-    Top = 208
+    Top = 272
     Width = 174
     Caption = 'Reporte de Relaciones'
     TabOrder = 1
@@ -36,7 +36,7 @@ object Form2: TForm2
   object Button3: TButton
     Left = 80
     Height = 49
-    Top = 144
+    Top = 208
     Width = 174
     Caption = 'Reporte Usuarios'
     TabOrder = 2
@@ -45,7 +45,7 @@ object Form2: TForm2
   object Button4: TButton
     Left = 79
     Height = 49
-    Top = 336
+    Top = 400
     Width = 175
     Caption = 'Salir'
     TabOrder = 3
@@ -54,15 +54,28 @@ object Form2: TForm2
   object Button5: TButton
     Left = 80
     Height = 49
-    Top = 272
+    Top = 336
     Width = 174
     Caption = 'Comunidades'
     TabOrder = 4
     OnClick = Button5Click
   end
+  object Button6: TButton
+    Left = 80
+    Height = 52
+    Top = 144
+    Width = 176
+    Caption = 'Carga Masiva Correos'
+    TabOrder = 5
+    OnClick = Button6Click
+  end
   object OpenDialog1: TOpenDialog
     Filter = 'JSON files|*.json|All files|*.*'
     Left = 24
     Top = 232
+  end
+  object OpenDialog2: TOpenDialog
+    Left = 32
+    Top = 312
   end
 end
