@@ -5,7 +5,7 @@ unit menuAdmin;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, crearComunidadad, relaciones, listaUsuarios, usuario, contactos, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, avlBorradores, correo, fpjson, jsonparser, Process;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, crearComunidadad, relaciones, listaUsuarios, usuario, contactos, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, avlBorradores, bFavoritos, correo, fpjson, jsonparser, Process;
 
 type
 
@@ -126,6 +126,7 @@ var
   pilaPapelera: TPilaPapelera;
   colaCorreo: TColaCorreos;
   avlBorradores: TAvlBorradores;
+  favoritos: TbFavoritos;
 
 begin
   //CARGA MASIVA
@@ -152,10 +153,11 @@ begin
         pilaPapelera := TPilaPapelera.Create;
         colaCorreo := TColaCorreos.Create;
         avlBorradores := TAvlBorradores.Create;
+        favoritos := TbFavoritos.Create;
 
         if (not ListaUsuariosGlobal.ExisteId(id)) and (not ListaUsuariosGlobal.ExisteEmail(email)) then
         begin
-           Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos,correosRecibidos, pilaPapelera, colaCorreo, avlBorradores);
+           Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos,correosRecibidos, pilaPapelera, colaCorreo, avlBorradores, favoritos);
 
            ListaUsuariosGlobal.Agregar(Usuario);
         end;

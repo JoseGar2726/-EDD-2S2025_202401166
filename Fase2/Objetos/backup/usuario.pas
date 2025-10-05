@@ -23,7 +23,7 @@ type
     FColaCorreo: TColaCorreos;
     FAvlBorradores: TAvlBorradores;
   public
-    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera; colaCorreo: TColaCorreos, avlBorradores: TAvlBorradores);
+    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera; colaCorreo: TColaCorreos; avlBorradores: TAvlBorradores);
     procedure SetId(id: Integer);
     function GetId: Integer;
     procedure SetNombre(nombre: string);

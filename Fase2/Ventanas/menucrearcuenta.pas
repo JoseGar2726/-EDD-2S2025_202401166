@@ -5,7 +5,7 @@ unit menuCrearCuenta;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, usuario, contactos, listaUsuariosCircular, listaUsuarios, listaCorreos, pilaPapelera, colaCorreos, avlBorradores, globals;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, usuario, contactos, listaUsuariosCircular, listaUsuarios, listaCorreos, pilaPapelera, colaCorreos, avlBorradores, bFavoritos, globals;
 
 type
 
@@ -60,6 +60,7 @@ var
    pilaPapelera: TPilaPapelera;
    colaCorreo: TColaCorreos;
    avlBorradores: TAvlBorradores;
+   favoritos: TbFavoritos;
 begin
   Randomize;
   id := Random(1000) + 1;
@@ -73,6 +74,7 @@ begin
   pilaPapelera := TPilaPapelera.Create;
   colaCorreo := TColaCorreos.Create;
   avlBorradores := TAvlBorradores.Create;
+  favoritos := TbFavoritos.Create;
   if ListaUsuariosGlobal.ExisteId(id) then
      showMessage('Id Existente')
   else
@@ -81,7 +83,7 @@ begin
        showMessage('El Correo Ya Se Encuentra Registrado')
     else
     begin
-      Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos,correosRecibidos, pilaPapelera, colaCorreo, avlBorradores);
+      Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos,correosRecibidos, pilaPapelera, colaCorreo, avlBorradores, favoritos);
       ListaUsuariosGlobal.Agregar(Usuario);
       Edit1.Text := '';
       Edit2.Text := '';

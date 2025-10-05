@@ -1,7 +1,7 @@
 object Form10: TForm10
-  Left = 706
+  Left = 689
   Height = 407
-  Top = 227
+  Top = 233
   Width = 321
   Caption = 'Correo'
   ClientHeight = 407
@@ -16,7 +16,7 @@ object Form10: TForm10
     TabOrder = 0
   end
   object Button1: TButton
-    Left = 40
+    Left = 24
     Height = 32
     Top = 352
     Width = 75
@@ -25,7 +25,7 @@ object Form10: TForm10
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 208
+    Left = 224
     Height = 32
     Top = 352
     Width = 75
@@ -49,5 +49,14 @@ object Form10: TForm10
     Width = 44
     Caption = 'Label1'
     Visible = False
+  end
+  object Button3: TButton
+    Left = 120
+    Height = 33
+    Top = 352
+    Width = 83
+    Caption = 'Favorito'
+    TabOrder = 4
+    OnClick = Button3Click
   end
 end

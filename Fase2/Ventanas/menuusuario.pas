@@ -5,7 +5,7 @@ unit menuUsuario;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, actualizarPerfil, agregarContacto, verContactos, enviarCorreo, bandejaEntrada, papelera, programarCorreo, enviarCorreoP, borradores, globals, Process;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, actualizarPerfil, agregarContacto, verContactos, enviarCorreo, bandejaEntrada, papelera, programarCorreo, enviarCorreoP, borradores, verFavoritos, bFavoritos, globals, Process;
 
 type
 
@@ -27,6 +27,7 @@ type
     Button9: TButton;
     Label1: TLabel;
     procedure Button10Click(Sender: TObject);
+    procedure Button11Click(Sender: TObject);
     procedure Button12Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -74,6 +75,14 @@ end;
 procedure TForm4.Button10Click(Sender: TObject);
 begin
   Close
+end;
+
+procedure TForm4.Button11Click(Sender: TObject);
+begin
+  Form17 := TForm17.Create(nil);
+  Form17.Show;
+
+  Self.Hide;
 end;
 
 procedure TForm4.Button12Click(Sender: TObject);
@@ -269,6 +278,30 @@ begin
       AProcess.Parameters.Add(direccion + '/Borradores.dot');
       AProcess.Parameters.Add('-o');
       AProcess.Parameters.Add(direccion + '/Borradores.png');
+      AProcess.Options := [poWaitOnExit];
+      AProcess.Execute;
+    finally
+      AProcess.Free;
+    end;
+  end;
+  //--------------------------------------------------------------------------------------------------------------------------------
+  nombreReporte := usuarioLogeado.GetNombre;
+  usuarioReporte := usuarioLogeado.GetUser;
+  direccion := nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  ForceDirectories(direccion);
+  //Graficar - Generar DOT - FAVORITOS
+  usuarioLogeado.GetbFavoritos.GenerarDOT(direccion + '/Favoritos.dot');
+  //Graficar - Generar PNG - FAVORITOS
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  if FileExists(direccion + '/Favoritos.dot') then
+  begin
+    AProcess := TProcess.Create(nil);
+    try
+      AProcess.Executable := 'dot';
+      AProcess.Parameters.Add('-Tpng');
+      AProcess.Parameters.Add(direccion + '/Favoritos.dot');
+      AProcess.Parameters.Add('-o');
+      AProcess.Parameters.Add(direccion + '/Favoritos.png');
       AProcess.Options := [poWaitOnExit];
       AProcess.Execute;
     finally

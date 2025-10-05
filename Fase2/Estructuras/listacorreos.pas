@@ -31,6 +31,7 @@ type
       function ContarCorreos(): Integer;
       function Eliminar(const id: Integer): TCorreo;
       function Primero: PNodo;
+      function Buscar(const id: Integer): TCorreo;
   end;
 
 implementation
@@ -120,6 +121,24 @@ begin
 
        Dispose(Aux);
        Dec(FCantidad);
+       Exit;
+     end;
+     Aux := Aux^.Siguiente;
+  end;
+end;
+
+function TListaCorreos.Buscar(const id: Integer): TCorreo;
+var
+ Aux: PNodo;
+begin
+  Result:= nil;
+  Aux:=Cabeza;
+
+  while Aux <> nil do
+  begin
+    if Aux^.Correo.GetId = id then
+     begin
+       Result := Aux^.Correo;
        Exit;
      end;
      Aux := Aux^.Siguiente;

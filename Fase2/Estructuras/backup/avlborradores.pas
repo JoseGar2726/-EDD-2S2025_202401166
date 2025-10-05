@@ -329,10 +329,9 @@ var
   begin
     if nodo = nil then Exit;
 
-    Writeln(Archivo, Format('  Nodo%d [label="ID: %d\nRemitente: %s\nDestinatario: %s\nEstado: %s\nFecha: %s\nAsunto: %s\nMensaje: %s\nProgramado: %s"];',
+    Writeln(Archivo, Format('  Nodo%d [label="ID: %d\nDestinatario: %s\nEstado: %s\nFecha: %s\nAsunto: %s\nMensaje: %s\nProgramado: %s"];',
       [nodo^.Datos.GetId,
        nodo^.Datos.GetId,
-       nodo^.Datos.GetRemitente,
        nodo^.Datos.GetDestinatario,
        nodo^.Datos.GetEstado,
        nodo^.Datos.GetFecha,

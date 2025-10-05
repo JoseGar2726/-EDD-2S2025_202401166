@@ -155,7 +155,7 @@ begin
 
         if (not ListaUsuariosGlobal.ExisteId(id)) and (not ListaUsuariosGlobal.ExisteEmail(email)) then
         begin
-           Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos,correosRecibidos, pilaPapelera, colaCorreo, avlBorradores);
+           Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos,correosRecibidos, pilaPapelera, colaCorreo, avlBorradores, favoritos);
 
            ListaUsuariosGlobal.Agregar(Usuario);
         end;
@@ -195,15 +195,15 @@ begin
   matriz.GenerarDOT('Reporte/Relaciones.dot');
 
   //GENERAR PNG
-  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/Relaciones.dot') then
+  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/Relaciones.dot') then
   begin
     AProcess := TProcess.Create(nil);
     try
       AProcess.Executable := 'dot';
       AProcess.Parameters.Add('-Tpng');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/Relaciones.dot');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/Relaciones.dot');
       AProcess.Parameters.Add('-o');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/Relaciones.png');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/Relaciones.png');
       AProcess.Options := [poWaitOnExit];
       AProcess.Execute;
       ShowMessage('Imagen Generada en la Carpeta Reporte');
@@ -228,15 +228,15 @@ begin
   //Graficar - Generar DOT
   ListaUsuariosGlobal.GenerarDOT('Reporte/ListaSimpleUsuarios.dot');
   //Graficar - Generar PNG
-  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/ListaSimpleUsuarios.dot') then
+  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/ListaSimpleUsuarios.dot') then
   begin
     AProcess := TProcess.Create(nil);
     try
       AProcess.Executable := 'dot';
       AProcess.Parameters.Add('-Tpng');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/ListaSimpleUsuarios.dot');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/ListaSimpleUsuarios.dot');
       AProcess.Parameters.Add('-o');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase1/Reporte/ListaSimpleUsuarios.png');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/ListaSimpleUsuarios.png');
       AProcess.Options := [poWaitOnExit];
       AProcess.Execute;
       ShowMessage('Lista de Usuarios Graficada, Imagen Generada en la Carpeta Reporte');

@@ -156,6 +156,7 @@
         <Filename Value="Ventanas/papelera.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form11"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
       <Unit>
@@ -177,6 +178,7 @@
         <Filename Value="Ventanas/vercorreo.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form10"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="verCorreo"/>
       </Unit>
@@ -198,7 +200,35 @@
         <Filename Value="Ventanas/borradores.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form15"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/verborrador.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form16"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verBorrador"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/bfavoritos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="bFavoritos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/verfavoritos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form17"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verFavoritos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/verfavorito.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form18"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verFavorito"/>
       </Unit>
     </Units>
   </ProjectOptions>

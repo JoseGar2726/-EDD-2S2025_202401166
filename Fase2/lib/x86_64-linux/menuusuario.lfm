@@ -116,6 +116,7 @@ object Form4: TForm4
     Width = 160
     Caption = 'Favoritos'
     TabOrder = 10
+    OnClick = Button11Click
   end
   object Button12: TButton
     Left = 80
