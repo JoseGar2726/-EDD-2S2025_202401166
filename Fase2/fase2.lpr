@@ -15,7 +15,8 @@ uses
   menuUsuario, papelera, programarCorreo, verContactos, verCorreo, contactos,
   correo, usuario, globals, listaCorreos, pilaPapelera, colaCorreos,
   listaUsuarios, listaUsuariosCircular, relaciones, Comunidades, avlBorradores,
-  borradores, verBorrador, bFavoritos, verFavoritos, verFavorito;
+  borradores, verBorrador, bFavoritos, verFavoritos, verFavorito, 
+mensajesComunidad, bstComunidades;
 
 {$R *.res}
 
@@ -31,6 +32,7 @@ begin
   Application.CreateForm(TForm16, Form16);
   Application.CreateForm(TForm17, Form17);
   Application.CreateForm(TForm18, Form18);
+  Application.CreateForm(TForm19, Form19);
   Application.Run;
 end.
 

@@ -1,7 +1,7 @@
 object Form4: TForm4
-  Left = 596
+  Left = 620
   Height = 683
-  Top = 45
+  Top = 130
   Width = 320
   Caption = 'Menu Usuario'
   ClientHeight = 683
@@ -134,5 +134,6 @@ object Form4: TForm4
     Width = 160
     Caption = 'Mensaje Comunidad'
     TabOrder = 12
+    OnClick = Button13Click
   end
 end

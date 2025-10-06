@@ -1,7 +1,0 @@
-digraph G {
-  rankdir=TB;
-  node [shape=record, style=filled, fillcolor=lightcoral];
-  label="Pila de Correos (Papelera)";
-  labelloc=top; fontsize=20;
-  Nodo0 [label="{Id: 4293\nRemitente: 1\nEstado: Eliminado\nProgramado: No\nAsunto: 3\nFecha: 05-10-2025 02:08:41\nMensaje: 3}"];
-}

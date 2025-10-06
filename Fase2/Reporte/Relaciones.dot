@@ -1,7 +1,0 @@
-digraph Matriz {
-  graph [splines=ortho];
-  rankdir=TB;
-  node [shape=record, style=filled, fillcolor=white];
-  label = "Matriz Dispersa de Relaciones";
-  { rank=same; "ROOT"; }
-}

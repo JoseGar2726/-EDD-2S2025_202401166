@@ -230,6 +230,18 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="verFavorito"/>
       </Unit>
+      <Unit>
+        <Filename Value="Ventanas/mensajescomunidad.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form19"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="mensajesComunidad"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/bstcomunidades.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="bstComunidades"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

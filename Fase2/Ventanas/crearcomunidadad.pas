@@ -5,7 +5,7 @@ unit crearComunidadad;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Comunidades, Process, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Comunidades, bstComunidades, Process, StdCtrls;
 
 type
 
@@ -57,6 +57,7 @@ var
   AProcess: TProcess;
 begin
 
+  //FASE1
   dotFile := 'Reporte/comunidades.dot';
   pngFile := 'Reporte/comunidades.png';
 
@@ -64,6 +65,36 @@ begin
     CreateDir('Reporte');
 
   dotContent := generateGrafComunidades();
+
+  SL := TStringList.Create;
+  try
+    SL.Text := dotContent;
+    SL.SaveToFile(dotFile);
+  finally
+    SL.Free;
+  end;
+
+  AProcess := TProcess.Create(nil);
+  try
+    AProcess.Executable := 'dot';
+    AProcess.Parameters.Add('-Tpng');
+    AProcess.Parameters.Add(dotFile);
+    AProcess.Parameters.Add('-o');
+    AProcess.Parameters.Add(pngFile);
+    AProcess.Options := AProcess.Options + [poWaitOnExit];
+    AProcess.Execute;
+  finally
+    AProcess.Free;
+  end;
+
+  //Fase2
+  dotFile := 'Reporte/bst_comunidades.dot';
+  pngFile := 'Reporte/bst_comunidades.png';
+
+  if not DirectoryExists('Reporte') then
+    CreateDir('Reporte');
+
+  dotContent := BST_GENERARDOT();
 
   SL := TStringList.Create;
   try
@@ -94,13 +125,24 @@ procedure TForm14.Button1Click(Sender: TObject);
 var
   txtComunidadInput_entry : Pchar;
   response: Boolean;
+  //FASE2
+  FechaActual: TDateTime;
+  FechaFormateada: string;
 begin
+  FechaActual := Now;
+  FechaFormateada := FormatDateTime('dd-mm-yyyy', FechaActual);
   txtComunidadInput_entry := Pchar(Edit1.Text);
+  //FASE1
   response := InsertarComunidad(txtComunidadInput_entry);
+  //FASE2
+  response := InsertBSTNode(txtComunidadInput_entry,FechaFormateada);
   if response then
        ShowMessage('La comunidad ha sido creada con exito')
   else
        ShowMessage('Ya existe una comunidad con ese nombre. Intenta con otro nombre' );
+  //FASE2
+  FechaActual := Now;
+  FechaFormateada := FormatDateTime('dd-mm-yyyy', FechaActual);
 end;
 
 procedure TForm14.Button2Click(Sender: TObject);
@@ -111,7 +153,11 @@ begin
    txtComunidadInput_entry := Pchar(Edit2.Text);
    txtUsuarioInput_entry := Pchar(Edit3.Text);
 
+   //FASE 1
    response := InsertarUsuario(txtComunidadInput_entry, txtUsuarioInput_entry);
+
+   //FASE 2
+   response := insertUsers(txtComunidadInput_entry, txtUsuarioInput_entry);
 
    if response then
        ShowMessage('El usuario ha sido agregado a la comunidad correctamente')

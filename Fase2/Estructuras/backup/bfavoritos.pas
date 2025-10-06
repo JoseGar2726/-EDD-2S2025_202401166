@@ -414,54 +414,60 @@ procedure TbFavoritos.GenerarDOT(const RutaArchivo: string);
 var
   Archivo: TextFile;
 
-  procedure RecorrerNodo(nodo: PNodoB);
+  procedure RecorrerNodo(nodo: PNodo; var contador: Integer);
   var
     i: Integer;
+    nombreNodo: string;
     etiqueta: string;
   begin
     if nodo = nil then Exit;
 
-    // Crear etiqueta del nodo como record
-    etiqueta := '"';
+    // Nombre único para el nodo en Graphviz
+    nombreNodo := 'Nodo' + IntToStr(contador);
+    Inc(contador);
+
+    // Construir etiqueta con todos los correos del nodo
+    etiqueta := '';
     for i := 0 to nodo^.n - 1 do
     begin
-      etiqueta := etiqueta + Format('<f%d> ID:%d | Asunto:%s | Remitente:%s',
-        [i, nodo^.Datos[i].GetId, nodo^.Datos[i].GetAsunto, nodo^.Datos[i].GetRemitente]);
+      etiqueta := etiqueta + nodo^.keys[i].GetCorreo; // ajusta GetCorreo/GetAsunto según lo que quieras mostrar
       if i < nodo^.n - 1 then
         etiqueta := etiqueta + ' | ';
     end;
-    etiqueta := etiqueta + '"';
 
-    Writeln(Archivo, Format('  Nodo%p [label=%s, shape=record];', [nodo, etiqueta]));
+    // Escribir el nodo en DOT
+    Writeln(Archivo, Format('  %s [label="%s", shape=record, style=filled, fillcolor=lightyellow];',
+      [nombreNodo, etiqueta]));
 
-    // Dibujar conexiones hacia los hijos
-    if not nodo^.esHoja then
-      for i := 0 to nodo^.n do
+    // Enlazar hijos
+    for i := 0 to nodo^.n do
+    begin
+      if nodo^.hijos[i] <> nil then
       begin
-        if nodo^.Hijos[i] <> nil then
-        begin
-          Writeln(Archivo, Format('  Nodo%p:f%d -> Nodo%p;', [nodo, i, nodo^.Hijos[i]]));
-          RecorrerNodo(nodo^.Hijos[i]);
-        end;
+        Writeln(Archivo, Format('  %s -> Nodo%d;', [nombreNodo, contador]));
+        RecorrerNodo(nodo^.hijos[i], contador);
       end;
+    end;
   end;
 
+var
+  contador: Integer;
 begin
   AssignFile(Archivo, RutaArchivo);
   Rewrite(Archivo);
 
-  Writeln(Archivo, 'digraph BTree_Favoritos {');
+  Writeln(Archivo, 'digraph BTreeFavoritos {');
   Writeln(Archivo, '  rankdir=TB;');
   Writeln(Archivo, '  node [shape=record, style=filled, fillcolor=lightyellow];');
-  Writeln(Archivo, '  label="Arbol B de Favoritos"; labelloc=top; fontsize=20;');
+  Writeln(Archivo, '  label="Árbol B - Favoritos"; labelloc=top; fontsize=20;');
 
+  contador := 0;
   if raiz <> nil then
-    RecorrerNodo(raiz);
+    RecorrerNodo(raiz, contador);
 
   Writeln(Archivo, '}');
   CloseFile(Archivo);
 end;
-
 
 end.
 

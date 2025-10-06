@@ -1,5 +1,0 @@
-digraph AVL_Borradores {
-  rankdir=TB;
-  node [shape=box, style=filled, fillcolor=lightblue];
-  label="Arbol AVL Borradores"; labelloc=top; fontsize=20;
-}

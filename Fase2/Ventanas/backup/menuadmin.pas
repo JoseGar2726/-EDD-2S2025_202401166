@@ -5,7 +5,7 @@ unit menuAdmin;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, crearComunidadad, relaciones, listaUsuarios, usuario, contactos, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, avlBorradores, correo, fpjson, jsonparser, Process;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, crearComunidadad, relaciones, listaUsuarios, usuario, contactos, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, avlBorradores, bFavoritos, correo, fpjson, jsonparser, Process;
 
 type
 
@@ -65,10 +65,11 @@ var
   JSONData: TJSONData;
   JSONArray: TJSONArray;
   JSONObject: TJSONObject;
-  i, id: Integer;
-  remitente, destinatario, estado, asunto, mensaje, fecha, programado: string;
-  receptor: TUsuario;
+  i, id, correosEnviados: Integer;
+  remitente, destinatario, nombre, user, password, email, telefono, estado, asunto, mensaje, fecha, programado: string;
+  receptor, emisor: TUsuario;
   Correo: TCorreo;
+  contactoN, contactoE: TContacto;
 
 begin
   //CARGA MASIVA CORREOS
@@ -98,7 +99,25 @@ begin
            Correo := TCorreo.Create(id,remitente,destinatario,estado,fecha,asunto,mensaje,programado);
 
            receptor := ListaUsuariosGlobal.Logearse(destinatario);
+           //CONTACTO RECEPTOR
+           id := receptor.GetId;
+           nombre := receptor.GetNombre;
+           user := receptor.GetUser;
+           password := receptor.GetPassword;
+           email := receptor.GetEmail;
+           telefono := receptor.GetTelefono;
+           correosEnviados := 0;
+           contactoN := TContacto.Create(id,nombre,user,password,email,telefono,correosEnviados);
+
+           emisor := ListaUsuariosGlobal.Logearse(remitente);
+
+           if not emisor.GetContactos.ExisteContacto(contactoN.GetEmail) then
+              emisor.GetContactos.Agregar(contactoN);
            receptor.GetCorreosRecibidos.AgregarCorreo(Correo);
+
+           //SUMAR CORREOS
+           contactoE := usuarioLogeado.GetContactos.BuscarPorEmail(contactoN.GetEmail);
+           contactoE.SetCorreosEnviados(contactoE.GetCorreosEnviados + 1);
         end;
 
       end;
@@ -126,6 +145,7 @@ var
   pilaPapelera: TPilaPapelera;
   colaCorreo: TColaCorreos;
   avlBorradores: TAvlBorradores;
+  favoritos: TbFavoritos;
 
 begin
   //CARGA MASIVA
@@ -152,6 +172,7 @@ begin
         pilaPapelera := TPilaPapelera.Create;
         colaCorreo := TColaCorreos.Create;
         avlBorradores := TAvlBorradores.Create;
+        favoritos := TbFavoritos.Create;
 
         if (not ListaUsuariosGlobal.ExisteId(id)) and (not ListaUsuariosGlobal.ExisteEmail(email)) then
         begin

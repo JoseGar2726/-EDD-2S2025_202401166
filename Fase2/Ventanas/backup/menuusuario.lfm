@@ -134,5 +134,6 @@ object Form4: TForm4
     Width = 160
     Caption = 'Mensaje Comunidad'
     TabOrder = 12
+    OnClick = Button13Click
   end
 end
