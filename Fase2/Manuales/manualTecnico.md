@@ -3,7 +3,7 @@
 ## Objetos Utilizados
 
 ### Usuario
-<img width="2048" height="7542" alt="image" src="https://github.com/user-attachments/assets/4d3c8bb2-742b-43d2-89d8-a38a143ef84a" />
+<img width="2048" height="8790" alt="image" src="https://github.com/user-attachments/assets/4290c23a-0d99-413c-bcca-6e9853e4dfca" />
 
 Nuestro objeto usuario es el encargado de almacenar toda la informacion sobre un usuario.
 
@@ -54,6 +54,21 @@ Matriz dispersa la cual almacena la cantidad de correos enviados entre usuarios 
 
 Lista de lista la cual almacena las comunidades creadas y los usuarios que se encuentran dentro de estas(Integracion por Grupos).
 
+### Arbol AVL
+<img width="2048" height="14124" alt="image" src="https://github.com/user-attachments/assets/4a819c5a-498e-402d-ac49-bf1e44e828be" />
+
+Arbol AVL el cual se encarga de guardar los correos guardados como borradores.
+
+### Arbol B De Grado 5
+<img width="1954" height="18260" alt="image" src="https://github.com/user-attachments/assets/07e98cba-5776-4bc7-a689-b777bc494697" />
+
+Arbol B el cual se encarga de guardar los correos seleccionados como favoritos.
+
+### Arbol BST
+<img width="2048" height="11406" alt="image" src="https://github.com/user-attachments/assets/09c67fc4-9484-4cdd-915b-53eb562e5c96" />
+
+Arbol BST el cual se encarga de almacenar los mensajes enviados por los usuarios dentro de las comunidades(Integracion por Grupos)
+
 ## Globals
 <img width="1010" height="938" alt="image" src="https://github.com/user-attachments/assets/849e4e81-0621-441a-b279-98352d5af450" />
 
@@ -61,19 +76,188 @@ Almacena informacion globalmente, el usuario que se encuentra logeado y la lista
 
 
 # Arbol del directorio
-── Fase1
-├── Fase1.ico
-├── Fase1.lpi
-├── Fase1.lpr
-├── Fase1.lps
-├── Fase1.res
+-Fase2
+├── backup
+│   ├── actualizarperfil.lfm
+│   ├── actualizarperfil.pas
+│   ├── agregarcontacto.lfm
+│   ├── agregarcontacto.pas
+│   ├── bandejaentrada.lfm
+│   ├── bandejaentrada.pas
+│   ├── colacorreos.pas
+│   ├── comunidades.pas
+│   ├── contactos.pas
+│   ├── correo.pas
+│   ├── crearcomunidadad.lfm
+│   ├── crearcomunidadad.pas
+│   ├── enviarcorreo.lfm
+│   ├── enviarcorreo.pas
+│   ├── enviarcorreop.lfm
+│   ├── enviarcorreop.pas
+│   ├── Fase1.lpi
+│   ├── Fase1.lpr
+│   ├── Fase1.lps
+│   ├── fase2.lpi
+│   ├── fase2.lpr
+│   ├── fase2.lps
+│   ├── globals.pas
+│   ├── listacorreos.pas
+│   ├── listausuarioscircular.pas
+│   ├── listausuarios.pas
+│   ├── menuadmin.lfm
+│   ├── menuadmin.pas
+│   ├── menucrearcuenta.lfm
+│   ├── menucrearcuenta.pas
+│   ├── menuinicio.lfm
+│   ├── menuinicio.pas
+│   ├── menuusuario.lfm
+│   ├── menuusuario.pas
+│   ├── papelera.lfm
+│   ├── papelera.pas
+│   ├── pilapapelera.pas
+│   ├── programarcorreo.lfm
+│   ├── programarcorreo.pas
+│   ├── relaciones.pas
+│   ├── tiposusuarios.pas
+│   ├── usuario.pas
+│   ├── vercontactos.lfm
+│   ├── vercontactos.pas
+│   ├── vercorreo.lfm
+│   └── vercorreo.pas
+├── correosM.json
+├── Estructuras
+│   ├── avlborradores.pas
+│   ├── backup
+│   │   ├── avlborradores.pas
+│   │   ├── bfavoritos.pas
+│   │   ├── bstcomunidades.pas
+│   │   ├── colacorreos.pas
+│   │   ├── listacorreos.pas
+│   │   ├── listausuarioscircular.pas
+│   │   ├── listausuarios.pas
+│   │   └── pilapapelera.pas
+│   ├── bfavoritos.pas
+│   ├── bstcomunidades.pas
+│   ├── colacorreos.pas
+│   ├── comunidades.pas
+│   ├── listacorreos.pas
+│   ├── listausuarioscircular.pas
+│   ├── listausuarios.pas
+│   ├── pilapapelera.pas
+│   └── relaciones.pas
+├── fase2
+├── fase2.ico
+├── fase2.lpi
+├── fase2.lpr
+├── fase2.lps
+├── fase2.res
 ├── lib
 │   └── x86_64-linux
+│       ├── actualizarperfil.lfm
+│       ├── actualizarperfil.o
+│       ├── actualizarperfil.ppu
+│       ├── agregarcontacto.lfm
+│       ├── agregarcontacto.o
+│       ├── agregarcontacto.ppu
+│       ├── avlborradores.o
+│       ├── avlborradores.ppu
+│       ├── bandejaentrada.lfm
+│       ├── bandejaentrada.o
+│       ├── bandejaentrada.ppu
+│       ├── bfavoritos.o
+│       ├── bfavoritos.ppu
+│       ├── borradores.lfm
+│       ├── borradores.o
+│       ├── borradores.ppu
+│       ├── bstcomunidades.o
+│       ├── bstcomunidades.ppu
+│       ├── colacorreos.o
+│       ├── colacorreos.ppu
+│       ├── comunidades.o
+│       ├── comunidades.ppu
+│       ├── contactos.o
+│       ├── contactos.ppu
+│       ├── correo.o
+│       ├── correo.ppu
+│       ├── crearcomunidadad.lfm
+│       ├── crearcomunidadad.o
+│       ├── crearcomunidadad.ppu
+│       ├── enviarcorreo.lfm
+│       ├── enviarcorreo.o
+│       ├── enviarcorreop.lfm
+│       ├── enviarcorreop.o
+│       ├── enviarcorreop.ppu
+│       ├── enviarcorreo.ppu
+│       ├── Fase1.compiled
+│       ├── Fase1.o
+│       ├── Fase1.or
+│       ├── Fase1.res
+│       ├── fase2.compiled
+│       ├── fase2.o
+│       ├── fase2.or
+│       ├── fase2.res
+│       ├── globals.o
+│       ├── globals.ppu
+│       ├── listacorreos.o
+│       ├── listacorreos.ppu
+│       ├── listausuarioscircular.o
+│       ├── listausuarioscircular.ppu
+│       ├── listausuarios.o
+│       ├── listausuarios.ppu
+│       ├── mensajescomunidad.lfm
+│       ├── mensajescomunidad.o
+│       ├── mensajescomunidad.ppu
+│       ├── menuadmin.lfm
+│       ├── menuadmin.o
+│       ├── menuadmin.ppu
+│       ├── menucrearcuenta.lfm
+│       ├── menucrearcuenta.o
+│       ├── menucrearcuenta.ppu
+│       ├── menuinicio.lfm
+│       ├── menuinicio.o
+│       ├── menuinicio.ppu
+│       ├── menuusuario.lfm
+│       ├── menuusuario.o
+│       ├── menuusuario.ppu
+│       ├── papelera.lfm
+│       ├── papelera.o
+│       ├── papelera.ppu
+│       ├── pilapapelera.o
+│       ├── pilapapelera.ppu
+│       ├── programarcorreo.lfm
+│       ├── programarcorreo.o
+│       ├── programarcorreo.ppu
+│       ├── relaciones.o
+│       ├── relaciones.ppu
+│       ├── usuario.o
+│       ├── usuario.ppu
+│       ├── verborrador.lfm
+│       ├── verborrador.o
+│       ├── verborrador.ppu
+│       ├── vercontactos.lfm
+│       ├── vercontactos.o
+│       ├── vercontactos.ppu
+│       ├── vercorreo.lfm
+│       ├── vercorreo.o
+│       ├── vercorreo.ppu
+│       ├── verfavorito.lfm
+│       ├── verfavorito.o
+│       ├── verfavorito.ppu
+│       ├── verfavoritos.lfm
+│       ├── verfavoritos.o
+│       └── verfavoritos.ppu
+├── Manuales
+│   ├── Manual de Integracion.pdf
+│   ├── manualTecnico.md
+│   └── ManualUsuario.md
 ├── Objetos
+│   ├── backup
+│   │   └── usuario.pas
 │   ├── contactos.pas
 │   ├── correo.pas
 │   └── usuario.pas
-├── usuarios.json
+├── relaciones.pas
+├── usuariosM.json
 ├── Utilidades
 │   └── globals.pas
 └── Ventanas
@@ -82,14 +266,47 @@ Almacena informacion globalmente, el usuario que se encuentra logeado y la lista
     ├── agregarcontacto.lfm
     ├── agregarcontacto.pas
     ├── backup
+    │   ├── bandejaentrada.lfm
+    │   ├── bandejaentrada.pas
+    │   ├── borradores.lfm
+    │   ├── borradores.pas
+    │   ├── crearcomunidadad.lfm
+    │   ├── crearcomunidadad.pas
+    │   ├── enviarcorreo.lfm
+    │   ├── enviarcorreo.pas
+    │   ├── enviarcorreop.pas
+    │   ├── mensajescomunidad.lfm
+    │   ├── mensajescomunidad.pas
+    │   ├── menuadmin.lfm
+    │   ├── menuadmin.pas
+    │   ├── menucrearcuenta.pas
+    │   ├── menuinicio.lfm
+    │   ├── menuinicio.pas
+    │   ├── menuusuario.lfm
+    │   ├── menuusuario.pas
+    │   ├── papelera.pas
+    │   ├── verborrador.lfm
+    │   ├── verborrador.pas
+    │   ├── vercontactos.lfm
+    │   ├── vercontactos.pas
+    │   ├── vercorreo.lfm
+    │   ├── vercorreo.pas
+    │   ├── verfavorito.lfm
+    │   ├── verfavorito.pas
+    │   ├── verfavoritos.lfm
+    │   └── verfavoritos.pas
     ├── bandejaentrada.lfm
     ├── bandejaentrada.pas
+    ├── borradores.lfm
+    ├── borradores.pas
     ├── crearcomunidadad.lfm
     ├── crearcomunidadad.pas
     ├── enviarcorreo.lfm
     ├── enviarcorreo.pas
     ├── enviarcorreop.lfm
     ├── enviarcorreop.pas
+    ├── mensajescomunidad.lfm
+    ├── mensajescomunidad.pas
     ├── menuadmin.lfm
     ├── menuadmin.pas
     ├── menucrearcuenta.lfm
@@ -102,7 +319,13 @@ Almacena informacion globalmente, el usuario que se encuentra logeado y la lista
     ├── papelera.pas
     ├── programarcorreo.lfm
     ├── programarcorreo.pas
+    ├── verborrador.lfm
+    ├── verborrador.pas
     ├── vercontactos.lfm
     ├── vercontactos.pas
     ├── vercorreo.lfm
-    └── vercorreo.pas
+    ├── vercorreo.pas
+    ├── verfavorito.lfm
+    ├── verfavorito.pas
+    ├── verfavoritos.lfm
+    └── verfavoritos.pas
