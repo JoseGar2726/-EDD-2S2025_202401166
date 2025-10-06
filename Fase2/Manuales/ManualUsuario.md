@@ -8,7 +8,7 @@ Podemos ingresar como administrador ingresando los siguientes datos:
 email: root@edd.com  contraseña: root123
 
 ## Iniciando Sesion Como Administrador
-<img width="318" height="438" alt="admin" src="https://github.com/user-attachments/assets/a8dec1c7-9993-41f1-9305-5db2e8e42ea8" />
+<img width="320" height="529" alt="image" src="https://github.com/user-attachments/assets/3efc2170-9373-49ea-95c5-88235e3a6ad8" />
 
 Desde aqui contamos con las siguientes opciones:
 * Carga Masiva Usuarios: Se nos abrira el explorador de archivos y podremos elegir un archivo .json para cargar usuarios al sistema.
