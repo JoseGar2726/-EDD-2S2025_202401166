@@ -1,0 +1,15 @@
+digraph G {
+  node [shape=circle, style=filled, fillcolor=lightblue];
+  rankdir=LR; // disposición izquierda-derecha opcional
+  1 [label="Ciudad A"];
+  2 [label="Ciudad B"];
+  3 [label="Ciudad C"];
+  4 [label="Ciudad D"];
+  5 [label="Ciudad E"];
+  1 -> 5 [dir=both];
+  1 -> 3 [dir=both];
+  1 -> 2 [dir=both];
+  2 -> 5 [dir=both];
+  2 -> 4 [dir=both];
+  3 -> 5 [dir=both];
+}
