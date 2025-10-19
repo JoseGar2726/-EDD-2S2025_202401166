@@ -1,0 +1,66 @@
+object Form1: TForm1
+  Left = 451
+  Height = 347
+  Top = 237
+  Width = 541
+  Caption = 'Inicio Sesion'
+  ClientHeight = 347
+  ClientWidth = 541
+  LCLVersion = '4.2.0.0'
+  OnCreate = FormCreate
+  object Label1: TLabel
+    Left = 264
+    Height = 18
+    Top = 16
+    Width = 57
+    Caption = 'EDDMail'
+  end
+  object Label2: TLabel
+    Left = 57
+    Height = 18
+    Top = 79
+    Width = 41
+    Caption = 'Email:'
+  end
+  object Label3: TLabel
+    Left = 54
+    Height = 18
+    Top = 152
+    Width = 80
+    Caption = 'Contraseña:'
+  end
+  object Edit1: TEdit
+    Left = 160
+    Height = 35
+    Top = 62
+    Width = 312
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 160
+    Height = 35
+    Top = 135
+    Width = 312
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 224
+    Height = 50
+    Top = 216
+    Width = 136
+    Caption = 'Iniciar Sesion'
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 224
+    Height = 49
+    Top = 280
+    Width = 136
+    Caption = 'Crear Cuenta'
+    TabOrder = 3
+    OnClick = Button2Click
+  end
+end

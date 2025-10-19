@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="12"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <Title Value="fase2"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <BuildModes>
+      <Item Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+    </RunParams>
+    <RequiredPackages>
+      <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+    </RequiredPackages>
+    <Units>
+      <Unit>
+        <Filename Value="fase2.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/listacorreos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="listaCorreos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/pilapapelera.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pilaPapelera"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/colacorreos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="colaCorreos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/listausuarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="listaUsuarios"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/listausuarioscircular.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="listaUsuariosCircular"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Utilidades/globals.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Objetos/contactos.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Objetos/correo.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Objetos/usuario.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/actualizarperfil.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form5"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="actualizarPerfil"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/agregarcontacto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form6"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="agregarContacto"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/bandejaentrada.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form9"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="bandejaEntrada"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/crearcomunidadad.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form14"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="crearComunidadad"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/enviarcorreo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form8"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="enviarCorreo"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/enviarcorreop.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form13"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="enviarCorreoP"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/menuadmin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form2"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="menuAdmin"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/menucrearcuenta.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form3"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="menuCrearCuenta"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/menuinicio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="menuInicio"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/menuusuario.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form4"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="menuUsuario"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/papelera.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form11"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/programarcorreo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form12"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="programarCorreo"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/vercontactos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form7"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verContactos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/vercorreo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form10"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verCorreo"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/relaciones.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/comunidades.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Comunidades"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/avlborradores.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="avlBorradores"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/borradores.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form15"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/verborrador.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form16"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verBorrador"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/bfavoritos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="bFavoritos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/verfavoritos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form17"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verFavoritos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/verfavorito.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form18"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verFavorito"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/mensajescomunidad.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form19"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="mensajesComunidad"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/bstcomunidades.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="bstComunidades"/>
+      </Unit>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <Target>
+      <Filename Value="fase2"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="Estructuras;Utilidades;Objetos;Ventanas"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf3"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions>
+      <Item>
+        <Name Value="EAbort"/>
+      </Item>
+      <Item>
+        <Name Value="ECodetoolError"/>
+      </Item>
+      <Item>
+        <Name Value="EFOpenError"/>
+      </Item>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

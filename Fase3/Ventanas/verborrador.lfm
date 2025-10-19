@@ -1,0 +1,79 @@
+object Form16: TForm16
+  Left = 884
+  Height = 410
+  Top = 251
+  Width = 355
+  Caption = 'Borrador'
+  ClientHeight = 410
+  ClientWidth = 355
+  LCLVersion = '4.2.0.0'
+  OnClose = FormClose
+  object Button1: TButton
+    Left = 48
+    Height = 43
+    Top = 344
+    Width = 91
+    Caption = 'Enviar'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 216
+    Height = 43
+    Top = 344
+    Width = 91
+    Caption = 'Salir'
+    TabOrder = 1
+    OnClick = Button2Click
+  end
+  object Memo1: TMemo
+    Left = 48
+    Height = 162
+    Top = 160
+    Width = 257
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 0
+    Height = 18
+    Top = 0
+    Width = 44
+    Caption = 'Label1'
+    Visible = False
+  end
+  object Label2: TLabel
+    Left = 48
+    Height = 18
+    Top = 32
+    Width = 87
+    Caption = 'Destinatario:'
+  end
+  object Label3: TLabel
+    Left = 48
+    Height = 18
+    Top = 80
+    Width = 51
+    Caption = 'Asunto:'
+  end
+  object Edit1: TEdit
+    Left = 144
+    Height = 35
+    Top = 24
+    Width = 161
+    TabOrder = 3
+  end
+  object Edit2: TEdit
+    Left = 144
+    Height = 35
+    Top = 72
+    Width = 162
+    TabOrder = 4
+  end
+  object Label4: TLabel
+    Left = 48
+    Height = 18
+    Top = 128
+    Width = 59
+    Caption = 'Mensaje:'
+  end
+end
