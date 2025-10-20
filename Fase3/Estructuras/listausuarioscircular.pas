@@ -138,7 +138,7 @@ begin
 
   Temp := Cabeza;
   repeat;
-    if Temp^.Datos.GetUser = email then
+    if Temp^.Datos.GetEmail = email then
     begin
       if (Temp^.Siguiente = Temp) and (Temp^.Anterior = Temp) then
       begin

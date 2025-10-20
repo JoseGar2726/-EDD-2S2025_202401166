@@ -5,7 +5,7 @@ unit menuInicio;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, menuAdmin, menuCrearCuenta, menuUsuario, listaUsuarios, usuario, globals;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, menuAdmin, menuCrearCuenta, menuUsuario, listaUsuarios, usuario, log, globals;
 
 type
 
@@ -58,6 +58,7 @@ begin
                 showMessage('Sesion Iniciada Como ' + usuarioLogeado.GetUser);
                 Form4 := TForm4.Create(nil);
                 Form4.Label1.Caption := 'Bienvenido ' + usuarioLogeado.GetUser;
+                globals.LogActual := Tlog.Create(usuarioLogeado.GetUser, FormatDateTime('dd/mm/yyyy hh:nn:ss', Now), '');
                 Edit1.Text := '';
                 Edit2.Text := '';
                 Form4.Show;

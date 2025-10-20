@@ -5,7 +5,7 @@ unit usuario;
 interface
 
 uses
-  Classes, SysUtils, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, avlBorradores, bFavoritos;
+  Classes, SysUtils, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, avlBorradores, bFavoritos, merkletree;
 
 type
 
@@ -23,8 +23,9 @@ type
     FColaCorreo: TColaCorreos;
     FAvlBorradores: TAvlBorradores;
     FbFavoritos: TbFavoritos;
+    FtFavoritos: TMerkleTree;
   public
-    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera; colaCorreo: TColaCorreos; avlBorradores: TAvlBorradores; bFavoritos: TbFavoritos);
+    constructor Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera; colaCorreo: TColaCorreos; avlBorradores: TAvlBorradores; bFavoritos: TbFavoritos; tFavoritos: TMerkleTree);
     procedure SetId(id: Integer);
     function GetId: Integer;
     procedure SetNombre(nombre: string);
@@ -49,13 +50,15 @@ type
     function GetAvlBorradores: TAvlBorradores;
     procedure SetbFavoritos(bFavoritos: TbFavoritos);
     function GetbFavoritos: TbFavoritos;
+    procedure SettFavoritos(tFavoritos: TMerkleTree);
+    function GettFavoritos: TMerkleTree;
   end;
 
 implementation
 
 { TUsuario }
 
-constructor TUsuario.Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera; colaCorreo: TColaCorreos; avlBorradores: TAvlBorradores; bFavoritos: TbFavoritos);
+constructor TUsuario.Create(id: Integer; nombre: string; user: string; password: string; email: string; telefono: string; contactos: TListaUsuariosCircular; correosRecibidos: TListaCorreos; pilaPapelera: TPilaPapelera; colaCorreo: TColaCorreos; avlBorradores: TAvlBorradores; bFavoritos: TbFavoritos; tFavoritos: TMerkleTree);
 begin
   FId := id;
   FNombre := nombre;
@@ -68,7 +71,8 @@ begin
   FPilaPapelera := pilaPapelera;
   FColaCorreo := colaCorreo;
   FAvlBorradores := avlBorradores;
-  FbFavoritos := bFavoritos
+  FbFavoritos := bFavoritos;
+  FtFavoritos := tFavoritos;
 end;
 
 procedure TUsuario.SetId(id: Integer);
@@ -119,6 +123,10 @@ procedure TUsuario.SetbFavoritos(bFavoritos: TbFavoritos);
 begin
   FbFavoritos := bFavoritos;
 end;
+procedure TUsuario.SettFavoritos(tFavoritos: TMerkleTree);
+begin
+  FtFavoritos := tFavoritos;
+end;
 
 function TUsuario.GetId: Integer;
 begin
@@ -164,9 +172,13 @@ function TUsuario.GetAvlBorradores: TAvlBorradores;
 begin
   Result := FAvlBorradores;
 end;
-function TUsuario.GetbFAvoritos: TbFavoritos;
+function TUsuario.GetbFavoritos: TbFavoritos;
 begin
   Result := FbFavoritos;
+end;
+function TUsuario.GettFavoritos: TMerkleTree;
+begin
+  Result := FtFavoritos;
 end;
 
 end.

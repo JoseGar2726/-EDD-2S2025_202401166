@@ -1,0 +1,44 @@
+object Form20: TForm20
+  Left = 348
+  Height = 485
+  Top = 225
+  Width = 550
+  Caption = 'Control de Logueo'
+  ClientHeight = 485
+  ClientWidth = 550
+  LCLVersion = '4.2.0.0'
+  OnClose = FormClose
+  OnShow = FormShow
+  object Label1: TLabel
+    Left = 208
+    Height = 18
+    Top = 24
+    Width = 123
+    Caption = 'Control de Logueo'
+  end
+  object Button1: TButton
+    Left = 48
+    Height = 48
+    Top = 424
+    Width = 112
+    Caption = 'Exportar JSON'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 392
+    Height = 48
+    Top = 424
+    Width = 112
+    Caption = 'Salir'
+    TabOrder = 1
+    OnClick = Button2Click
+  end
+  object StringGrid1: TStringGrid
+    Left = 48
+    Height = 332
+    Top = 64
+    Width = 456
+    TabOrder = 2
+  end
+end

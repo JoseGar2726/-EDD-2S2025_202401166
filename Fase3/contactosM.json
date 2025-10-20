@@ -1,0 +1,18 @@
+{
+"Usuarios": [
+{
+"Usuario": "auxluis",
+"Contactos": [
+"auxmarcos",
+"smejia"
+]
+},
+{
+"Usuario": "linus",
+"Contactos": [
+"auxluis",
+"bgates"
+]
+}
+]
+}

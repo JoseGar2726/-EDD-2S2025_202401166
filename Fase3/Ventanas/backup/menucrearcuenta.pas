@@ -5,7 +5,7 @@ unit menuCrearCuenta;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, usuario, contactos, listaUsuariosCircular, listaUsuarios, listaCorreos, pilaPapelera, colaCorreos, avlBorradores, bFavoritos globals;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, usuario, contactos, listaUsuariosCircular, listaUsuarios, listaCorreos, pilaPapelera, colaCorreos, avlBorradores, bFavoritos, globals;
 
 type
 
@@ -83,7 +83,7 @@ begin
        showMessage('El Correo Ya Se Encuentra Registrado')
     else
     begin
-      Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos,correosRecibidos, pilaPapelera, colaCorreo, avlBorradores, favoritos);
+      Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos,correosRecibidos, pilaPapelera, colaCorreo, avlBorradores, favoritos, tFavoritos);
       ListaUsuariosGlobal.Agregar(Usuario);
       Edit1.Text := '';
       Edit2.Text := '';

@@ -5,7 +5,7 @@ unit bFavoritos;
 interface
 
 uses
-  Classes, SysUtils, correo;
+  Classes, SysUtils, correo, merkleTree;
 
 const
   ORDEN = 5;
@@ -414,7 +414,7 @@ procedure TbFavoritos.GenerarDOT(const RutaArchivo: string);
 var
   Archivo: TextFile;
 
-  procedure RecorrerNodo(nodo: PNodo; var contador: Integer);
+  procedure RecorrerNodo(nodo: PNodoB; var contador: Integer);
   var
     i: Integer;
     nombreNodo: string;
@@ -430,7 +430,15 @@ var
     etiqueta := '';
     for i := 0 to nodo^.n - 1 do
     begin
-      etiqueta := etiqueta + nodo^.keys[i].GetCorreo; // ajusta GetCorreo/GetAsunto según lo que quieras mostrar
+      etiqueta := etiqueta +
+        'ID: ' + IntToStr(nodo^.Datos[i].GetId) + '\n' +
+        'Remitente: ' + nodo^.Datos[i].GetRemitente + '\n' +
+        'Estado: ' + nodo^.Datos[i].GetEstado + '\n' +
+        'Fecha: ' + nodo^.Datos[i].GetFecha + '\n' +
+        'Asunto: ' + nodo^.Datos[i].GetAsunto + '\n' +
+        'Mensaje: ' + nodo^.Datos[i].GetMensaje + '\n' +
+        'Programado: ' + nodo^.Datos[i].GetProgramado;
+
       if i < nodo^.n - 1 then
         etiqueta := etiqueta + ' | ';
     end;
@@ -442,10 +450,10 @@ var
     // Enlazar hijos
     for i := 0 to nodo^.n do
     begin
-      if nodo^.hijos[i] <> nil then
+      if nodo^.Hijos[i] <> nil then
       begin
         Writeln(Archivo, Format('  %s -> Nodo%d;', [nombreNodo, contador]));
-        RecorrerNodo(nodo^.hijos[i], contador);
+        RecorrerNodo(nodo^.Hijos[i], contador);
       end;
     end;
   end;

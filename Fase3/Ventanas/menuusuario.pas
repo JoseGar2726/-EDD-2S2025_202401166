@@ -75,6 +75,8 @@ end;
 
 procedure TForm4.Button10Click(Sender: TObject);
 begin
+  LogActual.SetSalida(FormatDateTime('dd/mm/yyyy hh:nn:ss', Now));
+  Logs.Add(LogActual);
   Close
 end;
 
@@ -178,7 +180,7 @@ begin
   //Graficar - Generar DOT - Correos
   usuarioLogeado.GetCorreosRecibidos.GenerarDOT(direccion + '/ListaCorreos.dot');
   //Graficar - Generar PNG - Correos
-  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
   if FileExists(direccion + '/ListaCorreos.dot') then
   begin
     AProcess := TProcess.Create(nil);
@@ -205,7 +207,7 @@ begin
   //Graficar - Generar DOT - PAPELERA
   usuarioLogeado.GetPilaPapelera.GenerarDOT(direccion + '/Papelera.dot');
   //Graficar - Generar PNG - PAPELERA
-  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
   if FileExists(direccion + '/Papelera.dot') then
   begin
     AProcess := TProcess.Create(nil);
@@ -229,7 +231,7 @@ begin
   //Graficar - Generar DOT - PROGRAMADOS
   usuarioLogeado.GetColaCorreo.GenerarDOT(direccion + '/CorreosProgramados.dot');
   //Graficar - Generar PNG - PROGRAMADOS
-  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
   if FileExists(direccion + '/CorreosProgramados.dot') then
   begin
     AProcess := TProcess.Create(nil);
@@ -253,7 +255,7 @@ begin
   //Graficar - Generar DOT - CONTACTOSS
   usuarioLogeado.GetContactos.GenerarDOT(direccion + '/Contactos.dot');
   //Graficar - Generar PNG - CONTACTOS
-  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
   if FileExists(direccion + '/Contactos.dot') then
   begin
     AProcess := TProcess.Create(nil);
@@ -277,7 +279,7 @@ begin
   //Graficar - Generar DOT - BORRADORES
   usuarioLogeado.GetAvlBorradores.GenerarDot(direccion + '/Borradores.dot');
   //Graficar - Generar PNG - BORRADORES
-  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
   if FileExists(direccion + '/Borradores.dot') then
   begin
     AProcess := TProcess.Create(nil);
@@ -301,7 +303,7 @@ begin
   //Graficar - Generar DOT - FAVORITOS
   usuarioLogeado.GetbFavoritos.GenerarDOT(direccion + '/Favoritos.dot');
   //Graficar - Generar PNG - FAVORITOS
-  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
   if FileExists(direccion + '/Favoritos.dot') then
   begin
     AProcess := TProcess.Create(nil);
@@ -311,6 +313,32 @@ begin
       AProcess.Parameters.Add(direccion + '/Favoritos.dot');
       AProcess.Parameters.Add('-o');
       AProcess.Parameters.Add(direccion + '/Favoritos.png');
+      AProcess.Options := [poWaitOnExit];
+      AProcess.Execute;
+    finally
+      AProcess.Free;
+    end;
+  end;
+  //--------------------------------------------------------------------------------------------------------------------------------
+  nombreReporte := usuarioLogeado.GetNombre;
+  usuarioReporte := usuarioLogeado.GetUser;
+  direccion := nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  ForceDirectories(direccion);
+  //ARMAR ARBOL MERKLE
+  usuarioLogeado.GetbFavoritos.GenerarMerkle(usuarioLogeado.GettFavoritos);
+  //Graficar - Generar DOT - FAVORITOS - Merkle
+  usuarioLogeado.GettFavoritos.GenerarDOT(direccion + '/MerkleFavoritos.dot');
+  //Graficar - Generar PNG - FAVORITOS - Merkle
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  if FileExists(direccion + '/Favoritos.dot') then
+  begin
+    AProcess := TProcess.Create(nil);
+    try
+      AProcess.Executable := 'dot';
+      AProcess.Parameters.Add('-Tpng');
+      AProcess.Parameters.Add(direccion + '/MerkleFavoritos.dot');
+      AProcess.Parameters.Add('-o');
+      AProcess.Parameters.Add(direccion + '/MerkleFavoritos.png');
       AProcess.Options := [poWaitOnExit];
       AProcess.Execute;
     finally

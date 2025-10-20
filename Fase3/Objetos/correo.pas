@@ -37,6 +37,7 @@ type
     function GetMensaje: string;
     procedure SetProgramado(programado: string);
     function GetProgramado: string;
+    function ToSingleLine: string;
   end;
 
 implementation
@@ -119,6 +120,18 @@ end;
 function TCorreo.GetProgramado: string;
 begin
   Result := FProgramado;
+end;
+
+function TCorreo.ToSingleLine: string;
+var
+ S: string;
+begin
+    S := IntToStr(FID) + ': ' + Trim(FRemitente) + ' -> ' + Trim(FDestinatario) + ' - ' + Trim(FAsunto) + ': ' + Trim(FMensaje);
+    S := StringReplace(S, '"', '\"', [rfReplaceAll]);
+    S := StringReplace(S, #13#10, ' ', [rfReplaceAll]);
+    S := StringReplace(S, #10, ' ', [rfReplaceAll]);
+    S := StringReplace(S, #13, ' ', [rfReplaceAll]);
+    Result := S;
 end;
 
 end.

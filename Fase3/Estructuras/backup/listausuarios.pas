@@ -116,7 +116,7 @@ begin
 
   while Temp <> nil do
   begin
-       if Temp^.Datos.GetUser = email then
+       if Temp^.Datos.GetEmail = email then
        begin
          Result := Temp^.Datos;
          Exit;

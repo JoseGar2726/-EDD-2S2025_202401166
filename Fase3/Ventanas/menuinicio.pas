@@ -5,7 +5,7 @@ unit menuInicio;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, menuAdmin, menuCrearCuenta, menuUsuario, listaUsuarios, usuario, globals;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, menuAdmin, menuCrearCuenta, menuUsuario, listaUsuarios, usuario, log, globals;
 
 type
 
@@ -39,7 +39,7 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-    if (Edit1.Text = 'root@edd.com') and (Edit2.Text = 'root123') then
+    if (Edit1.Text = 'root') and (Edit2.Text = '1234') then
        begin
             showMessage('Sesion Iniciada Como Admin');
             Form2 := TForm2.Create(nil);
@@ -58,6 +58,7 @@ begin
                 showMessage('Sesion Iniciada Como ' + usuarioLogeado.GetUser);
                 Form4 := TForm4.Create(nil);
                 Form4.Label1.Caption := 'Bienvenido ' + usuarioLogeado.GetUser;
+                LogActual := Tlog.Create(usuarioLogeado.GetUser, FormatDateTime('dd/mm/yyyy hh:nn:ss', Now), '');
                 Edit1.Text := '';
                 Edit2.Text := '';
                 Form4.Show;

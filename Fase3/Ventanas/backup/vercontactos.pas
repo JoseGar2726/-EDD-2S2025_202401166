@@ -56,7 +56,7 @@ procedure TForm7.Button4Click(Sender: TObject);
 var
   contactoActual: string;
 begin
-   contactoActual := Edit3.Text;
+   contactoActual := Edit2.Text;
    if (UsuarioLogeado.GetContactos.EliminarContacto(contactoActual)) then
    begin
       ShowMessage('Contacto Eliminado Correctamente');

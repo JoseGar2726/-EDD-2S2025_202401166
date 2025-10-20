@@ -5,7 +5,7 @@ unit verCorreo;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, globals, bFavoritos, listaCorreos, correo, pilaPapelera, Grids, StdCtrls;
+  Classes, SysUtils, Forms, Generics.Collections, Controls, Graphics, Dialogs, globals, bFavoritos, listaCorreos, correo, pilaPapelera, Grids, StdCtrls;
 
 type
 
@@ -15,12 +15,14 @@ type
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
+    Button4: TButton;
     Label1: TLabel;
     Memo1: TMemo;
     StringGrid1: TStringGrid;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
   private
 
@@ -55,11 +57,86 @@ begin
      else
      begin
         usuarioLogeado.GetbFavoritos.Insertar(correoFavorito);
+        usuarioLogeado.GettFavoritos.AgregarCorreo(correoFavorito);
         ShowMessage('Mensaje Añadido a la Lista de Favoritos');
      end;
   end
   else
      ShowMessage('El Mensaje No Existe');
+end;
+
+procedure TForm10.Button4Click(Sender: TObject);
+var
+  idCorreo: Integer;
+  correoDescargar: TCorreo;
+  diccionario: specialize TDictionary<string, Integer>;
+  salida: specialize TList<Integer>;
+  mensaje, nombreReporte, usuarioReporte, direccion: string;
+  s, c, sc: string;
+  codigo, i: Integer;
+  carpeta: string;
+begin
+  //Crear Carpeta
+  nombreReporte := usuarioLogeado.GetNombre;
+  usuarioReporte := usuarioLogeado.GetUser;
+  direccion := nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  ForceDirectories(direccion);
+  carpeta := '/CorreosDescargados';
+  direccion := direccion + carpeta;
+  ForceDirectories(direccion);
+
+
+  idCorreo := StrToInt(Label1.Caption);
+  correoDescargar := usuarioLogeado.GetCorreosRecibidos.Buscar(idCorreo);
+
+  mensaje := correoDescargar.GetMensaje;
+
+  diccionario := specialize TDictionary<string, Integer>.Create;
+  salida := specialize TList<Integer>.Create;
+  try
+    for i := 0 to 255 do
+      diccionario.Add(Char(i), i);
+
+    codigo := 256;
+    s := '';
+
+    for i := 1 to Length(mensaje) do
+    begin
+      c := mensaje[i];
+      sc := s + c;
+
+      if diccionario.ContainsKey(sc) then
+        s := sc
+      else
+      begin
+        if s <> '' then
+          salida.Add(diccionario[s]);
+
+        diccionario.Add(sc, codigo);
+        Inc(codigo);
+        s := c;
+      end;
+    end;
+
+    if s <> '' then
+      salida.Add(diccionario[s]);
+
+    // Guardar en archivo
+    with TStringList.Create do
+    try
+      for i := 0 to salida.Count - 1 do
+        Add(IntToStr(salida[i]));
+      SaveToFile(direccion + '/Correo_' + IntToStr(correoDescargar.GetId) + '.txt');
+    finally
+      Free;
+    end;
+
+    ShowMessage('Correo comprimido guardado correctamente');
+
+  finally
+    diccionario.Free;
+    salida.Free;
+  end;
 end;
 
 procedure TForm10.Button1Click(Sender: TObject);
@@ -72,7 +149,7 @@ begin
   begin
     usuarioLogeado.GetbFavoritos.Eliminar(idCorreo);
     ShowMessage('Correo eliminado de Favoritos');
-  end
+  end;
   correoPapelera := usuarioLogeado.GetCorreosRecibidos.Eliminar(StrToInt(Label1.Caption));
   if correoPapelera <> nil then
      begin

@@ -26,6 +26,7 @@ type
     function ExisteId(id: Integer): Boolean;
     function ExisteEmail(email: string): Boolean;
     function Logearse(email: string): TUsuario;
+    function LogearseUsuario(usuario: string): TUsuario;
     function GetCabeza: PNodoUsuario;
   end;
 
@@ -117,6 +118,24 @@ begin
   while Temp <> nil do
   begin
        if Temp^.Datos.GetEmail = email then
+       begin
+         Result := Temp^.Datos;
+         Exit;
+       end;
+       Temp := Temp^.Siguiente;
+  end;
+end;
+
+function TListaUsuarios.LogearseUsuario(usuario: string): TUsuario;
+var
+   Temp: PNodoUsuario;
+begin
+  Result := nil;
+  Temp := Cabeza;
+
+  while Temp <> nil do
+  begin
+       if Temp^.Datos.GetUser = usuario then
        begin
          Result := Temp^.Datos;
          Exit;

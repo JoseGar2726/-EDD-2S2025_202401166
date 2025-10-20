@@ -5,7 +5,7 @@ unit menuAdmin;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, crearComunidadad, relaciones, listaUsuarios, usuario, contactos, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, avlBorradores, bFavoritos, correo, fpjson, jsonparser, Process;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, globals, crearComunidadad, relaciones, listaUsuarios, usuario, contactos, listaUsuariosCircular, listaCorreos, pilaPapelera, colaCorreos, avlBorradores, bFavoritos, correo, clogueo, merkleTree, fpjson, jsonparser, Process, grafoContactos;
 
 type
 
@@ -18,6 +18,8 @@ type
     Button4: TButton;
     Button5: TButton;
     Button6: TButton;
+    Button7: TButton;
+    Button8: TButton;
     Label1: TLabel;
     OpenDialog1: TOpenDialog;
     OpenDialog2: TOpenDialog;
@@ -27,6 +29,8 @@ type
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
   private
 
@@ -91,7 +95,7 @@ begin
         estado := JSONObject.Get('estado', '');
         asunto := JSONObject.Get('asunto', '');
         mensaje := JSONObject.Get('mensaje', '');
-        fecha := JSONObject.Get('fecha_envio', '');
+        fecha := FormatDateTime('dd/mm/yyyy hh:nn:ss', Now);
         programado := 'No';
 
         if (ListaUsuariosGlobal.ExisteEmail(remitente)) and (ListaUsuariosGlobal.ExisteEmail(destinatario)) then
@@ -130,6 +134,74 @@ begin
 
 end;
 
+procedure TForm2.Button7Click(Sender: TObject);
+begin
+  Form20 := TForm20.Create(nil);
+  Form20.Show;
+
+  Self.Hide;
+end;
+
+procedure TForm2.Button8Click(Sender: TObject);
+var
+  ruta: string;
+  SL: TStringList;
+  JSONData: TJSONData;
+  JSONArray: TJSONArray;
+  JSONObject: TJSONObject;
+  ContactosArray: TJSONArray;
+  i, j, idC, correosEnviadosC: Integer;
+  usuarioActual, contactoActual: TUsuario;
+  usuario, contacto: string;
+  nombreC, userC, passwordC, emailC, telefonoC: string;
+  nuevoContacto: TContacto;
+
+begin
+  //CARGA MASIVA
+  SL := TStringList.Create;
+  if OpenDialog1.Execute then
+  begin
+    ruta := OpenDialog1.FileName;
+    try
+      SL.LoadFromFile(ruta);
+      JSONData := GetJSON(SL.Text);
+
+      JSONArray := JSONDATA.GetPath('Usuarios') as TJSONArray;
+      for i := 0 to JSONArray.Count -1 do
+      begin
+        JSONObject := TJSONObject(JSONArray.Items[i]);
+        usuario := JSONObject.Strings['Usuario'];
+        UsuarioActual := ListaUsuariosGlobal.LogearseUsuario(usuario);
+        if usuarioActual <> nil then
+        begin
+          //LEER CONTACTOS Y AGREGAR
+          ContactosArray := JSONObject.Arrays['Contactos'];
+          for j := 0 to ContactosArray.Count - 1 do
+          begin
+            contacto := ContactosArray.Items[j].AsString;
+            contactoActual := ListaUsuariosGlobal.LogearseUsuario(contacto);
+            if (contactoActual <> nil) and (not usuarioActual.GetContactos.ExisteContacto(contactoActual.GetEmail)) then
+            begin
+              idC := contactoActual.GetId;
+              nombreC := contactoActual.GetNombre;
+              userC := contactoActual.GetUser;
+              passwordC := contactoActual.GetPassword;
+              emailC := contactoActual.GetEmail;
+              telefonoC := contactoACtual.GetTelefono;
+              correosEnviadosC := 0;
+              nuevoContacto := TContacto.Create(idC, nombreC, userC, passwordC, emailC, telefonoC, correosEnviadosC);
+              usuarioActual.GetContactos.Agregar(nuevoContacto);
+            end;
+          end;
+        end;
+      end;
+      ShowMessage('Contactos añadidos correctamente');
+    finally
+      SL.Free;
+    end;
+  end;
+end;
+
 procedure TForm2.Button1Click(Sender: TObject);
 var
   ruta: string;
@@ -146,6 +218,7 @@ var
   colaCorreo: TColaCorreos;
   avlBorradores: TAvlBorradores;
   favoritos: TbFavoritos;
+  tFavoritos: TMerkleTree;
 
 begin
   //CARGA MASIVA
@@ -167,19 +240,17 @@ begin
         password := JSONObject.Get('password', '');
         email := JSONObject.Get('email', '');
         telefono := JSONObject.Get('telefono', '');
-        edad := JSONObject.Get('edad', 0);
         contactos := TListaUsuariosCircular.Create;
         correosRecibidos := TListaCorreos.Create;
         pilaPapelera := TPilaPapelera.Create;
         colaCorreo := TColaCorreos.Create;
         avlBorradores := TAvlBorradores.Create;
         favoritos := TbFavoritos.Create;
-        WriteLn('Se guardo el usuario: ' + user);
-        WriteLn('Con la edad: ' + edad);
+        tFavoritos := TMerkleTree.Create;
 
         if (not ListaUsuariosGlobal.ExisteId(id)) and (not ListaUsuariosGlobal.ExisteEmail(email)) then
         begin
-           Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos,correosRecibidos, pilaPapelera, colaCorreo, avlBorradores, favoritos);
+           Usuario := TUsuario.Create(id,nombre,user,password,email,telefono,contactos,correosRecibidos, pilaPapelera, colaCorreo, avlBorradores, favoritos, tFavoritos);
 
            ListaUsuariosGlobal.Agregar(Usuario);
         end;
@@ -219,15 +290,15 @@ begin
   matriz.GenerarDOT('Reporte/Relaciones.dot');
 
   //GENERAR PNG
-  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/Relaciones.dot') then
+  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/Reporte/Relaciones.dot') then
   begin
     AProcess := TProcess.Create(nil);
     try
       AProcess.Executable := 'dot';
       AProcess.Parameters.Add('-Tpng');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/Relaciones.dot');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/Reporte/Relaciones.dot');
       AProcess.Parameters.Add('-o');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/Relaciones.png');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/Reporte/Relaciones.png');
       AProcess.Options := [poWaitOnExit];
       AProcess.Execute;
       ShowMessage('Imagen Generada en la Carpeta Reporte');
@@ -246,24 +317,77 @@ var
   AProcess: TProcess;
   usuarioActual: PnodoUsuario;
   contactoActual: PNodoContacto;
-  matriz: TRelaciones;
+  GrafoContactos: TGrafoContactos;
+  idUsuario, idContacto: Integer;
 begin
   ForceDirectories('Reporte');
   //Graficar - Generar DOT
   ListaUsuariosGlobal.GenerarDOT('Reporte/ListaSimpleUsuarios.dot');
   //Graficar - Generar PNG
-  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/ListaSimpleUsuarios.dot') then
+  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/Reporte/ListaSimpleUsuarios.dot') then
   begin
     AProcess := TProcess.Create(nil);
     try
       AProcess.Executable := 'dot';
       AProcess.Parameters.Add('-Tpng');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/ListaSimpleUsuarios.dot');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/Reporte/ListaSimpleUsuarios.dot');
       AProcess.Parameters.Add('-o');
-      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase2/Reporte/ListaSimpleUsuarios.png');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/Reporte/ListaSimpleUsuarios.png');
       AProcess.Options := [poWaitOnExit];
       AProcess.Execute;
       ShowMessage('Lista de Usuarios Graficada, Imagen Generada en la Carpeta Reporte');
+    finally
+      AProcess.Free;
+    end;
+  end
+  else
+    ShowMessage('Error: el archivo DOT no existe');
+
+  //REPORTE CONTACTOS
+  GrafoContactos := TGrafoContactos.Create;
+  try
+    usuarioActual := ListaUsuariosGlobal.GetCabeza;
+    while usuarioActual <> nil do
+    begin
+
+      idUsuario := usuarioActual^.Datos.GetId;
+      GrafoContactos.AgregarNodo(idUsuario, usuarioActual^.Datos.GetUser);
+
+      if usuarioActual^.Datos.GetContactos.Primero <> nil then
+      begin
+        contactoActual := usuarioActual^.Datos.GetContactos.Primero;
+        repeat
+          idContacto := contactoActual^.Datos.GetId;
+
+          GrafoContactos.AgregarNodo(idContacto, contactoActual^.Datos.GetUser);
+
+          GrafoContactos.ConectarNodos(idUsuario, idContacto);
+
+          contactoActual := contactoActual^.siguiente;
+        until contactoActual = usuarioActual^.Datos.GetContactos.Primero;
+      end;
+
+      usuarioActual := usuarioActual^.siguiente;
+    end;
+  finally
+  end;
+
+  //GRAFICAR
+  //Graficar - Generar DOT
+  grafoContactos.GenerarDOT('Reporte/GrafoContactos.dot');
+  //Graficar - Generar PNG
+  if FileExists('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/Reporte/GrafoContactos.dot') then
+  begin
+    AProcess := TProcess.Create(nil);
+    try
+      AProcess.Executable := 'dot';
+      AProcess.Parameters.Add('-Tpng');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/Reporte/GrafoContactos.dot');
+      AProcess.Parameters.Add('-o');
+      AProcess.Parameters.Add('/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/Reporte/GrafoContactos.png');
+      AProcess.Options := [poWaitOnExit];
+      AProcess.Execute;
+      ShowMessage('Grafo de Contactos Graficado, Imagen Generada en la Carpeta Reporte');
     finally
       AProcess.Free;
     end;

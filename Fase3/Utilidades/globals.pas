@@ -5,13 +5,21 @@ unit globals;
 interface
 
 uses
-  Classes, SysUtils, listaUsuarios, usuario;
+  Classes, SysUtils, listaUsuarios, usuario, log, fgl;
+
+type
+  TListaLogs = specialize TFPGObjectList<TLog>;
 
 var
   ListaUsuariosGlobal: TListaUsuarios;
   UsuarioLogeado: TUsuario;
+  LogActual: TLog;
+  Logs: TListaLogs;
 
 implementation
+
+initialization
+  Logs := TListaLogs.Create(True);
 
 end.
 
