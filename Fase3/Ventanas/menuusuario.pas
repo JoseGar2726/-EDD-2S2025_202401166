@@ -5,7 +5,7 @@ unit menuUsuario;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, actualizarPerfil, agregarContacto, verContactos, enviarCorreo, bandejaEntrada, papelera, programarCorreo, enviarCorreoP, borradores, verFavoritos, bFavoritos, mensajesComunidad, globals, Process;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, actualizarPerfil, agregarContacto, verContactos, enviarCorreo, bandejaEntrada, papelera, programarCorreo, enviarCorreoP, borradores, verFavoritos, bFavoritos, mensajesComunidad, privados, bChain, globals, listaCorreos, Process;
 
 type
 
@@ -17,6 +17,7 @@ type
     Button11: TButton;
     Button12: TButton;
     Button13: TButton;
+    Button14: TButton;
     Button2: TButton;
     Button3: TButton;
     Button4: TButton;
@@ -30,6 +31,7 @@ type
     procedure Button11Click(Sender: TObject);
     procedure Button12Click(Sender: TObject);
     procedure Button13Click(Sender: TObject);
+    procedure Button14Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -104,6 +106,14 @@ begin
   Self.Hide;
 end;
 
+procedure TForm4.Button14Click(Sender: TObject);
+begin
+  Form21 := TForm21.Create(nil);
+  Form21.Show;
+
+  Self.Hide;
+end;
+
 procedure TForm4.Button1Click(Sender: TObject);
 begin
   Form9 := TForm9.Create(nil);
@@ -172,6 +182,8 @@ procedure TForm4.Button9Click(Sender: TObject);
 var
   nombreReporte, usuarioReporte, direccion: string;
   AProcess: TProcess;
+  Chain: TBlockchain;
+  Nodo: PNodo;
 begin
   nombreReporte := usuarioLogeado.GetNombre;
   usuarioReporte := usuarioLogeado.GetUser;
@@ -324,8 +336,6 @@ begin
   usuarioReporte := usuarioLogeado.GetUser;
   direccion := nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
   ForceDirectories(direccion);
-  //ARMAR ARBOL MERKLE
-  usuarioLogeado.GetbFavoritos.GenerarMerkle(usuarioLogeado.GettFavoritos);
   //Graficar - Generar DOT - FAVORITOS - Merkle
   usuarioLogeado.GettFavoritos.GenerarDOT(direccion + '/MerkleFavoritos.dot');
   //Graficar - Generar PNG - FAVORITOS - Merkle
@@ -339,6 +349,43 @@ begin
       AProcess.Parameters.Add(direccion + '/MerkleFavoritos.dot');
       AProcess.Parameters.Add('-o');
       AProcess.Parameters.Add(direccion + '/MerkleFavoritos.png');
+      AProcess.Options := [poWaitOnExit];
+      AProcess.Execute;
+    finally
+      AProcess.Free;
+    end;
+  end;
+  //--------------------------------------------------------------------------------------------------------------------------------
+  nombreReporte := usuarioLogeado.GetNombre;
+  usuarioReporte := usuarioLogeado.GetUser;
+  direccion := nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  ForceDirectories(direccion);
+  //Graficar - Generar DOT - Blockchain
+  Chain := TBlockchain.Create;
+  try
+    Nodo := usuarioLogeado.GetCorreosRecibidos.Primero;
+    while Nodo <> nil do
+    begin
+      Chain.AddBlock(Nodo^.Correo);
+      Nodo := Nodo^.Siguiente;
+    end;
+
+    Chain.GenerarDOT(direccion + '/blockchain.dot');
+
+  finally
+    Chain.Free;
+  end;
+  //Graficar - Generar PNG - Blockchain
+  direccion := '/home/JoseEdd/-EDD-2S2025_202401166_nuevo/Fase3/' + nombreReporte + ' - ' + usuarioReporte + ' - ' + 'Reportes';
+  if FileExists(direccion + '/blockchain.dot') then
+  begin
+    AProcess := TProcess.Create(nil);
+    try
+      AProcess.Executable := 'dot';
+      AProcess.Parameters.Add('-Tpng');
+      AProcess.Parameters.Add(direccion + '/blockchain.dot');
+      AProcess.Parameters.Add('-o');
+      AProcess.Parameters.Add(direccion + '/blockchain.png');
       AProcess.Options := [poWaitOnExit];
       AProcess.Execute;
     finally

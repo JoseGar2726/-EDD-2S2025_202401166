@@ -477,5 +477,29 @@ begin
   CloseFile(Archivo);
 end;
 
+procedure TbFavoritos.RecorrerNodoBParaMerkle(nodo: PNodoB; AMerkle: TMerkleTree);
+var
+  i: Integer;
+begin
+  if nodo = nil then Exit;
+
+  for i := 0 to nodo^.n - 1 do
+    AMerkle.AgregarCorreo(nodo^.Datos[i]);
+
+  if not nodo^.esHoja then
+    for i := 0 to nodo^.n do
+      RecorrerNodoBParaMerkle(nodo^.Hijos[i], AMerkle);
+end;
+
+procedure TbFavoritos.GenerarMerkle(AMerkle: TMerkleTree);
+begin
+  if AMerkle = nil then Exit;
+
+  AMerkle.Free;
+  AMerkle := TMerkleTree.Create;
+
+  RecorrerNodoBParaMerkle(raiz, AMerkle);
+end;
+
 end.
 

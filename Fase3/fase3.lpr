@@ -17,7 +17,7 @@ uses
   listaUsuarios, listaUsuariosCircular, relaciones, Comunidades, avlBorradores,
   borradores, verBorrador, bFavoritos, verFavoritos, verFavorito, 
 mensajesComunidad, bstComunidades, clogueo, merkletree, bcCorreo, 
-grafoContactos;
+grafoContactos, privados, verPrivado, bChain;
 
 {$R *.res}
 
@@ -35,6 +35,8 @@ begin
   Application.CreateForm(TForm18, Form18);
   Application.CreateForm(TForm19, Form19);
   Application.CreateForm(TForm20, Form20);
+  Application.CreateForm(TForm21, Form21);
+  Application.CreateForm(TForm22, Form22);
   Application.Run;
 end.
 

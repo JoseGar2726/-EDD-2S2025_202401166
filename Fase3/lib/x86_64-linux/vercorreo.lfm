@@ -19,16 +19,16 @@ object Form10: TForm10
     Left = 24
     Height = 40
     Top = 400
-    Width = 99
+    Width = 75
     Caption = 'Eliminar'
     TabOrder = 1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 200
+    Left = 224
     Height = 40
     Top = 400
-    Width = 99
+    Width = 75
     Caption = 'Salir'
     TabOrder = 2
     OnClick = Button2Click
@@ -51,10 +51,10 @@ object Form10: TForm10
     Visible = False
   end
   object Button3: TButton
-    Left = 200
+    Left = 224
     Height = 40
     Top = 344
-    Width = 99
+    Width = 75
     Caption = 'Favorito'
     TabOrder = 4
     OnClick = Button3Click
@@ -63,9 +63,18 @@ object Form10: TForm10
     Left = 24
     Height = 40
     Top = 344
-    Width = 99
+    Width = 75
     Caption = 'Descargar'
     TabOrder = 5
     OnClick = Button4Click
+  end
+  object Button5: TButton
+    Left = 120
+    Height = 40
+    Top = 344
+    Width = 78
+    Caption = 'Privado'
+    TabOrder = 6
+    OnClick = Button5Click
   end
 end

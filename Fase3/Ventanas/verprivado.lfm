@@ -1,0 +1,44 @@
+object Form22: TForm22
+  Left = 296
+  Height = 410
+  Top = 229
+  Width = 389
+  Caption = 'Correo Privado'
+  ClientHeight = 410
+  ClientWidth = 389
+  LCLVersion = '4.2.0.0'
+  OnClose = FormClose
+  object Label1: TLabel
+    Left = 13
+    Height = 18
+    Top = 8
+    Width = 44
+    Caption = 'Label1'
+    Visible = False
+  end
+  object StringGrid1: TStringGrid
+    Left = 19
+    Height = 338
+    Top = 17
+    Width = 353
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 19
+    Height = 38
+    Top = 366
+    Width = 101
+    Caption = 'Eliminar'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 265
+    Height = 38
+    Top = 366
+    Width = 107
+    Caption = 'Salir'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+end

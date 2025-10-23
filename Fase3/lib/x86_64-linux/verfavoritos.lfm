@@ -1,7 +1,7 @@
 object Form17: TForm17
-  Left = 348
+  Left = 972
   Height = 408
-  Top = 233
+  Top = 277
   Width = 335
   Caption = 'Favoritos'
   ClientHeight = 408

@@ -102,6 +102,7 @@
         <Filename Value="Ventanas/crearcomunidadad.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form14"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="crearComunidadad"/>
       </Unit>
@@ -220,6 +221,7 @@
         <Filename Value="Ventanas/verfavoritos.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form17"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="verFavoritos"/>
       </Unit>
@@ -227,6 +229,7 @@
         <Filename Value="Ventanas/verfavorito.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form18"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="verFavorito"/>
       </Unit>
@@ -261,7 +264,25 @@
       <Unit>
         <Filename Value="Estructuras/grafocontactos.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="grafoContactos"/>
+        <UnitName Value="GrafoContactos"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/privados.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form21"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/verprivado.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form22"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verPrivado"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/bchain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="bChain"/>
       </Unit>
     </Units>
   </ProjectOptions>

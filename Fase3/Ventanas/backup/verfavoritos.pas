@@ -94,6 +94,7 @@ begin
  fila := 1;
 
  RecorrerNodo(usuarioLogeado.GetbFavoritos.GetRaiz);
+ Button2.Caption := IntToStr(usuarioLogeado.GetbFavoritos.ContarCorreos);
 end;
 
 procedure TForm17.StringGrid1DblClick(Sender: TObject);

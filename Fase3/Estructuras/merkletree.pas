@@ -33,7 +33,11 @@ type
     destructor Destroy; override;
     procedure AgregarCorreo(ACorreo: TCorreo);
     function GetRootHash: string;
+    function Buscar(idCorreo: Integer): Boolean;
     procedure GenerarDot(const Ruta: string);
+    function GetRoot: TMerkleNode;
+    function ContarCorreos: Integer;
+    function EliminarCorreo(idCorreo: Integer): Boolean;
   end;
 
 implementation
@@ -142,6 +146,73 @@ begin
      Result := FRoot.Hash
   else
      Result := '';
+end;
+
+function TMerkleTree.Buscar(idCorreo: Integer): Boolean;
+
+  function BuscarNodo(Node: TMerkleNode): Boolean;
+  begin
+    Result := False;
+    if Node = nil then Exit;
+
+    if Assigned(Node.Correo) then
+    begin
+      if Node.Correo.GetId = idCorreo then
+      begin
+        Result := True;
+        Exit;
+      end;
+    end;
+
+    Result := BuscarNodo(Node.Left) or BuscarNodo(Node.Right);
+  end;
+
+begin
+  Result := BuscarNodo(FRoot);
+end;
+
+function TMerkleTree.GetRoot: TMerkleNode;
+begin
+  Result := FRoot;
+end;
+
+function TMerkleTree.ContarCorreos: Integer;
+var
+  i: Integer;
+  nodo: TMerkleNode;
+begin
+  Result := 0;
+  for i := 0 to FLeaves.Count - 1 do
+  begin
+    nodo := TMerkleNode(FLeaves[i]);
+    if Assigned(nodo.Correo) then
+      Inc(Result);
+  end;
+end;
+
+function TMerkleTree.EliminarCorreo(idCorreo: Integer): Boolean;
+var
+  i: Integer;
+  nodo: TMerkleNode;
+begin
+  Result := False;
+
+  if FLeaves.Count = 0 then Exit;
+
+  for i := FLeaves.Count - 1 downto 0 do
+  begin
+    nodo := TMerkleNode(FLeaves[i]);
+    if Assigned(nodo.Correo) and (nodo.Correo.GetId = idCorreo) then
+    begin
+      nodo.Free;
+      FLeaves.Delete(i);
+      Result := True;
+      Break;
+    end;
+  end;
+
+  if Result then
+    BuildTree;
 end;
 
 procedure TMerkleTree.GenerarDot(const Ruta: string);

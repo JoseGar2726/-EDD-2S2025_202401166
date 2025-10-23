@@ -10,16 +10,16 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="5"/>
         <CursorPos X="43" Y="15"/>
-        <UsageCount Value="133"/>
+        <UsageCount Value="139"/>
       </Unit>
       <Unit>
         <Filename Value="Estructuras/listacorreos.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="listaCorreos"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="27"/>
-        <CursorPos X="28" Y="32"/>
-        <UsageCount Value="78"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="20" Y="9"/>
+        <UsageCount Value="84"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Estructuras/pilapapelera.pas"/>
@@ -29,42 +29,39 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Estructuras/colacorreos.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="colaCorreos"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Estructuras/listausuarios.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="listaUsuarios"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="5"/>
         <CursorPos X="3" Y="17"/>
-        <UsageCount Value="78"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Estructuras/listausuarioscircular.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="listaUsuariosCircular"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos X="3" Y="18"/>
-        <UsageCount Value="78"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Utilidades/globals.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
-        <CursorPos X="3" Y="14"/>
-        <UsageCount Value="78"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="3" Y="15"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Objetos/contactos.pas"/>
@@ -72,24 +69,22 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos X="60" Y="25"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Objetos/correo.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="114"/>
-        <CursorPos X="40" Y="124"/>
-        <UsageCount Value="78"/>
+        <EditorIndex Value="4"/>
+        <UsageCount Value="84"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Objetos/usuario.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="33"/>
-        <CursorPos X="14" Y="42"/>
-        <UsageCount Value="78"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="162"/>
+        <CursorPos Y="180"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/actualizarperfil.pas"/>
@@ -98,8 +93,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="actualizarPerfil"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="78"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="84"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/agregarcontacto.pas"/>
@@ -111,7 +107,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="51"/>
         <CursorPos X="38" Y="62"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/bandejaentrada.pas"/>
@@ -121,9 +117,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="bandejaEntrada"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="84"/>
-        <CursorPos X="3" Y="128"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/crearcomunidadad.pas"/>
@@ -135,7 +129,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="109"/>
         <CursorPos X="3" Y="59"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/enviarcorreo.pas"/>
@@ -147,7 +141,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="89"/>
         <CursorPos X="72" Y="102"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/enviarcorreop.pas"/>
@@ -159,7 +153,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/menuadmin.pas"/>
@@ -168,12 +162,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="menuAdmin"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="361"/>
-        <CursorPos X="7" Y="372"/>
-        <UsageCount Value="78"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="382"/>
+        <CursorPos X="29" Y="391"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/menucrearcuenta.pas"/>
@@ -184,7 +176,7 @@
         <UnitName Value="menuCrearCuenta"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="205" Y="8"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/menuinicio.pas"/>
@@ -195,7 +187,7 @@
         <UnitName Value="menuInicio"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="72" Y="56"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/menuusuario.pas"/>
@@ -204,10 +196,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="menuUsuario"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="319"/>
-        <CursorPos X="27" Y="326"/>
-        <UsageCount Value="78"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="359"/>
+        <CursorPos X="30" Y="370"/>
+        <UsageCount Value="84"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/papelera.pas"/>
@@ -217,7 +212,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="74"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/programarcorreo.pas"/>
@@ -228,7 +223,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="56"/>
         <CursorPos X="3" Y="78"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/vercontactos.pas"/>
@@ -240,7 +235,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="55"/>
         <CursorPos X="35" Y="62"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/vercorreo.pas"/>
@@ -250,16 +245,16 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="verCorreo"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="47"/>
-        <CursorPos X="31" Y="59"/>
-        <UsageCount Value="78"/>
+        <TopLine Value="162"/>
+        <CursorPos X="43" Y="176"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Estructuras/relaciones.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="229"/>
-        <UsageCount Value="77"/>
+        <UsageCount Value="83"/>
       </Unit>
       <Unit>
         <Filename Value="Estructuras/comunidades.pas"/>
@@ -268,16 +263,17 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
         <CursorPos X="44" Y="8"/>
-        <UsageCount Value="77"/>
+        <UsageCount Value="83"/>
       </Unit>
       <Unit>
         <Filename Value="Estructuras/avlborradores.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="avlBorradores"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="337"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="308"/>
         <CursorPos X="42" Y="337"/>
-        <UsageCount Value="71"/>
+        <UsageCount Value="77"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/borradores.pas"/>
@@ -288,7 +284,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="147"/>
         <CursorPos X="27" Y="150"/>
-        <UsageCount Value="65"/>
+        <UsageCount Value="71"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/verborrador.pas"/>
@@ -300,36 +296,40 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="77"/>
         <CursorPos X="28" Y="78"/>
-        <UsageCount Value="62"/>
+        <UsageCount Value="68"/>
       </Unit>
       <Unit>
         <Filename Value="Estructuras/bfavoritos.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="bFavoritos"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="478"/>
-        <CursorPos X="37" Y="491"/>
-        <UsageCount Value="54"/>
+        <TopLine Value="459"/>
+        <CursorPos X="5" Y="478"/>
+        <UsageCount Value="60"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/verfavoritos.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form17"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="verFavoritos"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="56" Y="93"/>
-        <UsageCount Value="52"/>
+        <TopLine Value="81"/>
+        <CursorPos X="34" Y="96"/>
+        <UsageCount Value="58"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/verfavorito.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form18"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="verFavorito"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="47" Y="8"/>
-        <UsageCount Value="50"/>
+        <TopLine Value="47"/>
+        <CursorPos X="3" Y="46"/>
+        <UsageCount Value="56"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/mensajescomunidad.pas"/>
@@ -340,7 +340,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="60"/>
         <CursorPos X="27" Y="62"/>
-        <UsageCount Value="47"/>
+        <UsageCount Value="53"/>
       </Unit>
       <Unit>
         <Filename Value="Estructuras/bstcomunidades.pas"/>
@@ -348,7 +348,7 @@
         <UnitName Value="bstComunidades"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="30" Y="12"/>
-        <UsageCount Value="47"/>
+        <UsageCount Value="53"/>
       </Unit>
       <Unit>
         <Filename Value="Ventanas/clogueo.pas"/>
@@ -359,14 +359,15 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="87"/>
         <CursorPos X="39" Y="99"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="46"/>
       </Unit>
       <Unit>
         <Filename Value="Estructuras/merkletree.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="30" Y="10"/>
-        <UsageCount Value="31"/>
+        <TopLine Value="175"/>
+        <CursorPos X="38" Y="200"/>
+        <UsageCount Value="37"/>
       </Unit>
       <Unit>
         <Filename Value="Estructuras/bccorreo.pas"/>
@@ -374,7 +375,17 @@
         <UnitName Value="bcCorreo"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="37" Y="12"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="31"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/grafocontactos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="GrafoContactos"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="52"/>
+        <CursorPos X="53" Y="63"/>
+        <UsageCount Value="28"/>
       </Unit>
       <Unit>
         <Filename Value="menuinicio.pas"/>
@@ -663,104 +674,76 @@
         <UsageCount Value="9"/>
       </Unit>
       <Unit>
-        <Filename Value="Estructuras/grafocontactos.pas"/>
+        <Filename Value="Ventanas/privados.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="GrafoContactos"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="158"/>
-        <CursorPos X="14" Y="165"/>
-        <UsageCount Value="22"/>
+        <ComponentName Value="Form21"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="93"/>
+        <CursorPos X="61" Y="103"/>
+        <UsageCount Value="24"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Ventanas/verprivado.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form22"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="verPrivado"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="32"/>
+        <CursorPos X="70" Y="45"/>
+        <UsageCount Value="24"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Estructuras/bchain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="bChain"/>
+        <TopLine Value="13"/>
+        <CursorPos X="25" Y="155"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="21">
+    <JumpHistory HistoryIndex="9">
       <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="193" Column="43" TopLine="179"/>
+        <Filename Value="Estructuras/bchain.pas"/>
+        <Caret Line="10" Column="5" TopLine="129"/>
       </Position>
       <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="12" Column="268" TopLine="43"/>
+        <Filename Value="Estructuras/bchain.pas"/>
+        <Caret Line="31" Column="31" TopLine="12"/>
       </Position>
       <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="364" Column="38" TopLine="350"/>
+        <Filename Value="Ventanas/menuusuario.pas"/>
+        <Caret Line="119" Column="3" TopLine="116"/>
       </Position>
       <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="349" Column="42" TopLine="338"/>
+        <Filename Value="Ventanas/menuusuario.pas"/>
+        <Caret Line="8" Column="263"/>
       </Position>
       <Position>
-        <Filename Value="Utilidades/globals.pas"/>
-        <Caret Line="14" Column="3"/>
+        <Filename Value="Ventanas/menuusuario.pas"/>
+        <Caret Line="372" TopLine="365"/>
       </Position>
       <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="360" Column="46" TopLine="341"/>
+        <Filename Value="Ventanas/menuusuario.pas"/>
+        <Caret Line="8" Column="286"/>
       </Position>
       <Position>
-        <Filename Value="Objetos/usuario.pas"/>
-        <Caret Line="42" Column="14" TopLine="33"/>
+        <Filename Value="Estructuras/bchain.pas"/>
+        <Caret Line="155" Column="25" TopLine="13"/>
       </Position>
       <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="365" Column="48" TopLine="353"/>
+        <Filename Value="Ventanas/menuusuario.pas"/>
+        <Caret Line="367" Column="25" TopLine="358"/>
       </Position>
       <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="364" Column="59" TopLine="348"/>
+        <Filename Value="Estructuras/listacorreos.pas"/>
+        <Caret Line="9" Column="20"/>
       </Position>
       <Position>
-        <Filename Value="Estructuras/grafocontactos.pas"/>
-        <Caret Line="149" Column="35" TopLine="134"/>
-      </Position>
-      <Position>
-        <Filename Value="Estructuras/grafocontactos.pas"/>
-        <Caret Line="25" Column="48" TopLine="11"/>
-      </Position>
-      <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="373" Column="40" TopLine="75"/>
-      </Position>
-      <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="335" Column="79" TopLine="308"/>
-      </Position>
-      <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="301" Column="79" TopLine="292"/>
-      </Position>
-      <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="59" Column="3" TopLine="56"/>
-      </Position>
-      <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="395" Column="26" TopLine="378"/>
-      </Position>
-      <Position>
-        <Filename Value="Estructuras/grafocontactos.pas"/>
-        <Caret Line="155" Column="42" TopLine="142"/>
-      </Position>
-      <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="228" Column="15" TopLine="222"/>
-      </Position>
-      <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="88" TopLine="238"/>
-      </Position>
-      <Position>
-        <Filename Value="Estructuras/grafocontactos.pas"/>
-        <Caret Line="125" Column="35" TopLine="107"/>
-      </Position>
-      <Position>
-        <Filename Value="Estructuras/grafocontactos.pas"/>
-        <Caret Line="161" Column="27" TopLine="153"/>
-      </Position>
-      <Position>
-        <Filename Value="Ventanas/menuadmin.pas"/>
-        <Caret Line="371" Column="9" TopLine="358"/>
+        <Filename Value="Ventanas/menuusuario.pas"/>
+        <Caret Line="369" Column="26" TopLine="358"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -768,15 +751,4 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
-  <Debugging>
-    <BreakPoints>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="Ventanas/menuusuario.pas"/>
-        <Line Value="8"/>
-      </Item>
-    </BreakPoints>
-  </Debugging>
 </CONFIG>

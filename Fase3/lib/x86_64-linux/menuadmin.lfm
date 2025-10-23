@@ -1,7 +1,7 @@
 object Form2: TForm2
-  Left = 607
+  Left = 561
   Height = 607
-  Top = 156
+  Top = 167
   Width = 318
   Caption = 'Menu Administrador'
   ClientHeight = 607

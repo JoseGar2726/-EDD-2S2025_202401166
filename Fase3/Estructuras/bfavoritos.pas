@@ -28,7 +28,6 @@ type
     function CrearNodoB(esHoja: Boolean): PNodoB;
     procedure InsertarNoLleno(nodo: PNodoB; correo: TCorreo);
     procedure DividirHijo(padre: PNodoB; i: Integer; hijo: PNodoB);
-    procedure RecorrerNodoBParaMerkle(nodo: PNodoB; AMerkle: TMerkleTree);
     //ELIMINAR
     procedure EliminarNodo(nodo: PNodoB; id: Integer);
     function ObtenerPredecesor(nodo: PNodoB; idx: Integer): TCorreo;
@@ -47,7 +46,6 @@ type
     procedure Eliminar(id: Integer);
     function ContarCorreos: Integer;
     procedure GenerarDOT(const RutaArchivo: string);
-    procedure GenerarMerkle(AMerkle: TMerkleTree);
   end;
 
 implementation
@@ -477,30 +475,6 @@ begin
 
   Writeln(Archivo, '}');
   CloseFile(Archivo);
-end;
-
-procedure TbFavoritos.RecorrerNodoBParaMerkle(nodo: PNodoB; AMerkle: TMerkleTree);
-var
-  i: Integer;
-begin
-  if nodo = nil then Exit;
-
-  for i := 0 to nodo^.n - 1 do
-    AMerkle.AgregarCorreo(nodo^.Datos[i]);
-
-  if not nodo^.esHoja then
-    for i := 0 to nodo^.n do
-      RecorrerNodoBParaMerkle(nodo^.Hijos[i], AMerkle);
-end;
-
-procedure TbFavoritos.GenerarMerkle(AMerkle: TMerkleTree);
-begin
-  if AMerkle = nil then Exit;
-
-  AMerkle.Free;
-  AMerkle := TMerkleTree.Create;
-
-  RecorrerNodoBParaMerkle(raiz, AMerkle);
 end;
 
 end.

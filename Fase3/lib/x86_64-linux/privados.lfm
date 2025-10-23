@@ -1,0 +1,47 @@
+object Form21: TForm21
+  Left = 468
+  Height = 410
+  Top = 263
+  Width = 333
+  Caption = 'Privados'
+  ClientHeight = 410
+  ClientWidth = 333
+  LCLVersion = '4.2.0.0'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  object Label1: TLabel
+    Left = 137
+    Height = 18
+    Top = 19
+    Width = 58
+    Caption = 'Privados'
+  end
+  object StringGrid1: TStringGrid
+    Left = 16
+    Height = 289
+    Top = 55
+    Width = 303
+    TabOrder = 0
+    OnDblClick = StringGrid1DblClick
+  end
+  object Button1: TButton
+    Left = 131
+    Height = 34
+    Top = 361
+    Width = 97
+    Caption = 'Salir'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 16
+    Height = 40
+    Top = 355
+    Width = 42
+    Caption = '0'
+    Enabled = False
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+end

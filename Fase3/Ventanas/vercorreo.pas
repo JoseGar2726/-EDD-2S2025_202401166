@@ -16,6 +16,7 @@ type
     Button2: TButton;
     Button3: TButton;
     Button4: TButton;
+    Button5: TButton;
     Label1: TLabel;
     Memo1: TMemo;
     StringGrid1: TStringGrid;
@@ -23,6 +24,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
   private
 
@@ -138,6 +140,25 @@ begin
   end;
 end;
 
+procedure TForm10.Button5Click(Sender: TObject);
+var
+  correoPrivado: TCorreo;
+begin
+  correoPrivado := usuarioLogeado.GetCorreosRecibidos.Buscar(StrToInt(Label1.Caption));
+  if correoPrivado <> nil then
+  begin
+     if usuarioLogeado.GettFavoritos.Buscar(correoPrivado.GetId) then
+        ShowMessage('Mensaje Ya Fue Añadido a la Lista de Privados')
+     else
+     begin
+        usuarioLogeado.GettFavoritos.AgregarCorreo(correoPrivado);
+        ShowMessage('Mensaje Añadido a la Lista de Privados');
+     end;
+  end
+  else
+     ShowMessage('El Mensaje No Existe');
+end;
+
 procedure TForm10.Button1Click(Sender: TObject);
 var
   correoPapelera: TCorreo;
@@ -148,6 +169,11 @@ begin
   begin
     usuarioLogeado.GetbFavoritos.Eliminar(idCorreo);
     ShowMessage('Correo eliminado de Favoritos');
+  end;
+  if usuarioLogeado.GettFavoritos.Buscar(idCorreo) then
+  begin
+    usuarioLogeado.GettFavoritos.EliminarCorreo(idCorreo);
+    ShowMessage('Correo eliminado de Privados');
   end;
   correoPapelera := usuarioLogeado.GetCorreosRecibidos.Eliminar(StrToInt(Label1.Caption));
   if correoPapelera <> nil then
